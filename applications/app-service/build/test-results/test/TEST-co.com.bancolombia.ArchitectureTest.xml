@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.bancolombia.ArchitectureTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-08-26T12:14:32.839Z" hostname="LEIFE19" time="0.58">
+  <properties/>
+  <testcase name="domainClassesShouldNotBeNamedWithToolNames()" classname="co.com.bancolombia.ArchitectureTest" time="0.282"/>
+  <testcase name="domainClassesShouldNotHaveFieldsNamedWithToolNames()" classname="co.com.bancolombia.ArchitectureTest" time="0.028"/>
+  <testcase name="useCaseFinalFields()" classname="co.com.bancolombia.ArchitectureTest" time="0.012"/>
+  <testcase name="beansShouldOnlyHaveFinalFields()" classname="co.com.bancolombia.ArchitectureTest" time="0.03"/>
+  <testcase name="reactiveFlowsShouldUseAwsAsyncClients()" classname="co.com.bancolombia.ArchitectureTest" time="0.062"/>
+  <testcase name="domainClassesShouldNotBeNamedWithTechSuffixes()" classname="co.com.bancolombia.ArchitectureTest" time="0.004"/>
+  <system-out><![CDATA[07:14:12.698 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 17.0.2
+]]></system-out>
+  <system-err><![CDATA[ago 26, 2025 7:14:31 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 26, 2025 7:14:33 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 26, 2025 7:14:33 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 26, 2025 7:14:33 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 26, 2025 7:14:33 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 26, 2025 7:14:33 A. M. co.com.bancolombia.Utils findFiles
+INFO: begin -1, end 231, length 231
+]]></system-err>
+</testsuite>

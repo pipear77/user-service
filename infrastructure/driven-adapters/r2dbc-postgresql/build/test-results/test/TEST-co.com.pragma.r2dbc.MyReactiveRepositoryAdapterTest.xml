@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.pragma.r2dbc.MyReactiveRepositoryAdapterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-08-26T03:17:46.233Z" hostname="LEIFE19" time="6.65">
+  <properties/>
+  <testcase name="mustSaveValue()" classname="co.com.pragma.r2dbc.MyReactiveRepositoryAdapterTest" time="6.57"/>
+  <testcase name="mustFindValueById()" classname="co.com.pragma.r2dbc.MyReactiveRepositoryAdapterTest" time="0.02"/>
+  <testcase name="mustFindAllValues()" classname="co.com.pragma.r2dbc.MyReactiveRepositoryAdapterTest" time="0.01"/>
+  <testcase name="mustFindByExample()" classname="co.com.pragma.r2dbc.MyReactiveRepositoryAdapterTest" time="0.03"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

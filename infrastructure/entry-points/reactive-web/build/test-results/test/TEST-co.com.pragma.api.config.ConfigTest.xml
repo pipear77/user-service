@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.pragma.api.config.ConfigTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-26T03:17:58.965Z" hostname="LEIFE19" time="0.01">
+  <properties/>
+  <testcase name="corsConfigurationShouldAllowOrigins()" classname="co.com.pragma.api.config.ConfigTest" time="0.01"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-25T22:17:58.043-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.config.ConfigTest      : Starting ConfigTest using Java 17.0.2 with PID 6832 (started by Leife in D:\Documentos\proyectos\bootcamp_proyecto_pragma\proyecto_bootcamp\user-service\infrastructure\entry-points\reactive-web)
+2025-08-25T22:17:58.044-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.config.ConfigTest      : No active profile set, falling back to 1 default profile: "default"
+2025-08-25T22:17:58.353-05:00  INFO 6832 --- [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-25T22:17:58.961-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.config.ConfigTest      : Started ConfigTest in 0.978 seconds (process running for 42.993)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
