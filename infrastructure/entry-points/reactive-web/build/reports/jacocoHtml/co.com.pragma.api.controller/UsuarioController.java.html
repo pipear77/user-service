@@ -4,11 +4,10 @@ import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 import java.util.Map;
 
 
@@ -19,12 +18,24 @@ public class UsuarioController {
     private final RegistrarUsuarioUseCase registrarUsuarioUseCase;
 
     @PostMapping
-    public Mono&lt;ResponseEntity&lt;Object&gt;&gt; registrarUsuario(@RequestBody Usuario usuario) {
-<span class="nc" id="L23">        return registrarUsuarioUseCase.registrarUsuario(usuario)</span>
-<span class="nc" id="L24">                .map(u -&gt; ResponseEntity.status(201).body((Object) u))</span>
-<span class="nc" id="L25">                .onErrorResume(e -&gt; Mono.just(</span>
-<span class="nc" id="L26">                        ResponseEntity.badRequest().body(Map.of(&quot;error&quot;, e.getMessage()))</span>
-                ));
+    public Mono&lt;ResponseEntity&lt;Usuario&gt;&gt; save(@RequestBody Usuario usuario) {
+<span class="nc" id="L22">        return registrarUsuarioUseCase.save(usuario)</span>
+<span class="nc" id="L23">                .map(u -&gt; ResponseEntity.status(201).body(u))</span>
+<span class="nc" id="L24">                .onErrorResume(e -&gt;</span>
+<span class="nc" id="L25">                        Mono.just(ResponseEntity.badRequest().build())</span>
+                );
     }
+
+
+    @GetMapping
+    public Mono&lt;ResponseEntity&lt;List&lt;Usuario&gt;&gt;&gt; getAllUsuarios() {
+<span class="nc" id="L32">        return registrarUsuarioUseCase.getAllUsuarios()</span>
+<span class="nc" id="L33">                .collectList()</span>
+<span class="nc" id="L34">                .map(ResponseEntity::ok)</span>
+<span class="nc" id="L35">                .onErrorResume(e -&gt;</span>
+<span class="nc" id="L36">                        Mono.just(ResponseEntity.badRequest().body(List.of()))</span>
+                );
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

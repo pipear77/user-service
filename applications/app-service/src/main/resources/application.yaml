@@ -1,5 +1,7 @@
 server:
   port: 8080
+  error:
+    include-message: always
 spring:
   application:
     name: "user-service"
@@ -11,6 +13,13 @@ spring:
       path: "/h2"
   profiles:
     include: null
+adapters:
+  r2dbc:
+    hotst: "localhost"
+    port: 5432
+    database: "crediya"
+    username: "postgres"
+    password: "2[zp@AJ]"
 management:
   endpoints:
     web:
@@ -22,3 +31,11 @@ management:
         enabled: true
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enable: true
+

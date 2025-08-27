@@ -4,6 +4,7 @@ import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import co.com.pragma.r2dbc.mapper.UsuarioMapper;
 import co.com.pragma.r2dbc.repository.ReactiveUsuarioDataRepository;
@@ -17,15 +18,22 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
 
     @Override
     public Mono&lt;Usuario&gt; save(Usuario usuario) {
-<span class="nc" id="L20">        return dataRepository.save(mapper.toEntity(usuario))</span>
-<span class="nc" id="L21">                .map(mapper::toDomain);</span>
+<span class="nc" id="L21">        return dataRepository.save(mapper.toEntity(usuario))</span>
+<span class="nc" id="L22">                .map(mapper::toDomain);</span>
 
     }
 
     @Override
     public Mono&lt;Usuario&gt; findByCorreoElectronico(String correoElectronico) {
-<span class="nc" id="L27">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
-<span class="nc" id="L28">                .map(mapper::toDomain);</span>
+<span class="nc" id="L28">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
+<span class="nc" id="L29">                .map(mapper::toDomain);</span>
     }
+
+    @Override
+    public Flux&lt;Usuario&gt; findAllUsuarios() {
+<span class="nc" id="L34">        return dataRepository.findAll()</span>
+<span class="nc" id="L35">                .map(mapper::toDomain);</span>
+    }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>

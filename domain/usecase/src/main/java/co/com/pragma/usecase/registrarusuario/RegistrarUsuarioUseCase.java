@@ -2,60 +2,74 @@ package co.com.pragma.usecase.registrarusuario;
 
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
+import co.com.pragma.usecase.exceptions.CampoObligatorioException;
+import co.com.pragma.usecase.exceptions.CorreoYaRegistradoException;
+import co.com.pragma.usecase.exceptions.FormatoCorreoInvalidoException;
+import co.com.pragma.usecase.exceptions.SalarioFueraDeRangoException;
 import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
+
 @RequiredArgsConstructor
 public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface {
-    private final UsuarioRepository usuarioRepository;
 
-    private static final Pattern EMAIL_PATTERN = Pattern.compile(
-            "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"
-    );
+    private final UsuarioRepository usuarioRepository;
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+    private static final BigDecimal SALARIO_MAXIMO = new BigDecimal("15000000");
+    private static final BigDecimal SALARIO_MINIMO = BigDecimal.ZERO;
 
     @Override
-    public Mono<Usuario> registrarUsuario(Usuario usuario) {
+    public Mono<Usuario> save(Usuario usuario) {
         return validarUsuario(usuario)
-                .then(usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico()))
-                .flatMap(existing -> {
-                    if (existing != null) {
-                        return Mono.error(new IllegalArgumentException("El correo ya está registrado"));
-                    }
-                    return usuarioRepository.save(usuario);
-                })
-                .switchIfEmpty(usuarioRepository.save(usuario));
+                .then(Mono.defer(() ->
+                        usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico())
+                                .flatMap(existing -> Mono.<Usuario>error(
+                                        new CorreoYaRegistradoException(usuario.getCorreoElectronico())))
+                                .switchIfEmpty(Mono.defer(() -> usuarioRepository.save(usuario)))
+                ));
     }
 
-    private Mono<Void> validarUsuario(Usuario usuario) {
+
+
+
+    Mono<Void> validarUsuario(Usuario usuario) {
         if (isNullOrEmpty(usuario.getNombres())) {
-            return Mono.error(new IllegalArgumentException("El nombre es obligatorio"));
+            return Mono.error(new CampoObligatorioException("nombres"));
         }
         if (isNullOrEmpty(usuario.getApellidos())) {
-            return Mono.error(new IllegalArgumentException("El apellido es obligatorio"));
+            return Mono.error(new CampoObligatorioException("apellidos"));
+        }
+        if (isNullOrEmpty(usuario.getDireccion())) {
+            return Mono.error(new CampoObligatorioException("direccion"));
+        }
+        if (isNullOrEmpty(usuario.getTelefono())) {
+            return Mono.error(new CampoObligatorioException("telefono"));
         }
         if (isNullOrEmpty(usuario.getCorreoElectronico())) {
-            return Mono.error(new IllegalArgumentException("El correo electrónico es obligatorio"));
+            return Mono.error(new CampoObligatorioException("correo electrónico"));
         }
         if (!EMAIL_PATTERN.matcher(usuario.getCorreoElectronico()).matches()) {
-            return Mono.error(new IllegalArgumentException("Formato de correo inválido"));
+            return Mono.error(new FormatoCorreoInvalidoException());
         }
-        if (usuario.getSalarioBase() == null) {
-            return Mono.error(new IllegalArgumentException("El salario base es obligatorio"));
-        }
-        BigDecimal salario = usuario.getSalarioBase();
-        if (salario.compareTo(BigDecimal.ZERO) < 0 || salario.compareTo(new BigDecimal("150000000")) > 0) {
-            return Mono.error(new IllegalArgumentException("El salario debe estar entre 0 y 150.000.000"));
+        if (usuario.getSalarioBase().compareTo(SALARIO_MINIMO) < 0 ||
+                usuario.getSalarioBase().compareTo(SALARIO_MAXIMO) > 0) {
+            return Mono.error(new SalarioFueraDeRangoException(SALARIO_MINIMO, SALARIO_MAXIMO));
         }
 
         return Mono.empty();
     }
 
+
     private boolean isNullOrEmpty(String value) {
         return value == null || value.trim().isEmpty();
     }
 
-
+    @Override
+    public Flux<Usuario> getAllUsuarios() {
+        return usuarioRepository.findAllUsuarios();
+    }
 }

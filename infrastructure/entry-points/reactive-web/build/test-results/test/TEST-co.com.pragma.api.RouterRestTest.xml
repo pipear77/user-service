@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.api.RouterRestTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-08-26T03:17:55.994Z" hostname="LEIFE19" time="1.943">
+<testsuite name="co.com.pragma.api.RouterRestTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-08-27T02:58:07.598Z" hostname="LEIFE19" time="3.876">
   <properties/>
-  <testcase name="testListenPOSTUseCase()" classname="co.com.pragma.api.RouterRestTest" time="1.92"/>
-  <testcase name="testListenGETOtherUseCase()" classname="co.com.pragma.api.RouterRestTest" time="0.012"/>
-  <testcase name="testListenGETUseCase()" classname="co.com.pragma.api.RouterRestTest" time="0.007"/>
+  <testcase name="testListenPOSTUseCase()" classname="co.com.pragma.api.RouterRestTest" time="3.825"/>
+  <testcase name="testListenGETOtherUseCase()" classname="co.com.pragma.api.RouterRestTest" time="0.021"/>
+  <testcase name="testListenGETUseCase()" classname="co.com.pragma.api.RouterRestTest" time="0.02"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,10 +14,10 @@
 
  :: Spring Boot ::                (v3.5.4)
 
-2025-08-25T22:17:50.623-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.RouterRestTest         : Starting RouterRestTest using Java 17.0.2 with PID 6832 (started by Leife in D:\Documentos\proyectos\bootcamp_proyecto_pragma\proyecto_bootcamp\user-service\infrastructure\entry-points\reactive-web)
-2025-08-25T22:17:50.653-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.RouterRestTest         : No active profile set, falling back to 1 default profile: "default"
-2025-08-25T22:17:53.903-05:00  INFO 6832 --- [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-08-25T22:17:55.968-05:00  INFO 6832 --- [    Test worker] co.com.pragma.api.RouterRestTest         : Started RouterRestTest in 7.913 seconds (process running for 40.001)
+2025-08-26T21:57:58.929-05:00  INFO 22600 --- [    Test worker] co.com.pragma.api.RouterRestTest         : Starting RouterRestTest using Java 17.0.2 with PID 22600 (started by Leife in D:\Documentos\proyectos\bootcamp_proyecto_pragma\proyecto_bootcamp\user-service\infrastructure\entry-points\reactive-web)
+2025-08-26T21:57:58.952-05:00  INFO 22600 --- [    Test worker] co.com.pragma.api.RouterRestTest         : No active profile set, falling back to 1 default profile: "default"
+2025-08-26T21:58:04.538-05:00  INFO 22600 --- [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-08-26T21:58:07.569-05:00  INFO 22600 --- [    Test worker] co.com.pragma.api.RouterRestTest         : Started RouterRestTest in 12.836 seconds (process running for 37.876)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

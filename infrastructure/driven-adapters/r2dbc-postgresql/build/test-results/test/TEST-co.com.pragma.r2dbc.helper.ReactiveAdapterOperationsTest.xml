@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-08-26T03:17:54.213Z" hostname="LEIFE19" time="0.201">
+<testsuite name="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-08-27T01:23:46.653Z" hostname="LEIFE19" time="0.159">
   <properties/>
-  <testcase name="findAll()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.177"/>
+  <testcase name="findAll()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.118"/>
   <testcase name="findById()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.004"/>
-  <testcase name="saveAllEntities()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.006"/>
-  <testcase name="findByExample()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.007"/>
-  <testcase name="save()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.002"/>
+  <testcase name="saveAllEntities()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.011"/>
+  <testcase name="findByExample()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.016"/>
+  <testcase name="save()" classname="co.com.pragma.r2dbc.helper.ReactiveAdapterOperationsTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

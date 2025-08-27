@@ -4,6 +4,7 @@ import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import co.com.pragma.r2dbc.mapper.UsuarioMapper;
 import co.com.pragma.r2dbc.repository.ReactiveUsuarioDataRepository;
@@ -27,4 +28,11 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
         return dataRepository.findByCorreoElectronico(correoElectronico)
                 .map(mapper::toDomain);
     }
+
+    @Override
+    public Flux<Usuario> findAllUsuarios() {
+        return dataRepository.findAll()
+                .map(mapper::toDomain);
+    }
+
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RegistrarUsuarioUseCase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">usecase</a> &gt; <a href="index.source.html" class="el_package">co.com.pragma.usecase.registrarusuario</a> &gt; <span class="el_source">RegistrarUsuarioUseCase.java</span></div><h1>RegistrarUsuarioUseCase.java</h1><pre class="source lang-java linenums">package co.com.pragma.usecase.registrarusuario;
+
+import co.com.pragma.model.usuario.Usuario;
+import co.com.pragma.model.usuario.gateways.UsuarioRepository;
+import co.com.pragma.usecase.exceptions.CampoObligatorioException;
+import co.com.pragma.usecase.exceptions.CorreoYaRegistradoException;
+import co.com.pragma.usecase.exceptions.FormatoCorreoInvalidoException;
+import co.com.pragma.usecase.exceptions.SalarioFueraDeRangoException;
+import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
+import java.math.BigDecimal;
+import java.util.regex.Pattern;
+
+
+@RequiredArgsConstructor
+public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface {
+
+    private final UsuarioRepository usuarioRepository;
+<span class="fc" id="L21">    private static final Pattern EMAIL_PATTERN = Pattern.compile(&quot;^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$&quot;);</span>
+<span class="fc" id="L22">    private static final BigDecimal SALARIO_MAXIMO = new BigDecimal(&quot;15000000&quot;);</span>
+<span class="fc" id="L23">    private static final BigDecimal SALARIO_MINIMO = BigDecimal.ZERO;</span>
+
+    @Override
+    public Mono&lt;Usuario&gt; save(Usuario usuario) {
+<span class="fc" id="L27">        return validarUsuario(usuario)</span>
+<span class="fc" id="L28">                .then(Mono.defer(() -&gt;</span>
+<span class="fc" id="L29">                        usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico())</span>
+<span class="fc" id="L30">                                .flatMap(existing -&gt; Mono.&lt;Usuario&gt;error(</span>
+<span class="fc" id="L31">                                        new CorreoYaRegistradoException(usuario.getCorreoElectronico())))</span>
+<span class="fc" id="L32">                                .switchIfEmpty(Mono.defer(() -&gt; usuarioRepository.save(usuario)))</span>
+                ));
+    }
+
+
+
+
+    Mono&lt;Void&gt; validarUsuario(Usuario usuario) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getNombres())) {</span>
+<span class="fc" id="L41">            return Mono.error(new CampoObligatorioException(&quot;nombres&quot;));</span>
+        }
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getApellidos())) {</span>
+<span class="fc" id="L44">            return Mono.error(new CampoObligatorioException(&quot;apellidos&quot;));</span>
+        }
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getDireccion())) {</span>
+<span class="fc" id="L47">            return Mono.error(new CampoObligatorioException(&quot;direccion&quot;));</span>
+        }
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getTelefono())) {</span>
+<span class="fc" id="L50">            return Mono.error(new CampoObligatorioException(&quot;telefono&quot;));</span>
+        }
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getCorreoElectronico())) {</span>
+<span class="fc" id="L53">            return Mono.error(new CampoObligatorioException(&quot;correo electrÃ³nico&quot;));</span>
+        }
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!EMAIL_PATTERN.matcher(usuario.getCorreoElectronico()).matches()) {</span>
+<span class="fc" id="L56">            return Mono.error(new FormatoCorreoInvalidoException());</span>
+        }
+<span class="pc bpc" id="L58" title="1 of 2 branches missed.">        if (usuario.getSalarioBase().compareTo(SALARIO_MINIMO) &lt; 0 ||</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">                usuario.getSalarioBase().compareTo(SALARIO_MAXIMO) &gt; 0) {</span>
+<span class="fc" id="L60">            return Mono.error(new SalarioFueraDeRangoException(SALARIO_MINIMO, SALARIO_MAXIMO));</span>
+        }
+
+<span class="fc" id="L63">        return Mono.empty();</span>
+    }
+
+
+    private boolean isNullOrEmpty(String value) {
+<span class="pc bpc" id="L68" title="1 of 4 branches missed.">        return value == null || value.trim().isEmpty();</span>
+    }
+
+    @Override
+    public Flux&lt;Usuario&gt; getAllUsuarios() {
+<span class="fc" id="L73">        return usuarioRepository.findAllUsuarios();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
