@@ -20,12 +20,12 @@ import java.time.Duration;
 	@Bean
 	public ConnectionPool getConnectionConfig(PostgresqlConnectionProperties properties) {
 <span class="fc" id="L22">		PostgresqlConnectionConfiguration dbConfiguration = PostgresqlConnectionConfiguration.builder()</span>
-<span class="fc" id="L23">                .host(properties.host())</span>
-<span class="fc" id="L24">                .port(properties.port())</span>
-<span class="fc" id="L25">                .database(properties.database())</span>
-<span class="fc" id="L26">                .schema(properties.schema())</span>
-<span class="fc" id="L27">                .username(properties.username())</span>
-<span class="fc" id="L28">                .password(properties.password())</span>
+<span class="fc" id="L23">                .host(properties.getHost())</span>
+<span class="fc" id="L24">                .port(properties.getPort())</span>
+<span class="fc" id="L25">                .database(properties.getDatabase())</span>
+<span class="fc" id="L26">                .schema(properties.getSchema())</span>
+<span class="fc" id="L27">                .username(properties.getUsername())</span>
+<span class="fc" id="L28">                .password(properties.getPassword())</span>
 <span class="fc" id="L29">                .build();</span>
 
 <span class="fc" id="L31">        ConnectionPoolConfiguration poolConfiguration = ConnectionPoolConfiguration.builder()</span>

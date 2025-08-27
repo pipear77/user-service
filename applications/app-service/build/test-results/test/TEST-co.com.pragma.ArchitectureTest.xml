@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.com.pragma.ArchitectureTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-08-27T16:51:47.086Z" hostname="LEIFE19" time="0.474">
+  <properties/>
+  <testcase name="domainClassesShouldNotBeNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.135"/>
+  <testcase name="domainClassesShouldNotHaveFieldsNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.035"/>
+  <testcase name="useCaseFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.007"/>
+  <testcase name="beansShouldOnlyHaveFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.051"/>
+  <testcase name="reactiveFlowsShouldUseAwsAsyncClients()" classname="co.com.pragma.ArchitectureTest" time="0.048"/>
+  <testcase name="domainClassesShouldNotBeNamedWithTechSuffixes()" classname="co.com.pragma.ArchitectureTest" time="0.003"/>
+  <system-out><![CDATA[11:51:31.944 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 17.0.2
+]]></system-out>
+  <system-err><![CDATA[ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+INFO: begin -1, end 231, length 231
+]]></system-err>
+</testsuite>

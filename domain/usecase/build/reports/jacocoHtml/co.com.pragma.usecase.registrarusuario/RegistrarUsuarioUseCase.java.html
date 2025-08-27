@@ -13,11 +13,11 @@ import reactor.core.publisher.Mono;
 import java.math.BigDecimal;
 import java.util.regex.Pattern;
 
-
 @RequiredArgsConstructor
 public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface {
 
     private final UsuarioRepository usuarioRepository;
+
 <span class="fc" id="L21">    private static final Pattern EMAIL_PATTERN = Pattern.compile(&quot;^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$&quot;);</span>
 <span class="fc" id="L22">    private static final BigDecimal SALARIO_MAXIMO = new BigDecimal(&quot;15000000&quot;);</span>
 <span class="fc" id="L23">    private static final BigDecimal SALARIO_MINIMO = BigDecimal.ZERO;</span>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-27T01:23:45.511Z" hostname="LEIFE19" time="1.128">
+<testsuite name="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-27T14:39:15.143Z" hostname="LEIFE19" time="3.587">
   <properties/>
-  <testcase name="getConnectionConfigSuccess()" classname="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" time="1.128"/>
+  <testcase name="getConnectionConfigSuccess()" classname="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" time="3.587"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

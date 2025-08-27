@@ -3,6 +3,10 @@
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase;
+import co.com.pragma.model.usuario.gateways.UsuarioRepository;
+import org.springframework.context.annotation.Bean;
+
 
 @Configuration
 @ComponentScan(basePackages = &quot;co.com.bancolombia.usecase&quot;,
@@ -10,6 +14,11 @@ import org.springframework.context.annotation.FilterType;
                 @ComponentScan.Filter(type = FilterType.REGEX, pattern = &quot;^.+UseCase$&quot;)
         },
         useDefaultFilters = false)
-<span class="nc" id="L13">public class UseCasesConfig {</span>
+<span class="nc" id="L17">public class UseCasesConfig {</span>
+        @Bean
+        public RegistrarUsuarioUseCase registrarUsuarioUseCase(UsuarioRepository usuarioRepository) {
+<span class="nc" id="L20">                return new RegistrarUsuarioUseCase(usuarioRepository);</span>
+        }
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.13.202504020838</span></div></body></html>
