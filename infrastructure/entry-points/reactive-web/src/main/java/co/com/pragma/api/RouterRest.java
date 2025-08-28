@@ -35,15 +35,16 @@ public class RouterRest {
                     beanMethod = "save",
                     operation = @Operation(
                             summary = "Registrar usuario",
-                            description = "Registra un nuevo usuario en el sistema",
                             requestBody = @RequestBody(
                                     required = true,
                                     content = @Content(
-                                            mediaType = "application/json", schema = @Schema(implementation = UsuarioRequestDTO.class))),
+                                            mediaType = "application/json",
+                                            schema = @Schema(implementation = UsuarioRequestDTO.class)
+                                    )
+                            ),
                             responses = {
                                     @ApiResponse(responseCode = "201", description = "Usuario creado exitosamente",
-                                            content = @Content(schema = @Schema(implementation = UsuarioResponseDTO.class))),
-                                    @ApiResponse(responseCode = "400", description = "Datos de entrada inválidos")
+                                            content = @Content(schema = @Schema(implementation = UsuarioResponseDTO.class)))
                             }
                     )
             ),
