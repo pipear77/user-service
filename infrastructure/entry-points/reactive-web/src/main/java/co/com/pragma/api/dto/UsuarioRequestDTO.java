@@ -10,15 +10,16 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(name = "UsuarioRequestDTO", description = "Datos para registrar un usuario")
 public class UsuarioRequestDTO {
 
-    @Schema(example = "Juan Carlos", description = "Nombres del usuario")
+    @Schema(example = "Juan", description = "Nombres del usuario")
     private String nombres;
 
     @Schema(example = "Vaca Calisto", description = "Apellidos del usuario")
     private String apellidos;
 
-    @Schema(example = "1990-05-15", description = "Fecha de nacimiento en formato YYYY-MM-DD")
+    @Schema(example = "1990-05-15", description = "Fecha de nacimiento")
     private LocalDate fechaNacimiento;
 
     @Schema(example = "Calle 123 #45-67", description = "Dirección del usuario")
@@ -33,4 +34,3 @@ public class UsuarioRequestDTO {
     @Schema(example = "3500000.00", description = "Salario base")
     private BigDecimal salarioBase;
 }
-

@@ -50,7 +50,7 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
 <span class="fc" id="L50">            return Mono.error(new CampoObligatorioException(&quot;telefono&quot;));</span>
         }
 <span class="fc bfc" id="L52" title="All 2 branches covered.">        if (isNullOrEmpty(usuario.getCorreoElectronico())) {</span>
-<span class="fc" id="L53">            return Mono.error(new CampoObligatorioException(&quot;correo electrónico&quot;));</span>
+<span class="fc" id="L53">            return Mono.error(new CampoObligatorioException(&quot;correo electrÃ³nico&quot;));</span>
         }
 <span class="fc bfc" id="L55" title="All 2 branches covered.">        if (!EMAIL_PATTERN.matcher(usuario.getCorreoElectronico()).matches()) {</span>
 <span class="fc" id="L56">            return Mono.error(new FormatoCorreoInvalidoException());</span>

@@ -20,7 +20,7 @@ adapters:
     database: "crediya"
     schema: public
     username: "postgres"
-    password: "2[zp@AJ]"
+    password: "1234"
 
 management:
   endpoints:

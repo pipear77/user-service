@@ -34,7 +34,9 @@ public class RouterRest {
                     beanClass = Handler.class,
                     beanMethod = "save",
                     operation = @Operation(
+                            operationId = "saveUsuario", // 👈 importante para vincular correctamente
                             summary = "Registrar usuario",
+                            description = "Registra un nuevo usuario en el sistema",
                             requestBody = @RequestBody(
                                     required = true,
                                     content = @Content(
@@ -43,8 +45,15 @@ public class RouterRest {
                                     )
                             ),
                             responses = {
-                                    @ApiResponse(responseCode = "201", description = "Usuario creado exitosamente",
-                                            content = @Content(schema = @Schema(implementation = UsuarioResponseDTO.class)))
+                                    @ApiResponse(
+                                            responseCode = "201",
+                                            description = "Usuario creado exitosamente",
+                                            content = @Content(
+                                                    mediaType = "application/json",
+                                                    schema = @Schema(implementation = UsuarioResponseDTO.class)
+                                            )
+                                    ),
+                                    @ApiResponse(responseCode = "400", description = "Datos inválidos")
                             }
                     )
             ),

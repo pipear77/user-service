@@ -2,18 +2,24 @@
 .gradle/
 build/
 out/
-!gradle/wrapper/gradle-wrapper.properties
-!gradlew
-!gradlew.bat
+**/build/
+**/out/
 
-# IDEs
-*.iml
+# Checksums y locks
+**/checksums/
+*.lock
+*.bin
+
+# IDE
 .idea/
+*.iml
 .vscode/
 
 # Logs
 *.log
 
-# OS
-.DS_Store
-Thumbs.db
+# Otros generados
+*.class
+*.jar
+*.war
+*.ear
