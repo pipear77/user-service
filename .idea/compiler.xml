@@ -28,4 +28,17 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="user-service" options="-Amapstruct.suppressGeneratorTimestamp=true" />
+      <module name="user-service.app-service" options="-parameters" />
+      <module name="user-service.app-service.main" options="-parameters" />
+      <module name="user-service.app-service.test" options="-parameters" />
+      <module name="user-service.main" options="-Amapstruct.suppressGeneratorTimestamp=true" />
+      <module name="user-service.r2dbc-postgresql" options="-Xlint:unchecked" />
+      <module name="user-service.r2dbc-postgresql.main" options="-Xlint:unchecked" />
+      <module name="user-service.r2dbc-postgresql.test" options="-Xlint:unchecked" />
+      <module name="user-service.test" options="-Amapstruct.suppressGeneratorTimestamp=true" />
+    </option>
+  </component>
 </project>
