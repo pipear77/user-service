@@ -3,11 +3,14 @@
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 
 @Getter
 @Setter
+@Component // &lt;-- Â¡AÃ±ade esta anotaciÃ³n!
 @ConfigurationProperties(prefix = &quot;adapters.r2dbc&quot;)
-<span class="nc" id="L10">public class PostgresqlConnectionProperties {</span>
+<span class="nc" id="L13">public class PostgresqlConnectionProperties {</span>
     private String host;
     private Integer port;
     private String database;

@@ -1,25 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.ArchitectureTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-08-27T16:51:47.086Z" hostname="LEIFE19" time="0.474">
+<testsuite name="co.com.pragma.ArchitectureTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-08-27T22:58:20.840Z" hostname="LEIFE19" time="4.584">
   <properties/>
-  <testcase name="domainClassesShouldNotBeNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.135"/>
-  <testcase name="domainClassesShouldNotHaveFieldsNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.035"/>
-  <testcase name="useCaseFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.007"/>
-  <testcase name="beansShouldOnlyHaveFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.051"/>
-  <testcase name="reactiveFlowsShouldUseAwsAsyncClients()" classname="co.com.pragma.ArchitectureTest" time="0.048"/>
-  <testcase name="domainClassesShouldNotBeNamedWithTechSuffixes()" classname="co.com.pragma.ArchitectureTest" time="0.003"/>
-  <system-out><![CDATA[11:51:31.944 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 17.0.2
+  <testcase name="domainClassesShouldNotBeNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.859"/>
+  <testcase name="domainClassesShouldNotHaveFieldsNamedWithToolNames()" classname="co.com.pragma.ArchitectureTest" time="0.139"/>
+  <testcase name="useCaseFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.023"/>
+  <testcase name="beansShouldOnlyHaveFinalFields()" classname="co.com.pragma.ArchitectureTest" time="0.194"/>
+  <testcase name="reactiveFlowsShouldUseAwsAsyncClients()" classname="co.com.pragma.ArchitectureTest" time="0.523"/>
+  <testcase name="domainClassesShouldNotBeNamedWithTechSuffixes()" classname="co.com.pragma.ArchitectureTest" time="0.014"/>
+  <system-out><![CDATA[17:57:51.628 [Test worker] INFO com.tngtech.archunit.core.PluginLoader -- Detected Java version 17.0.2
 ]]></system-out>
-  <system-err><![CDATA[ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+  <system-err><![CDATA[ago 27, 2025 5:58:20 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
-ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+ago 27, 2025 5:58:22 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
-ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+ago 27, 2025 5:58:23 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
-ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+ago 27, 2025 5:58:24 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
-ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+ago 27, 2025 5:58:24 P. M. co.com.pragma.ArchitectureTest checkWithWarning
+WARNING: ARCHITECTURE_RULE_VIOLATED: This will cause a build error in future.
+Please review our wiki at https://bancolombia.github.io/scaffold-clean-architecture/docs/advanced/arch-unit-analysis
+java.lang.AssertionError: Architecture Violation [Priority: MEDIUM] - Rule 'Rule_2.7: Beans classes should only have final attributes (injection by constructor) to avoid concurrency issues' was violated (6 times):
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.database> is not final in (PostgresqlConnectionProperties.java:0)
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.host> is not final in (PostgresqlConnectionProperties.java:0)
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.password> is not final in (PostgresqlConnectionProperties.java:0)
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.port> is not final in (PostgresqlConnectionProperties.java:0)
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.schema> is not final in (PostgresqlConnectionProperties.java:0)
+Field <co.com.pragma.r2dbc.config.PostgresqlConnectionProperties.username> is not final in (PostgresqlConnectionProperties.java:0)
+	at com.tngtech.archunit.lang.ArchRule$Assertions.assertNoViolation(ArchRule.java:94)
+	at com.tngtech.archunit.lang.ArchRule$Assertions.check(ArchRule.java:86)
+	at com.tngtech.archunit.lang.ArchRule$Factory$SimpleArchRule.check(ArchRule.java:165)
+	at co.com.pragma.ArchitectureTest.lambda$beansShouldOnlyHaveFinalFields$11(ArchitectureTest.java:155)
+	at co.com.pragma.ArchitectureTest.checkWithWarning(ArchitectureTest.java:219)
+	at co.com.pragma.ArchitectureTest.beansShouldOnlyHaveFinalFields(ArchitectureTest.java:155)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+
+ago 27, 2025 5:58:24 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
-ago 27, 2025 11:51:47 A. M. co.com.pragma.Utils findFiles
+ago 27, 2025 5:58:25 P. M. co.com.pragma.Utils findFiles
 INFO: begin -1, end 231, length 231
 ]]></system-err>
 </testsuite>

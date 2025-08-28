@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @Builder
 public class UsuarioEntity {
     @Id
-    @Column("usuario_id")
     private String id;
     private String nombres;
     private String apellidos;

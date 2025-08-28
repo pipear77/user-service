@@ -312,7 +312,6 @@
 </tests>
 </block>
 <block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='1'><tests>
-<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:domainClassesShouldNotBeNamedWithTechSuffixes()]'/>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:domainClassesShouldNotBeNamedWithToolNames()]'/>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:domainClassesShouldNotHaveFieldsNamedWithToolNames()]'/>
@@ -597,6 +596,22 @@
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:useCaseFinalFields()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='from(Ljava/lang/String;Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='from(Ljava/lang/String;Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='with(Lco/com/pragma/Utils$ArchitectureRule$Location;)Lco/com/pragma/Utils$ArchitectureRule;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='with(Lco/com/pragma/Utils$ArchitectureRule$Location;)Lco/com/pragma/Utils$ArchitectureRule;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.ArchitectureTest' method='beansShouldOnlyHaveFinalFields()V' number='0'><tests>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
 </tests>
@@ -673,11 +688,271 @@
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.ArchitectureTest' method='lambda$beansShouldOnlyHaveFinalFields$11(Lcom/tngtech/archunit/lang/ArchRule;)V' number='1'><tests>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='8'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='7'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='6'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='5'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='12'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='11'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='10'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='9'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='15'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='14'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='13'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='6'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleDescription(Ljava/lang/String;)Ljava/lang/String;' number='4'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleDescription(Ljava/lang/String;)Ljava/lang/String;' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleDescription(Ljava/lang/String;)Ljava/lang/String;' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleDescription(Ljava/lang/String;)Ljava/lang/String;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='5'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleDescription(Ljava/lang/String;)Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='checkWithWarning(Ljava/lang/Runnable;)V' number='4'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='7'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleId(Ljava/lang/String;)Ljava/lang/String;' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='8'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleId(Ljava/lang/String;)Ljava/lang/String;' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='9'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='10'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='11'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleId(Ljava/lang/String;)Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='extractRuleId(Ljava/lang/String;)Ljava/lang/String;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='4'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocation(Ljava/lang/String;)I' number='5'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='lambda$checkWithWarning$19(Lco/com/pragma/Utils$ArchitectureRule;Lco/com/pragma/Utils$ArchitectureRule$Location;)V' number='14'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='lambda$checkWithWarning$19(Lco/com/pragma/Utils$ArchitectureRule;Lco/com/pragma/Utils$ArchitectureRule$Location;)V' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='lambda$checkWithWarning$19(Lco/com/pragma/Utils$ArchitectureRule;Lco/com/pragma/Utils$ArchitectureRule$Location;)V' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.ArchitectureTest' method='lambda$checkWithWarning$19(Lco/com/pragma/Utils$ArchitectureRule;Lco/com/pragma/Utils$ArchitectureRule$Location;)V' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='4'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='parseToRule(Ljava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveClassName(Ljava/lang/String;)Ljava/lang/String;' number='6'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule$Location' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule$Location' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule$Location' method='getClassName()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='8'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='6'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='7'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='4'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='5'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='3'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='getLocations()Ljava/util/List;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils' method='resolveLocationIdx(Ljava/lang/String;)Ljava/lang/String;' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V' number='1'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;)V' number='2'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule$Location' method='from(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule$Location;' number='0'><tests>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.ArchitectureTest' method='lambda$beansShouldOnlyHaveFinalFields$11(Lcom/tngtech/archunit/lang/ArchRule;)V' number='0'><tests>
+<test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.Utils$ArchitectureRule$Location' method='from(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)Lco/com/pragma/Utils$ArchitectureRule$Location;' number='1'><tests>
 <test name='co.com.pragma.ArchitectureTest.[engine:junit-jupiter]/[class:co.com.pragma.ArchitectureTest]/[method:beansShouldOnlyHaveFinalFields()]'/>
 </tests>
 </block>
