@@ -18,21 +18,21 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
 
     @Override
     public Mono&lt;Usuario&gt; save(Usuario usuario) {
-<span class="nc" id="L21">        return dataRepository.save(mapper.toEntity(usuario))</span>
-<span class="nc" id="L22">                .map(mapper::toDomain);</span>
+<span class="fc" id="L21">        return dataRepository.save(mapper.toEntity(usuario))</span>
+<span class="fc" id="L22">                .map(mapper::toDomain);</span>
 
     }
 
     @Override
     public Mono&lt;Usuario&gt; findByCorreoElectronico(String correoElectronico) {
-<span class="nc" id="L28">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
-<span class="nc" id="L29">                .map(mapper::toDomain);</span>
+<span class="fc" id="L28">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
+<span class="fc" id="L29">                .map(mapper::toDomain);</span>
     }
 
     @Override
     public Flux&lt;Usuario&gt; findAllUsuarios() {
-<span class="nc" id="L34">        return dataRepository.findAll()</span>
-<span class="nc" id="L35">                .map(mapper::toDomain);</span>
+<span class="fc" id="L34">        return dataRepository.findAll()</span>
+<span class="fc" id="L35">                .map(mapper::toDomain);</span>
     }
 
 }

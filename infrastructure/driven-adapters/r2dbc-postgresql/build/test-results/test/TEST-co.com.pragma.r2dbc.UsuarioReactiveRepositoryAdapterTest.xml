@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-08-28T04:52:29.504Z" hostname="DESKTOP-6JN1CPG" time="6.715">
+<testsuite name="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-09-01T16:44:50.926Z" hostname="DESKTOP-6JN1CPG" time="3.093">
   <properties/>
-  <testcase name="mustSaveValue()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="6.689"/>
-  <testcase name="mustFindValueById()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.006"/>
-  <testcase name="mustFindAllValues()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.016"/>
+  <testcase name="mustSaveValue()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="3.082"/>
+  <testcase name="mustFindValueById()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.005"/>
+  <testcase name="mustFindAllValues()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -12,7 +12,6 @@
         <module name="user-service.model.test" />
         <module name="user-service.r2dbc-postgresql.test" />
         <module name="user-service.usecase.main" />
-        <module name="user-service.reactive-web.main" />
         <module name="user-service.model.main" />
         <module name="user-service.app-service.test" />
         <module name="user-service.reactive-web.test" />
@@ -20,10 +19,18 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.28/a2ff5da8bcd8b1b26f36b806ced63213362c6dcc/lombok-1.18.28.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.5.5.Final/897f6f115930b936287bef552bf5fe28cc64717d/mapstruct-processor-1.5.5.Final.jar" />
         </processorPath>
         <module name="user-service.r2dbc-postgresql.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.38/57f8f5e02e92a30fd21b80cbd426a4172b5f8e29/lombok-1.18.38.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.3/52e345c907fbf173b376586c7f8b131d53fa5867/mapstruct-processor-1.6.3.jar" />
+        </processorPath>
+        <module name="user-service.reactive-web.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />
@@ -35,9 +42,6 @@
       <module name="user-service.app-service.main" options="-parameters" />
       <module name="user-service.app-service.test" options="-parameters" />
       <module name="user-service.main" options="-Amapstruct.suppressGeneratorTimestamp=true" />
-      <module name="user-service.r2dbc-postgresql" options="-Xlint:unchecked" />
-      <module name="user-service.r2dbc-postgresql.main" options="-Xlint:unchecked" />
-      <module name="user-service.r2dbc-postgresql.test" options="-Xlint:unchecked" />
       <module name="user-service.test" options="-Amapstruct.suppressGeneratorTimestamp=true" />
     </option>
   </component>

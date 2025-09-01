@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coverage>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='findByCorreoElectronico(Ljava/lang/String;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='direccion(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
@@ -12,6 +17,11 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='findByCorreoElectronico(Ljava/lang/String;)Lreactor/core/publisher/Mono;' number='0'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='12'><tests>
@@ -98,7 +108,7 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;init&gt;()V' number='0'><tests>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='setMockitoInterceptor(Lorg/mockito/internal/creation/bytebuddy/access/MockMethodInterceptor;)V' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
@@ -112,7 +122,19 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='5'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='4'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;clinit&gt;()V' number='2'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='3'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
@@ -148,22 +170,20 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='2'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;clinit&gt;()V' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;init&gt;()V' number='1'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='1'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiDireccionEsNula()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiNombresEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiSalarioEsMayorAlPermitido()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiTelefonoEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;clinit&gt;()V' number='0'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='&lt;init&gt;()V' number='1'><tests>
@@ -342,16 +362,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='findByCorreoElectronico(Ljava/lang/String;)Lreactor/core/publisher/Mono;' number='0'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='findByCorreoElectronico(Ljava/lang/String;)Lreactor/core/publisher/Mono;' number='1'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;init&gt;(Lco/com/pragma/model/usuario/gateways/UsuarioRepository;)V' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
@@ -420,6 +430,34 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiSalarioEsMayorAlPermitido()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiTelefonoEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiDireccionEsNula()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiNombresEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiSalarioEsMayorAlPermitido()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiTelefonoEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiDireccionEsNula()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiNombresEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiSalarioEsMayorAlPermitido()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiTelefonoEsNulo()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
@@ -734,20 +772,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='setMockitoInterceptor(Lorg/mockito/internal/creation/bytebuddy/MockMethodInterceptor;)V' number='0'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiDireccionEsNula()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiNombresEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiSalarioEsMayorAlPermitido()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiTelefonoEsNulo()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='validarUsuario(Lco/com/pragma/model/usuario/Usuario;)Lreactor/core/publisher/Mono;' number='26'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsNulo()]'/>
@@ -957,10 +981,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='5'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='2'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
@@ -973,10 +993,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='4'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='9'><tests>
@@ -993,10 +1009,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='3'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='8'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
@@ -1011,10 +1023,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='2'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='7'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiApellidosEsNulo()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoEsInvalido()]'/>
@@ -1027,10 +1035,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='1'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='build()Lco/com/pragma/model/usuario/Usuario;' number='1'><tests>
@@ -1059,10 +1063,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:noDebeFallarSiTodosLosCamposSonValidos()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='&lt;clinit&gt;()V' number='0'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeFallarSiCorreoYaExiste()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='setUp()V' number='1'><tests>
@@ -1390,11 +1390,11 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='findAllUsuarios()Lreactor/core/publisher/Flux;' number='0'><tests>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='findAllUsuarios()Lreactor/core/publisher/Flux;' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='findAllUsuarios()Lreactor/core/publisher/Flux;' number='1'><tests>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='findAllUsuarios()Lreactor/core/publisher/Flux;' number='1'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRetornarTodosLosUsuarios()]'/>
 </tests>
 </block>
@@ -1650,14 +1650,6 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='save(Lco/com/pragma/model/usuario/Usuario;)Lreactor/core/publisher/Mono;' number='1'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$txR60rWh' method='save(Lco/com/pragma/model/usuario/Usuario;)Lreactor/core/publisher/Mono;' number='0'><tests>
-<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='debeRegistrarUsuarioExitosamente()V' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
@@ -1690,7 +1682,15 @@
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='save(Lco/com/pragma/model/usuario/Usuario;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest' method='debeRegistrarUsuarioExitosamente()V' number='2'><tests>
+<test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.gateways.UsuarioRepository$MockitoMock$EpAKkCC6' method='save(Lco/com/pragma/model/usuario/Usuario;)Lreactor/core/publisher/Mono;' number='0'><tests>
 <test name='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest.[engine:junit-jupiter]/[class:co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest]/[method:debeRegistrarUsuarioExitosamente()]'/>
 </tests>
 </block>
