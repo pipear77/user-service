@@ -1,62 +1,57 @@
-/*
 package co.com.pragma.api;
 
-import org.assertj.core.api.Assertions;
+import co.com.pragma.api.dto.UsuarioRequestDTO;
+import co.com.pragma.api.dto.UsuarioResponseDTO;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.web.reactive.function.server.ServerResponse;
 
-@ContextConfiguration(classes = {RouterRest.class, Handler.class})
+import static org.mockito.ArgumentMatchers.any;
+import static org.springframework.web.reactive.function.BodyInserters.fromValue;
+
 @WebFluxTest
+@ContextConfiguration(classes = {RouterRest.class})
 class RouterRestTest {
 
     @Autowired
     private WebTestClient webTestClient;
 
-    @Test
-    void testListenGETUseCase() {
-        webTestClient.get()
-                .uri("/api/usecase/path")
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectBody(String.class)
-                .value(userResponse -> {
-                            Assertions.assertThat(userResponse).isEmpty();
-                        }
-                );
-    }
+    @MockitoBean
+    private Handler handler;
 
     @Test
-    void testListenGETOtherUseCase() {
-        webTestClient.get()
-                .uri("/api/otherusercase/path")
-                .accept(MediaType.APPLICATION_JSON)
-                .exchange()
-                .expectStatus().isOk()
-                .expectBody(String.class)
-                .value(userResponse -> {
-                            Assertions.assertThat(userResponse).isEmpty();
-                        }
-                );
-    }
+    void testPOSTUsuarioRoute() {
+        UsuarioRequestDTO requestDTO = new UsuarioRequestDTO(); // rellena si es necesario
+        UsuarioResponseDTO responseDTO = new UsuarioResponseDTO();
 
-    @Test
-    void testListenPOSTUseCase() {
+        // El handler devuelve directamente un Mono<ServerResponse>
+        Mockito.when(handler.save(any()))
+                .thenReturn(ServerResponse.created(null).bodyValue(responseDTO));
+
         webTestClient.post()
-                .uri("/api/usecase/otherpath")
-                .accept(MediaType.APPLICATION_JSON)
-                .bodyValue("")
+                .uri("/api/v1/usuarios")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(fromValue(requestDTO))
                 .exchange()
-                .expectStatus().isOk()
-                .expectBody(String.class)
-                .value(userResponse -> {
-                            Assertions.assertThat(userResponse).isEmpty();
-                        }
-                );
+                .expectStatus().isCreated();
+    }
+
+    @Test
+    void testGETUsuarioRoute() {
+        UsuarioResponseDTO responseDTO = new UsuarioResponseDTO();
+
+        Mockito.when(handler.getAll(any()))
+                .thenReturn(ServerResponse.ok().bodyValue(responseDTO));
+
+        webTestClient.get()
+                .uri("/api/v1/usuarios")
+                .exchange()
+                .expectStatus().isOk();
     }
 }
-*/

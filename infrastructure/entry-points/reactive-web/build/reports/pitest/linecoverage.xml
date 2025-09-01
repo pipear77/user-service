@@ -1,3 +1,1414 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <coverage>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='correoElectronico(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='builder()Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='builder()Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='getAll(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getFechaNacimiento()Ljava/time/LocalDate;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;clinit&gt;()V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='builder()Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;clinit&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='builder()Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase' method='&lt;clinit&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='17'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='18'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='13'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='14'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='nombres(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='15'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='16'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='&lt;clinit&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='&lt;clinit&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$12(Ljava/util/List;)Lreactor/core/publisher/Mono;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='10'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='11'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='12'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$8(Lorg/reactivestreams/Subscription;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$8(Lorg/reactivestreams/Subscription;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$12(Ljava/util/List;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$12(Ljava/util/List;)Lreactor/core/publisher/Mono;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='id(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='telefono(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getDireccion()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getTelefono()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getApellidos()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$10(Lco/com/pragma/api/dto/UsuarioResponseDTO;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$10(Lco/com/pragma/api/dto/UsuarioResponseDTO;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$9(Lco/com/pragma/model/usuario/Usuario;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$9(Lco/com/pragma/model/usuario/Usuario;)V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$9(Lco/com/pragma/model/usuario/Usuario;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='&lt;init&gt;(Lco/com/pragma/usecase/registrarusuario/RegistrarUsuarioUseCase;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$getAll_shouldReturnOkResponseWithList$1(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$getAll_shouldReturnOkResponseWithList$1(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='fechaNacimiento(Ljava/time/LocalDate;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$getAll_shouldReturnOkResponseWithList$1(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='&lt;init&gt;(Lco/com/pragma/usecase/registrarusuario/RegistrarUsuarioUseCase;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getNombres()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='setUp()V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='setUp()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='setUp()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='id(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getId()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='16'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='17'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getSalarioBase()Ljava/math/BigDecimal;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='build()Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='build()Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='salarioBase(Ljava/math/BigDecimal;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='10'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='11'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='12'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='nombres(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='13'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='14'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='15'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$11(Ljava/util/List;)V' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$11(Ljava/util/List;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getCorreoElectronico()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$11(Ljava/util/List;)V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$getAll$11(Ljava/util/List;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='build()Lco/com/pragma/model/usuario/Usuario;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='apellidos(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='build()Lco/com/pragma/model/usuario/Usuario;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO$UsuarioResponseDTOBuilder' method='direccion(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioResponseDTO$UsuarioResponseDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$3(Lco/com/pragma/model/usuario/Usuario;)V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$3(Lco/com/pragma/model/usuario/Usuario;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$3(Lco/com/pragma/model/usuario/Usuario;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='direccion(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='telefono(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='12'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='11'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='13'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='28'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='29'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='30'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='31'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='32'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='33'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='34'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='35'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='20'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='21'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='22'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='23'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='24'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='25'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='26'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getFechaNacimiento()Ljava/time/LocalDate;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='27'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='salarioBase(Ljava/math/BigDecimal;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='builder()Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='builder()Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='salarioBase(Ljava/math/BigDecimal;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getApellidos()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$5(Lco/com/pragma/api/dto/UsuarioResponseDTO;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='36'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$5(Lco/com/pragma/api/dto/UsuarioResponseDTO;)Lreactor/core/publisher/Mono;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='37'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$5(Lco/com/pragma/api/dto/UsuarioResponseDTO;)Lreactor/core/publisher/Mono;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='10'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='apellidos(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$2(Lco/com/pragma/model/usuario/Usuario;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$2(Lco/com/pragma/model/usuario/Usuario;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$4(Lco/com/pragma/api/dto/UsuarioResponseDTO;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$4(Lco/com/pragma/api/dto/UsuarioResponseDTO;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='12'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$save_shouldReturnCreatedResponse$0(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='13'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='14'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$save_shouldReturnCreatedResponse$0(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='15'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$save_shouldReturnCreatedResponse$0(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='16'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='17'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='18'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='19'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='16'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='15'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='12'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='11'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$save_shouldReturnCreatedResponse$0(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='14'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='10'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioDomain(Lco/com/pragma/api/dto/UsuarioRequestDTO;)Lco/com/pragma/model/usuario/Usuario;' number='13'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='11'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='lambda$save_shouldReturnCreatedResponse$0(Lorg/springframework/web/reactive/function/server/ServerResponse;)Z' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='8'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='7'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='10'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='9'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getNombres()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='4'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='3'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='6'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='5'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getTelefono()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='2'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='save(Lorg/springframework/web/reactive/function/server/ServerRequest;)Lreactor/core/publisher/Mono;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='nombres(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getCorreoElectronico()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='fechaNacimiento(Ljava/time/LocalDate;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='correoElectronico(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getDireccion()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='direccion(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='telefono(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$1(Lco/com/pragma/api/dto/UsuarioRequestDTO;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$1(Lco/com/pragma/api/dto/UsuarioRequestDTO;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='correoElectronico(Ljava/lang/String;)Lco/com/pragma/api/dto/UsuarioRequestDTO$UsuarioRequestDTOBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$0(Lorg/reactivestreams/Subscription;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='lambda$save$0(Lorg/reactivestreams/Subscription;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='fechaNacimiento(Ljava/time/LocalDate;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='getSalarioBase()Ljava/math/BigDecimal;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='build()Lco/com/pragma/api/dto/UsuarioRequestDTO;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='apellidos(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO$UsuarioRequestDTOBuilder' method='build()Lco/com/pragma/api/dto/UsuarioRequestDTO;' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='24'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='25'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='26'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='&lt;init&gt;(Ljava/lang/Class;)V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='&lt;init&gt;(Ljava/lang/Class;)V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getTelefono()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;init&gt;()V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$BIND_CALLBACKS(Ljava/lang/Object;)V' number='6'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='15'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='16'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getId()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getDireccion()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getFechaNacimiento()Ljava/time/LocalDate;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$usuarioRoutes$0(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$usuarioRoutes$0(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getApellidos()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$SET_STATIC_CALLBACKS([Lorg/springframework/cglib/proxy/Callback;)V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='&lt;init&gt;(Ljava/lang/Class;)V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='&lt;init&gt;(Ljava/lang/Class;)V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getCorreoElectronico()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioRequestDTO' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getNombres()Ljava/lang/String;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='setBeanFactory(Lorg/springframework/beans/factory/BeanFactory;)V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK2()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='10'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='8'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='9'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='6'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='7'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='&lt;init&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='&lt;init&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='setBeanFactory(Lorg/springframework/beans/factory/BeanFactory;)V' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='setBeanFactory(Lorg/springframework/beans/factory/BeanFactory;)V' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$0' method='getIndex(Lorg/springframework/cglib/core/Signature;)I' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='setBeanFactory(Lorg/springframework/beans/factory/BeanFactory;)V' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;clinit&gt;()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;clinit&gt;()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='&lt;clinit&gt;()V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='7'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getSalarioBase()Ljava/math/BigDecimal;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='6'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='9'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='8'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='11'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='10'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='13'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='12'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='15'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='14'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testPOSTUsuarioRoute()V' number='16'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='6'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest' method='usuarioRoutes(Lco/com/pragma/api/Handler;)Lorg/springframework/web/reactive/function/server/RouterFunction;' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$0' method='CGLIB$STATICHOOK1()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='11'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='10'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='12'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='1'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='0'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='7'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='6'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='9'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='8'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='3'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='2'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='5'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRestTest' method='testGETUsuarioRoute()V' number='4'><tests>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+</tests>
+</block>
 </coverage>
