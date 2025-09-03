@@ -11,6 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 import java.util.regex.Pattern;
 
 @RequiredArgsConstructor
@@ -29,7 +30,10 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
                         usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico())
                                 .flatMap(existing -> Mono.<Usuario>error(
                                         new CorreoYaRegistradoException(usuario.getCorreoElectronico())))
-                                .switchIfEmpty(Mono.defer(() -> usuarioRepository.save(usuario)))
+                                .switchIfEmpty(Mono.defer(() -> {
+                                    usuario.setId(UUID.fromString(UUID.randomUUID().toString()));
+                                    return usuarioRepository.save(usuario);
+                                }))
                 ));
     }
 
@@ -50,7 +54,7 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
             return Mono.error(new CampoObligatorioException("telefono"));
         }
         if (isNullOrEmpty(usuario.getCorreoElectronico())) {
-            return Mono.error(new CampoObligatorioException("correo electrónico"));
+            return Mono.error(new CampoObligatorioException("correo electronico"));
         }
         if (!EMAIL_PATTERN.matcher(usuario.getCorreoElectronico()).matches()) {
             return Mono.error(new FormatoCorreoInvalidoException());

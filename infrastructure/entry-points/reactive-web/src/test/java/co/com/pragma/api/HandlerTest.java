@@ -16,6 +16,7 @@ import reactor.test.StepVerifier;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
@@ -44,7 +45,7 @@ class HandlerTest {
                 .build();
 
         Usuario usuario = Usuario.builder()
-                .id("abc123")
+                .id(UUID.randomUUID())
                 .nombres("Juan")
                 .apellidos("Pérez")
                 .fechaNacimiento(LocalDate.of(1990, 1, 1))
@@ -68,8 +69,8 @@ class HandlerTest {
 
     @Test
     void getAll_shouldReturnOkResponseWithList() {
-        Usuario usuario1 = Usuario.builder().id("1").nombres("Ana").build();
-        Usuario usuario2 = Usuario.builder().id("2").nombres("Luis").build();
+        Usuario usuario1 = Usuario.builder().id(UUID.randomUUID()).nombres("Ana").build();
+        Usuario usuario2 = Usuario.builder().id(UUID.randomUUID()).nombres("Luis").build();
 
         when(useCase.getAllUsuarios()).thenReturn(Flux.just(usuario1, usuario2));
 

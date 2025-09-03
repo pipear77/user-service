@@ -59,7 +59,7 @@ public class Handler {
 
     private UsuarioResponseDTO toUsuarioResponseDTO(Usuario domain) {
         return UsuarioResponseDTO.builder()
-                .id(domain.getId())
+                .id(String.valueOf(domain.getId()))
                 .nombres(domain.getNombres())
                 .apellidos(domain.getApellidos())
                 .fechaNacimiento(domain.getFechaNacimiento())

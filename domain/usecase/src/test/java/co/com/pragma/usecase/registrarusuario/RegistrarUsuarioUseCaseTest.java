@@ -17,6 +17,7 @@ import reactor.test.StepVerifier;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 import static org.mockito.Mockito.when;
 
@@ -65,16 +66,23 @@ class RegistrarUsuarioUseCaseTest {
 
     @Test
     void debeRetornarTodosLosUsuarios() {
-        Usuario usuario1 = usuarioValido.toBuilder().id("1").build();
-        Usuario usuario2 = usuarioValido.toBuilder().id("2").correoElectronico("otro@mail.com").build();
+        UUID uuid1 = UUID.randomUUID();
+        UUID uuid2 = UUID.randomUUID();
+
+        Usuario usuario1 = usuarioValido.toBuilder().id(uuid1).build();
+        Usuario usuario2 = usuarioValido.toBuilder()
+                .id(uuid2)
+                .correoElectronico("otro@mail.com")
+                .build();
 
         when(usuarioRepository.findAllUsuarios()).thenReturn(Flux.just(usuario1, usuario2));
 
         StepVerifier.create(useCase.getAllUsuarios())
-                .expectNext(usuario1)
-                .expectNext(usuario2)
+                .expectNextMatches(u -> u.getId().equals(uuid1))
+                .expectNextMatches(u -> u.getId().equals(uuid2) && u.getCorreoElectronico().equals("otro@mail.com"))
                 .verifyComplete();
     }
+
 
     // ❌ Casos de error por validación
 
@@ -124,7 +132,7 @@ class RegistrarUsuarioUseCaseTest {
 
         StepVerifier.create(useCase.save(usuario))
                 .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("correo electrónico"))
+                        ((CampoObligatorioException) e).getCampo().equals("correo electronico"))
                 .verify();
     }
 

@@ -1,0 +1,6 @@
+˜23:09:45.977 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Guardando usuario con ID: 088b11d0-b21f-4f9c-b3ad-c1a6c5226121
+“23:09:45.992 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- ID antes de guardar: 088b11d0-b21f-4f9c-b3ad-c1a6c5226121
+˜23:09:45.996 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Usuario guardado: co.com.pragma.model.usuario.Usuario@596d17f4
+’23:09:46.008 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Se encontrÃƒÂ³ el usuario por su correo: test@correo.com
+š23:09:46.010 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Usuario encontrado: co.com.pragma.model.usuario.Usuario@3314f179
+	x23:09:46.014 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Se listaron todos los usuarios

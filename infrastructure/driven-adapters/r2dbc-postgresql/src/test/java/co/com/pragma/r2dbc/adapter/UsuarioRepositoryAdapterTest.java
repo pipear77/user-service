@@ -1,9 +1,5 @@
 package co.com.pragma.r2dbc.adapter;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.r2dbc.entity.UsuarioEntity;
 import co.com.pragma.r2dbc.mapper.UsuarioMapper;
@@ -16,6 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
+
+import java.util.UUID;
 
 import static org.mockito.Mockito.when;
 
@@ -33,9 +31,11 @@ class UsuarioRepositoryAdapterTest {
 
     @Test
     void mustSaveUsuario() {
-        Usuario usuario = Usuario.builder().id("1").build();
+        UUID uuid = UUID.randomUUID();
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
         UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        entity.setId(uuid.toString());
 
         when(mapper.toEntity(usuario)).thenReturn(entity);
         when(dataRepository.save(entity)).thenReturn(Mono.just(entity));
@@ -44,17 +44,19 @@ class UsuarioRepositoryAdapterTest {
         Mono<Usuario> result = adapter.save(usuario);
 
         StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
+                .expectNextMatches(u -> u.getId().equals(uuid))
                 .verifyComplete();
     }
 
     @Test
     void mustFindByCorreoElectronico() {
+        UUID uuid = UUID.randomUUID();
         String correo = "test@correo.com";
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
 
-        Usuario usuario = Usuario.builder().id("1").build();
+        UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(uuid.toString());
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
 
         when(dataRepository.findByCorreoElectronico(correo)).thenReturn(Mono.just(entity));
         when(mapper.toDomain(entity)).thenReturn(usuario);
@@ -62,16 +64,18 @@ class UsuarioRepositoryAdapterTest {
         Mono<Usuario> result = adapter.findByCorreoElectronico(correo);
 
         StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
+                .expectNextMatches(u -> u.getId().equals(uuid))
                 .verifyComplete();
     }
 
     @Test
     void mustFindAllUsuarios() {
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        UUID uuid = UUID.randomUUID();
 
-        Usuario usuario = Usuario.builder().id("1").build();
+        UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(uuid.toString());
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
 
         when(dataRepository.findAll()).thenReturn(Flux.just(entity));
         when(mapper.toDomain(entity)).thenReturn(usuario);
@@ -79,8 +83,7 @@ class UsuarioRepositoryAdapterTest {
         Flux<Usuario> result = adapter.findAllUsuarios();
 
         StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
+                .expectNextMatches(u -> u.getId().equals(uuid))
                 .verifyComplete();
     }
-
 }

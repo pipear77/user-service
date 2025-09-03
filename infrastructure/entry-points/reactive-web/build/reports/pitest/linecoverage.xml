@@ -60,6 +60,11 @@
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='getId()Ljava/util/UUID;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='&lt;init&gt;()V' number='1'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
@@ -98,6 +103,11 @@
 </tests>
 </block>
 <block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='18'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.Handler' method='toUsuarioResponseDTO(Lco/com/pragma/model/usuario/Usuario;)Lco/com/pragma/api/dto/UsuarioResponseDTO;' number='19'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
 </tests>
@@ -212,6 +222,21 @@
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 </tests>
 </block>
+<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='id(Ljava/util/UUID;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='0'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/util/UUID;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='1'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
 <block classname='co.com.pragma.api.Handler' method='lambda$getAll$12(Ljava/util/List;)Lreactor/core/publisher/Mono;' number='1'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 </tests>
@@ -322,21 +347,19 @@
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.Usuario$UsuarioBuilder' method='id(Ljava/lang/String;)Lco/com/pragma/model/usuario/Usuario$UsuarioBuilder;' number='0'><tests>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.Usuario' method='getId()Ljava/lang/String;' number='0'><tests>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='16'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='17'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='18'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='19'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 </tests>
 </block>
@@ -371,18 +394,8 @@
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='1'><tests>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
-</tests>
-</block>
 <block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='4'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.model.usuario.Usuario' method='&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/time/LocalDate;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/math/BigDecimal;)V' number='0'><tests>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:getAll_shouldReturnOkResponseWithList()]'/>
-<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.api.HandlerTest' method='getAll_shouldReturnOkResponseWithList()V' number='5'><tests>
@@ -643,6 +656,10 @@
 </tests>
 </block>
 <block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='37'><tests>
+<test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.HandlerTest' method='save_shouldReturnCreatedResponse()V' number='38'><tests>
 <test name='co.com.pragma.api.HandlerTest.[engine:junit-jupiter]/[class:co.com.pragma.api.HandlerTest]/[method:save_shouldReturnCreatedResponse()]'/>
 </tests>
 </block>
@@ -1048,16 +1065,16 @@
 <test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
 </tests>
 </block>
-<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='15'><tests>
-<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
-</tests>
-</block>
-<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='16'><tests>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='14'><tests>
 <test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
 </tests>
 </block>
 <block classname='co.com.pragma.api.dto.UsuarioResponseDTO' method='getId()Ljava/lang/String;' number='0'><tests>
 <test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testGETUsuarioRoute()]'/>
+<test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
+</tests>
+</block>
+<block classname='co.com.pragma.api.RouterRest$$SpringCGLIB$$FastClass$$1' method='invoke(ILjava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;' number='13'><tests>
 <test name='co.com.pragma.api.RouterRestTest.[engine:junit-jupiter]/[class:co.com.pragma.api.RouterRestTest]/[method:testPOSTUsuarioRoute()]'/>
 </tests>
 </block>

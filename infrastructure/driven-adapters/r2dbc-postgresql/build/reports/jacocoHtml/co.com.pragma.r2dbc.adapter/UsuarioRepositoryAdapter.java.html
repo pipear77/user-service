@@ -3,6 +3,7 @@
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -10,6 +11,7 @@ import co.com.pragma.r2dbc.mapper.UsuarioMapper;
 import co.com.pragma.r2dbc.repository.ReactiveUsuarioDataRepository;
 
 @RequiredArgsConstructor
+<span class="fc" id="L14">@Slf4j</span>
 @Component
 public class UsuarioRepositoryAdapter implements UsuarioRepository {
     private final ReactiveUsuarioDataRepository dataRepository;
@@ -18,21 +20,26 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
 
     @Override
     public Mono&lt;Usuario&gt; save(Usuario usuario) {
-<span class="fc" id="L21">        return dataRepository.save(mapper.toEntity(usuario))</span>
-<span class="fc" id="L22">                .map(mapper::toDomain);</span>
-
+<span class="fc" id="L23">        log.info(&quot;Guardando usuario con ID: {}&quot;, usuario.getId());</span>
+<span class="fc" id="L24">        log.info(&quot;ID antes de guardar: {}&quot;, usuario.getId());</span>
+<span class="fc" id="L25">        return dataRepository.save(mapper.toEntity(usuario))</span>
+<span class="fc" id="L26">                .map(mapper::toDomain)</span>
+<span class="fc" id="L27">                .doOnNext(u -&gt; log.info(&quot;Usuario guardado: {}&quot;, u));</span>
     }
 
     @Override
     public Mono&lt;Usuario&gt; findByCorreoElectronico(String correoElectronico) {
-<span class="fc" id="L28">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
-<span class="fc" id="L29">                .map(mapper::toDomain);</span>
+<span class="fc" id="L32">        log.info(&quot;Se encontrÃ³ el usuario por su correo: {}&quot;, correoElectronico);</span>
+<span class="fc" id="L33">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
+<span class="fc" id="L34">                .map(mapper::toDomain)</span>
+<span class="fc" id="L35">                .doOnNext(u -&gt; log.info(&quot;Usuario encontrado: {}&quot;, u));</span>
     }
 
     @Override
     public Flux&lt;Usuario&gt; findAllUsuarios() {
-<span class="fc" id="L34">        return dataRepository.findAll()</span>
-<span class="fc" id="L35">                .map(mapper::toDomain);</span>
+<span class="fc" id="L40">        log.info(&quot;Se listaron todos los usuarios&quot;);</span>
+<span class="fc" id="L41">        return dataRepository.findAll()</span>
+<span class="fc" id="L42">                .map(mapper::toDomain);</span>
     }
 
 }

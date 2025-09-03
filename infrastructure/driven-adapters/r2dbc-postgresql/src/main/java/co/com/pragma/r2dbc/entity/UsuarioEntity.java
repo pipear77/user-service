@@ -7,6 +7,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Table("usuarios")
 @AllArgsConstructor
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 @Builder
 public class UsuarioEntity {
     @Id
-    private String id;
+    private UUID id;
     private String nombres;
     private String apellidos;
     @Column("fecha_nacimiento")

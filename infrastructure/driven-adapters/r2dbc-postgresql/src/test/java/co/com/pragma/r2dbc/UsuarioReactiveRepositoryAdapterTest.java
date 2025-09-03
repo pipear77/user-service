@@ -17,8 +17,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
+import java.util.UUID;
+
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -36,27 +37,31 @@ class UsuarioReactiveRepositoryAdapterTest {
 
     @Test
     void mustFindValueById() {
+        UUID uuid = UUID.randomUUID();
+
         UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        entity.setId(uuid.toString());
 
-        Usuario usuario = Usuario.builder().id("1").build();
+        Usuario usuario = Usuario.builder().id(uuid).build();
 
-        when(repository.findById("1")).thenReturn(Mono.just(entity));
+        when(repository.findById(uuid.toString())).thenReturn(Mono.just(entity));
         when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
 
-        Mono<Usuario> result = repositoryAdapter.findById("1");
+        Mono<Usuario> result = repositoryAdapter.findById(uuid.toString());
 
         StepVerifier.create(result)
-                .expectNextMatches(value -> value.getId().equals("1"))
+                .expectNextMatches(value -> value.getId().equals(uuid))
                 .verifyComplete();
     }
 
     @Test
     void mustFindAllValues() {
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        UUID uuid = UUID.randomUUID();
 
-        Usuario usuario = Usuario.builder().id("1").build();
+        UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(uuid.toString());
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
 
         when(repository.findAll()).thenReturn(Flux.just(entity));
         when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
@@ -64,35 +69,18 @@ class UsuarioReactiveRepositoryAdapterTest {
         Flux<Usuario> result = repositoryAdapter.findAll();
 
         StepVerifier.create(result)
-                .expectNextMatches(value -> value.getId().equals("1"))
+                .expectNextMatches(value -> value.getId().equals(uuid))
                 .verifyComplete();
     }
-
-    /*@Test
-    void mustFindByExample() {
-        Usuario usuarioEjemplo = Usuario.builder().id("1").build();
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
-
-        Usuario usuario = Usuario.builder().id("1").build();
-
-        when(repository.findAll(any(Example.class))).thenReturn(Flux.just(entity));
-        when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
-
-        Flux<Usuario> result = repositoryAdapter.findByExample(usuarioEjemplo);
-
-        StepVerifier.create(result)
-                .expectNextMatches(value -> value.getId().equals("1"))
-                .verifyComplete();
-    }*/
-
 
     @SuppressWarnings("unchecked")
     @Test
     void mustSaveValue() {
-        Usuario usuario = Usuario.builder().id("1").build();
+        UUID uuid = UUID.randomUUID();
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
         UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        entity.setId(uuid.toString());
 
         when(mapper.map(usuario, UsuarioEntity.class)).thenReturn(entity);
         when(repository.save(entity)).thenReturn(Mono.just(entity));
@@ -101,7 +89,32 @@ class UsuarioReactiveRepositoryAdapterTest {
         Mono<Usuario> result = repositoryAdapter.save(usuario);
 
         StepVerifier.create(result)
-                .expectNextMatches(value -> value.getId().equals("1"))
+                .expectNextMatches(value -> value.getId().equals(uuid))
+                .verifyComplete();
+    }
+
+    @Test
+    void mustFindByExample() {
+        UUID uuid = UUID.randomUUID();
+
+        Usuario usuarioEjemplo = Usuario.builder().id(uuid).build();
+
+        UsuarioEntity entityEjemplo = new UsuarioEntity();
+        entityEjemplo.setId(uuid.toString());
+
+        UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(uuid.toString());
+
+        Usuario usuario = Usuario.builder().id(uuid).build();
+
+        when(mapper.map(usuarioEjemplo, UsuarioEntity.class)).thenReturn(entityEjemplo);
+        when(repository.findAll(any(Example.class))).thenReturn(Flux.just(entity));
+        when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
+
+        Flux<Usuario> result = repositoryAdapter.findByExample(usuarioEjemplo);
+
+        StepVerifier.create(result)
+                .expectNextMatches(value -> value.getId().equals(uuid))
                 .verifyComplete();
     }
 }
