@@ -1,38 +1,46 @@
 package co.com.pragma.r2dbc;
 
 import co.com.pragma.model.usuario.Usuario;
+import co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter;
 import co.com.pragma.r2dbc.entity.UsuarioEntity;
-import co.com.pragma.r2dbc.service.UsuarioReactiveRepository;
-import co.com.pragma.r2dbc.service.UsuarioReactiveRepositoryAdapter;
+import co.com.pragma.r2dbc.repositories.ReactiveUsuarioRepository;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.mockito.junit.jupiter.MockitoSettings;
 import org.mockito.quality.Strictness;
 import org.reactivecommons.utils.ObjectMapper;
 import org.springframework.data.domain.Example;
+import org.springframework.transaction.reactive.TransactionalOperator;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 @MockitoSettings(strictness = Strictness.LENIENT)
 class UsuarioReactiveRepositoryAdapterTest {
 
-    @InjectMocks
-    UsuarioReactiveRepositoryAdapter repositoryAdapter;
+    private UsuarioRepositoryAdapter repositoryAdapter;
 
-    @Mock
-    UsuarioReactiveRepository repository;
+    private ReactiveUsuarioRepository repository;
+    private ObjectMapper mapper;
+    private TransactionalOperator txOperator;
 
-    @Mock
-    ObjectMapper mapper;
+    @BeforeEach
+    void setUp() {
+        repository = mock(ReactiveUsuarioRepository.class);
+        mapper = mock(ObjectMapper.class);
+        txOperator = mock(TransactionalOperator.class);
+
+        // Simula comportamiento transaccional sin aplicar transacción real
+        when(txOperator.transactional(any(Mono.class))).thenAnswer(invocation -> invocation.getArgument(0));
+
+        repositoryAdapter = new UsuarioRepositoryAdapter(repository, mapper, txOperator);
+    }
 
     @Test
     void mustFindValueById() {
@@ -68,14 +76,18 @@ class UsuarioReactiveRepositoryAdapterTest {
                 .verifyComplete();
     }
 
-    /*@Test
+    @Test
     void mustFindByExample() {
         Usuario usuarioEjemplo = Usuario.builder().id("1").build();
+        UsuarioEntity entityEjemplo = new UsuarioEntity();
+        entityEjemplo.setId("1");
+
         UsuarioEntity entity = new UsuarioEntity();
         entity.setId("1");
 
         Usuario usuario = Usuario.builder().id("1").build();
 
+        when(mapper.map(usuarioEjemplo, UsuarioEntity.class)).thenReturn(entityEjemplo);
         when(repository.findAll(any(Example.class))).thenReturn(Flux.just(entity));
         when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
 
@@ -84,8 +96,7 @@ class UsuarioReactiveRepositoryAdapterTest {
         StepVerifier.create(result)
                 .expectNextMatches(value -> value.getId().equals("1"))
                 .verifyComplete();
-    }*/
-
+    }
 
     @SuppressWarnings("unchecked")
     @Test

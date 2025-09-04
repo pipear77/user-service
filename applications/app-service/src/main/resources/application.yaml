@@ -13,6 +13,10 @@ spring:
       path: "/h2"
   profiles:
     include: null
+  security:
+    user:
+      name: admin
+      password: admin123
 adapters:
   r2dbc:
     host: "localhost"
@@ -40,4 +44,9 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
     enable: true
+
+security:
+  jwt:
+    secret: YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo1Njc4OTAxMjM0NTY3ODkwMTIzNDU2
+    expiration: 3600000 # 1 hora en milisegundos
 

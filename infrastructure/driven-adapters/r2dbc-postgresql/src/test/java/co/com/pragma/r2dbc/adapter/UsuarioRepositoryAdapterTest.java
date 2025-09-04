@@ -1,32 +1,32 @@
 package co.com.pragma.r2dbc.adapter;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.r2dbc.entity.UsuarioEntity;
-import co.com.pragma.r2dbc.mapper.UsuarioMapper;
-import co.com.pragma.r2dbc.repository.ReactiveUsuarioDataRepository;
+import co.com.pragma.r2dbc.repositories.ReactiveUsuarioRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.reactivecommons.utils.ObjectMapper;
+import org.springframework.transaction.reactive.TransactionalOperator;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class UsuarioRepositoryAdapterTest {
 
     @Mock
-    ReactiveUsuarioDataRepository dataRepository;
+    ReactiveUsuarioRepository dataRepository;
 
     @Mock
-    UsuarioMapper mapper;
+    ObjectMapper objectMapper;
+
+    @Mock
+    TransactionalOperator txOperator;
 
     @InjectMocks
     UsuarioRepositoryAdapter adapter;
@@ -34,53 +34,65 @@ class UsuarioRepositoryAdapterTest {
     @Test
     void mustSaveUsuario() {
         Usuario usuario = Usuario.builder().id("1").build();
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
+        UsuarioEntity entity = UsuarioEntity.builder().id("1").build();
 
-        when(mapper.toEntity(usuario)).thenReturn(entity);
+        when(objectMapper.map(usuario, UsuarioEntity.class)).thenReturn(entity);
         when(dataRepository.save(entity)).thenReturn(Mono.just(entity));
-        when(mapper.toDomain(entity)).thenReturn(usuario);
+        when(objectMapper.map(entity, Usuario.class)).thenReturn(usuario);
+        when(txOperator.transactional(any(Mono.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
         Mono<Usuario> result = adapter.save(usuario);
 
         StepVerifier.create(result)
                 .expectNextMatches(u -> u.getId().equals("1"))
                 .verifyComplete();
-    }
 
-    @Test
-    void mustFindByCorreoElectronico() {
-        String correo = "test@correo.com";
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
-
-        Usuario usuario = Usuario.builder().id("1").build();
-
-        when(dataRepository.findByCorreoElectronico(correo)).thenReturn(Mono.just(entity));
-        when(mapper.toDomain(entity)).thenReturn(usuario);
-
-        Mono<Usuario> result = adapter.findByCorreoElectronico(correo);
-
-        StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
-                .verifyComplete();
+        verify(dataRepository).save(entity);
+        verify(objectMapper).map(usuario, UsuarioEntity.class);
+        verify(objectMapper).map(entity, Usuario.class);
     }
 
     @Test
     void mustFindAllUsuarios() {
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId("1");
-
+        UsuarioEntity entity = UsuarioEntity.builder().id("1").build();
         Usuario usuario = Usuario.builder().id("1").build();
 
         when(dataRepository.findAll()).thenReturn(Flux.just(entity));
-        when(mapper.toDomain(entity)).thenReturn(usuario);
+        when(objectMapper.map(entity, Usuario.class)).thenReturn(usuario);
 
         Flux<Usuario> result = adapter.findAllUsuarios();
 
         StepVerifier.create(result)
                 .expectNextMatches(u -> u.getId().equals("1"))
                 .verifyComplete();
+
+        verify(dataRepository).findAll();
+        verify(objectMapper).map(entity, Usuario.class);
     }
 
+    @Test
+    void mustCheckExistenceByEmail() {
+        String correo = "test@correo.com";
+
+        when(dataRepository.existsByCorreoElectronico(correo)).thenReturn(Mono.just(true));
+
+        StepVerifier.create(adapter.existsByEmail(correo))
+                .expectNext(true)
+                .verifyComplete();
+
+        verify(dataRepository).existsByCorreoElectronico(correo);
+    }
+
+    @Test
+    void mustCheckExistenceByDocumentNumber() {
+        String documento = "123456789";
+
+        when(dataRepository.existsByNumeroDocumento(documento)).thenReturn(Mono.just(false));
+
+        StepVerifier.create(adapter.existsByDocumentNumber(documento))
+                .expectNext(false)
+                .verifyComplete();
+
+        verify(dataRepository).existsByNumeroDocumento(documento);
+    }
 }

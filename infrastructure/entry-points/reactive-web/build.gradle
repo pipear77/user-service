@@ -1,6 +1,7 @@
 dependencies {
     implementation project(':usecase')
     implementation project(':model')
+    implementation project(':r2dbc-postgresql')
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-validation:3.3.2'
@@ -8,5 +9,12 @@ dependencies {
     implementation 'org.mapstruct:mapstruct:1.6.3'
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.11")
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+    // Spring Security para WebFlux
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
+    // JWT (si usas io.jsonwebtoken)
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+    runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 }

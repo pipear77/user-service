@@ -1,72 +1,67 @@
 package co.com.pragma.api;
 
 import co.com.pragma.api.dto.UsuarioRequestDTO;
-import co.com.pragma.api.dto.UsuarioResponseDTO;
-import co.com.pragma.model.usuario.Usuario;
+import co.com.pragma.api.mapper.IUsuarioRequestMapper;
+import co.com.pragma.api.mapper.IUsuarioResponseMapper;
 import co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
-@Component
+import java.util.Set;
+
 @Slf4j
+@Component
 @RequiredArgsConstructor
 public class Handler {
 
     private final RegistrarUsuarioUseCase useCase;
+    private final IUsuarioRequestMapper requestMapper;
+    private final IUsuarioResponseMapper responseMapper;
+    private final Validator validator;
 
     public Mono<ServerResponse> save(ServerRequest request) {
+        log.info("Escuchando solicitud de creación de usuario");
+
         return request.bodyToMono(UsuarioRequestDTO.class)
-                .doOnSubscribe(sub -> log.info("Iniciando procesamiento de solicitud de creación de usuario"))
                 .doOnNext(dto -> log.debug("DTO recibido: {}", dto))
-                .map(this::toUsuarioDomain)
+                .flatMap(this::validate)
+                .map(requestMapper::toUsuario)
                 .doOnNext(usuario -> log.debug("Mapeado a dominio: {}", usuario))
                 .flatMap(useCase::save)
                 .doOnNext(saved -> log.info("Usuario guardado exitosamente: {}", saved.getId()))
-                .map(this::toUsuarioResponseDTO)
-                .doOnNext(dto -> log.debug("Mapeado a DTO de respuesta: {}", dto))
-                .flatMap(usuarioDto -> ServerResponse.status(201).bodyValue(usuarioDto))
-                .doOnError(error -> log.error("Error al guardar usuario: {}", error.getMessage(), error))
-                .onErrorResume(e -> ServerResponse.badRequest().bodyValue("Error: " + e.getMessage()));
+                .map(responseMapper::toResponseDTO)
+                .doOnNext(dto -> log.debug("DTO de respuesta generado: {}", dto))
+                .flatMap(dto -> ServerResponse.created(request.uri())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(dto));
     }
 
     public Mono<ServerResponse> getAll(ServerRequest request) {
+        log.info("Escuchando solicitud de consulta de todos los usuarios");
+
         return useCase.getAllUsuarios()
-                .doOnSubscribe(sub -> log.info("Solicitando todos los usuarios"))
-                .doOnNext(usuario -> log.debug("Usuario recuperado: {}", usuario.getId()))
-                .map(this::toUsuarioResponseDTO)
-                .doOnNext(dto -> log.debug("Mapeado a DTO: {}", dto))
+                .map(responseMapper::toResponseDTO)
                 .collectList()
                 .doOnNext(lista -> log.info("Total usuarios recuperados: {}", lista.size()))
-                .flatMap(lista -> ServerResponse.ok().bodyValue(lista))
-                .doOnError(error -> log.error("Error al recuperar usuarios: {}", error.getMessage(), error));
+                .flatMap(lista -> ServerResponse.ok()
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(lista));
     }
 
-    private Usuario toUsuarioDomain(UsuarioRequestDTO dto) {
-        return Usuario.builder()
-                .nombres(dto.getNombres())
-                .apellidos(dto.getApellidos())
-                .fechaNacimiento(dto.getFechaNacimiento())
-                .direccion(dto.getDireccion())
-                .telefono(dto.getTelefono())
-                .correoElectronico(dto.getCorreoElectronico())
-                .salarioBase(dto.getSalarioBase())
-                .build();
-    }
-
-    private UsuarioResponseDTO toUsuarioResponseDTO(Usuario domain) {
-        return UsuarioResponseDTO.builder()
-                .id(domain.getId())
-                .nombres(domain.getNombres())
-                .apellidos(domain.getApellidos())
-                .fechaNacimiento(domain.getFechaNacimiento())
-                .direccion(domain.getDireccion())
-                .telefono(domain.getTelefono())
-                .correoElectronico(domain.getCorreoElectronico())
-                .salarioBase(domain.getSalarioBase())
-                .build();
+    private <T> Mono<T> validate(T bean) {
+        Set<ConstraintViolation<T>> violations = validator.validate(bean);
+        if (!violations.isEmpty()) {
+            log.warn("Validación fallida: {}", violations);
+            return Mono.error(new ConstraintViolationException(violations));
+        }
+        return Mono.just(bean);
     }
 }

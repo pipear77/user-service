@@ -7,4 +7,7 @@ import reactor.core.publisher.Mono;
 public interface RegistrarUsuarioUseCaseInterface {
     public Mono<Usuario> save(Usuario usuario);
     public Flux<Usuario> getAllUsuarios();
+    public Mono<Boolean> existsByEmail(String email);
+    public Mono<Boolean> existsByDocumentNumber(String documentNumber);
+
 }

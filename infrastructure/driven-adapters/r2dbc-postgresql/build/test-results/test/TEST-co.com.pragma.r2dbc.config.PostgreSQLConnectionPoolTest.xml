@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-01T16:44:54.142Z" hostname="DESKTOP-6JN1CPG" time="0.808">
-  <properties/>
-  <testcase name="getConnectionConfigSuccess()" classname="co.com.pragma.r2dbc.config.PostgreSQLConnectionPoolTest" time="0.808"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

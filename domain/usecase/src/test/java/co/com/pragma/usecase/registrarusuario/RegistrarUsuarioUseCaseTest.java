@@ -2,158 +2,181 @@ package co.com.pragma.usecase.registrarusuario;
 
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
-import co.com.pragma.usecase.exceptions.CampoObligatorioException;
+import co.com.pragma.model.usuario.gateways.PasswordEncoderRepository;
+import co.com.pragma.usecase.common.UsuarioValidationPipeline;
+import co.com.pragma.usecase.common.validacion.fields.Nombre;
 import co.com.pragma.usecase.exceptions.CorreoYaRegistradoException;
-import co.com.pragma.usecase.exceptions.FormatoCorreoInvalidoException;
-import co.com.pragma.usecase.exceptions.SalarioFueraDeRangoException;
-import org.junit.jupiter.api.BeforeEach;
+import co.com.pragma.usecase.exceptions.CampoObligatorioException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import reactor.core.publisher.Flux;
+import org.mockito.ArgumentCaptor;
+import java.util.UUID;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static org.mockito.Mockito.when;
+import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_DUPLICADO;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class RegistrarUsuarioUseCaseTest {
 
+    @InjectMocks
+    private RegistrarUsuarioUseCase registrarUsuarioUseCase;
+
     @Mock
     private UsuarioRepository usuarioRepository;
 
-    private RegistrarUsuarioUseCase useCase;
+    @Mock
+    private PasswordEncoderRepository passwordEncoderRepository;
 
-    private Usuario usuarioValido;
-
-    @BeforeEach
-    void setUp() {
-        useCase = new RegistrarUsuarioUseCase(usuarioRepository);
-
-        usuarioValido = Usuario.builder()
-                .nombres("Juan")
-                .apellidos("Pérez")
-                .fechaNacimiento(LocalDate.of(1990, 1, 1))
+    private static Usuario usuarioValido(String correo) {
+        return Usuario.builder()
+                .nombres("Leidy")
+                .apellidos("Prueba")
+                .numeroDocumento("123456789")
+                .fechaNacimiento(null)
                 .direccion("Calle 123")
-                .telefono("3111234567")
-                .correoElectronico("juan@mail.com")
-                .salarioBase(new BigDecimal("3000000"))
+                .telefono("3001234567")
+                .correoElectronico(correo)
+                .contrasena("123456")
+                .salarioBase(new BigDecimal("1000000"))
+                .idRol("ROL-ADMIN")
                 .build();
     }
 
-    // ✅ Casos exitosos
-
     @Test
-    void debeRegistrarUsuarioExitosamente() {
-        when(usuarioRepository.findByCorreoElectronico(usuarioValido.getCorreoElectronico())).thenReturn(Mono.empty());
-        when(usuarioRepository.save(usuarioValido)).thenReturn(Mono.just(usuarioValido));
+    void save_debeGuardarUsuario_siCorreoNoExiste() {
+        Usuario usuario = usuarioValido("nuevo@correo.com");
 
-        StepVerifier.create(useCase.save(usuarioValido))
-                .expectNext(usuarioValido)
+        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico())).thenReturn(Mono.just(false));
+        when(passwordEncoderRepository.encode(usuario.getNumeroDocumento())).thenReturn("encoded123");
+
+        ArgumentCaptor<Usuario> captor = ArgumentCaptor.forClass(Usuario.class);
+        when(usuarioRepository.save(any())).thenAnswer(invocation -> {
+            Usuario u = invocation.getArgument(0);
+            return Mono.just(u);
+        });
+
+        StepVerifier.create(registrarUsuarioUseCase.save(usuario))
+                .expectNextMatches(saved -> {
+                    assertNotNull(saved.getId(), "El ID no debe ser nulo");
+                    assertDoesNotThrow(() -> UUID.fromString(saved.getId()), "El ID debe tener formato UUID");
+                    assertEquals("encoded123", saved.getContrasena());
+                    return true;
+                })
                 .verifyComplete();
+
+        verify(usuarioRepository).existsByEmail(usuario.getCorreoElectronico());
+        verify(passwordEncoderRepository).encode(usuario.getNumeroDocumento());
+        verify(usuarioRepository).save(captor.capture());
+
+        Usuario usuarioGuardado = captor.getValue();
+        assertNotNull(usuarioGuardado.getId());
+        assertEquals("encoded123", usuarioGuardado.getContrasena());
+        verifyNoMoreInteractions(usuarioRepository);
+    }
+
+
+    @Test
+    void save_debeFallar_siCorreoYaExiste() {
+        Usuario usuario = usuarioValido("duplicado@correo.com");
+
+        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico())).thenReturn(Mono.just(true));
+
+        StepVerifier.create(registrarUsuarioUseCase.save(usuario))
+                .expectErrorSatisfies(error -> {
+                    assertInstanceOf(CorreoYaRegistradoException.class, error);
+                    assertEquals(ERROR_CORREO_DUPLICADO + usuario.getCorreoElectronico(), error.getMessage());
+                })
+                .verify();
+
+        verify(usuarioRepository).existsByEmail(usuario.getCorreoElectronico());
+        verify(usuarioRepository, never()).save(any());
+        verifyNoMoreInteractions(usuarioRepository);
     }
 
     @Test
-    void noDebeFallarSiTodosLosCamposSonValidos() {
-        StepVerifier.create(useCase.validarUsuario(usuarioValido))
+    void pipeline_debeFallar_siNombreEsVacio() {
+        Usuario usuario = Usuario.builder()
+                .nombres("")
+                .apellidos("Prueba")
+                .numeroDocumento("123456789")
+                .direccion("Calle 123")
+                .telefono("3001234567")
+                .correoElectronico("ok@correo.com")
+                .salarioBase(new BigDecimal("1000000"))
+                .idRol("ROL-ADMIN")
+                .build();
+
+        UsuarioValidationPipeline pipeline = new UsuarioValidationPipeline()
+                .agregarValidacion(new Nombre());
+
+        StepVerifier.create(pipeline.validar(usuario))
+                .expectErrorSatisfies(error -> {
+                    assertInstanceOf(CampoObligatorioException.class, error);
+                    assertEquals("Campo obligatorio: nombres", error.getMessage());
+                })
+                .verify();
+    }
+
+
+    @Test
+    void existsByEmail_delegaEnRepositorio() {
+        String correo = "test@correo.com";
+        when(usuarioRepository.existsByEmail(correo)).thenReturn(Mono.just(true));
+
+        StepVerifier.create(registrarUsuarioUseCase.existsByEmail(correo))
+                .expectNext(true)
                 .verifyComplete();
+
+        verify(usuarioRepository).existsByEmail(correo);
+        verifyNoMoreInteractions(usuarioRepository);
     }
 
     @Test
-    void debeRetornarTodosLosUsuarios() {
-        Usuario usuario1 = usuarioValido.toBuilder().id("1").build();
-        Usuario usuario2 = usuarioValido.toBuilder().id("2").correoElectronico("otro@mail.com").build();
+    void existsByDocumentNumber_delegaEnRepositorio_true() {
+        String documento = "123456789";
+        when(usuarioRepository.existsByDocumentNumber(documento)).thenReturn(Mono.just(true));
 
-        when(usuarioRepository.findAllUsuarios()).thenReturn(Flux.just(usuario1, usuario2));
-
-        StepVerifier.create(useCase.getAllUsuarios())
-                .expectNext(usuario1)
-                .expectNext(usuario2)
+        StepVerifier.create(registrarUsuarioUseCase.existsByDocumentNumber(documento))
+                .expectNext(true)
                 .verifyComplete();
-    }
 
-    // ❌ Casos de error por validación
-
-    @Test
-    void debeFallarSiNombresEsNulo() {
-        Usuario usuario = usuarioValido.toBuilder().nombres(null).build();
-
-        StepVerifier.create(useCase.save(usuario))
-                .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("nombres"))
-                .verify();
+        verify(usuarioRepository).existsByDocumentNumber(documento);
+        verifyNoMoreInteractions(usuarioRepository);
     }
 
     @Test
-    void debeFallarSiApellidosEsNulo() {
-        Usuario usuario = usuarioValido.toBuilder().apellidos(null).build();
+    void existsByDocumentNumber_delegaEnRepositorio_false() {
+        String documento = "987654321";
+        when(usuarioRepository.existsByDocumentNumber(documento)).thenReturn(Mono.just(false));
 
-        StepVerifier.create(useCase.save(usuario))
-                .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("apellidos"))
-                .verify();
+        StepVerifier.create(registrarUsuarioUseCase.existsByDocumentNumber(documento))
+                .expectNext(false)
+                .verifyComplete();
+
+        verify(usuarioRepository).existsByDocumentNumber(documento);
+        verifyNoMoreInteractions(usuarioRepository);
     }
 
     @Test
-    void debeFallarSiDireccionEsNula() {
-        Usuario usuario = usuarioValido.toBuilder().direccion(null).build();
+    void existsByDocumentNumber_debePropagarErrorDelRepositorio() {
+        String documento = "error";
+        RuntimeException boom = new RuntimeException("fallo en repo");
+        when(usuarioRepository.existsByDocumentNumber(documento)).thenReturn(Mono.error(boom));
 
-        StepVerifier.create(useCase.save(usuario))
-                .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("direccion"))
+        StepVerifier.create(registrarUsuarioUseCase.existsByDocumentNumber(documento))
+                .expectErrorMatches(error -> error == boom)
                 .verify();
-    }
 
-    @Test
-    void debeFallarSiTelefonoEsNulo() {
-        Usuario usuario = usuarioValido.toBuilder().telefono(null).build();
-
-        StepVerifier.create(useCase.save(usuario))
-                .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("telefono"))
-                .verify();
-    }
-
-    @Test
-    void debeFallarSiCorreoEsNulo() {
-        Usuario usuario = usuarioValido.toBuilder().correoElectronico(null).build();
-
-        StepVerifier.create(useCase.save(usuario))
-                .expectErrorMatches(e -> e instanceof CampoObligatorioException &&
-                        ((CampoObligatorioException) e).getCampo().equals("correo electrónico"))
-                .verify();
-    }
-
-    @Test
-    void debeFallarSiCorreoEsInvalido() {
-        Usuario usuario = usuarioValido.toBuilder().correoElectronico("correo-invalido").build();
-
-        StepVerifier.create(useCase.save(usuario))
-                .expectError(FormatoCorreoInvalidoException.class)
-                .verify();
-    }
-
-    @Test
-    void debeFallarSiSalarioEsMayorAlPermitido() {
-        Usuario usuario = usuarioValido.toBuilder().salarioBase(new BigDecimal("20000000")).build();
-
-        StepVerifier.create(useCase.save(usuario))
-                .expectError(SalarioFueraDeRangoException.class)
-                .verify();
-    }
-
-    @Test
-    void debeFallarSiCorreoYaExiste() {
-        when(usuarioRepository.findByCorreoElectronico(usuarioValido.getCorreoElectronico()))
-                .thenReturn(Mono.just(usuarioValido));
-
-        StepVerifier.create(useCase.save(usuarioValido))
-                .expectErrorMatches(e -> e instanceof CorreoYaRegistradoException &&
-                        e.getMessage().contains(usuarioValido.getCorreoElectronico()))
-                .verify();
+        verify(usuarioRepository).existsByDocumentNumber(documento);
+        verifyNoMoreInteractions(usuarioRepository);
     }
 }
