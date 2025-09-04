@@ -10,16 +10,20 @@ import java.util.UUID;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Builder(toBuilder = true)
 public class Usuario {
 
     private UUID id;
     private String nombres;
     private String apellidos;
+    private String numeroDocumento;
     private LocalDate fechaNacimiento;
     private String direccion;
     private String telefono;
     private String correoElectronico;
+    private String contrasena;
     private BigDecimal salarioBase;
+    private UUID idRol;
 
 }
