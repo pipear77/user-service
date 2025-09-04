@@ -30,6 +30,21 @@ public class Handler {
     public Mono<ServerResponse> save(ServerRequest request) {
         log.info("Escuchando solicitud de creación de usuario");
 
+        String authHeader = request.headers().firstHeader("Authorization");
+
+        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+            log.warn("Token no presente o mal formado");
+            return ServerResponse.status(401).bodyValue("Token de autorización requerido");
+        }
+
+        String token = authHeader.substring(7);
+        String rol = useCase.getJwtProvider().getClaim(token, "rol");
+
+        if (!rol.equals("ROL_ADMIN") && !rol.equals("ROL_ASESOR")) {
+            log.warn("Acceso denegado: rol no autorizado ({})", rol);
+            return ServerResponse.status(403).bodyValue("No tienes permisos para registrar usuarios");
+        }
+
         return request.bodyToMono(UsuarioRequestDTO.class)
                 .doOnNext(dto -> log.debug("DTO recibido: {}", dto))
                 .flatMap(this::validate)
@@ -43,6 +58,7 @@ public class Handler {
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(dto));
     }
+
 
     public Mono<ServerResponse> getAll(ServerRequest request) {
         log.info("Escuchando solicitud de consulta de todos los usuarios");

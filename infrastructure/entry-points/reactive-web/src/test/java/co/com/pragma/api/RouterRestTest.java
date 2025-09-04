@@ -114,4 +114,29 @@ class RouterRestTest {
                 .exchange()
                 .expectStatus().isOk();
     }
+
+    @Test
+    void testPOSTUsuarioRoute_withValidToken_shouldReturnCreated() {
+        UsuarioRequestDTO requestDTO = UsuarioRequestDTO.builder()
+                .nombres("Juan")
+                .correoElectronico("juan@correo.com")
+                .build();
+
+        UsuarioResponseDTO responseDTO = UsuarioResponseDTO.builder()
+                .id("abc123")
+                .nombres("Juan")
+                .build();
+
+        Mockito.when(handler.save(any()))
+                .thenReturn(ServerResponse.created(null).bodyValue(responseDTO));
+
+        webTestClient.post()
+                .uri("/api/v1/usuarios")
+                .header("Authorization", "Bearer valid-token")
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(fromValue(requestDTO))
+                .exchange()
+                .expectStatus().isCreated();
+    }
+
 }

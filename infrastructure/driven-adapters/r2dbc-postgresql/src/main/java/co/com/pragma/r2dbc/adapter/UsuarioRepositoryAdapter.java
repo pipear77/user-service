@@ -12,12 +12,14 @@ import org.springframework.transaction.reactive.TransactionalOperator;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.UUID;
+
 @Slf4j
 @Repository
 public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
         Usuario,
         UsuarioEntity,
-        String,
+        UUID,
         ReactiveUsuarioRepository
         > implements UsuarioRepository {
 

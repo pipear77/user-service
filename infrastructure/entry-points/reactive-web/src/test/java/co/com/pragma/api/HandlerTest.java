@@ -5,13 +5,19 @@ import co.com.pragma.api.dto.UsuarioResponseDTO;
 import co.com.pragma.api.mapper.IUsuarioRequestMapper;
 import co.com.pragma.api.mapper.IUsuarioResponseMapper;
 import co.com.pragma.model.usuario.Usuario;
+import co.com.pragma.model.usuario.gateways.JwtProviderRepository;
+import co.com.pragma.model.usuario.gateways.PasswordEncoderRepository;
+import co.com.pragma.model.usuario.gateways.UsuarioRepository;
 import co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase;
 import jakarta.validation.Validator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.mock.http.server.reactive.MockServerHttpRequest;
+import org.springframework.mock.web.server.MockServerWebExchange;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
+import org.springframework.web.reactive.function.server.support.ServerRequestWrapper;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
@@ -30,6 +36,7 @@ class HandlerTest {
     private IUsuarioResponseMapper responseMapper;
     private Validator validator;
     private Handler handler;
+
 
     @BeforeEach
     void setUp() {
@@ -103,4 +110,49 @@ class HandlerTest {
                 .expectNextMatches(response -> response.statusCode().is2xxSuccessful())
                 .verifyComplete();
     }
+
+    @Test
+    void save_shouldReturnForbiddenIfRoleIsNotAdminOrAsesor() {
+        // DTO de entrada
+        UsuarioRequestDTO requestDTO = UsuarioRequestDTO.builder()
+                .nombres("Juan")
+                .correoElectronico("juan@correo.com")
+                .build();
+
+        // Mocks necesarios
+        JwtProviderRepository jwtProvider = Mockito.mock(JwtProviderRepository.class);
+        UsuarioRepository usuarioRepository = Mockito.mock(UsuarioRepository.class);
+        PasswordEncoderRepository passwordEncoderRepository = Mockito.mock(PasswordEncoderRepository.class);
+
+        // UseCase con JwtProvider inyectado
+        RegistrarUsuarioUseCase useCaseConJwt = new RegistrarUsuarioUseCase(usuarioRepository, passwordEncoderRepository, jwtProvider);
+
+        // Mapper y validator
+        IUsuarioRequestMapper requestMapper = Mockito.mock(IUsuarioRequestMapper.class);
+        IUsuarioResponseMapper responseMapper = Mockito.mock(IUsuarioResponseMapper.class);
+        Validator validator = Mockito.mock(Validator.class);
+
+        // Handler con useCase completo
+        Handler handlerConJwt = new Handler(useCaseConJwt, requestMapper, responseMapper, validator);
+
+        // Mock del ServerRequest y sus headers
+        ServerRequest mockRequest = Mockito.mock(ServerRequest.class);
+        ServerRequest.Headers mockHeaders = Mockito.mock(ServerRequest.Headers.class);
+
+        when(mockRequest.headers()).thenReturn(mockHeaders);
+        when(mockHeaders.firstHeader("Authorization")).thenReturn("Bearer fake-token");
+        when(mockRequest.bodyToMono(UsuarioRequestDTO.class)).thenReturn(Mono.just(requestDTO));
+
+        // Simular rol no autorizado
+        when(jwtProvider.getClaim("fake-token", "rol")).thenReturn("ROL_CLIENTE");
+
+        // Ejecutar y verificar
+        Mono<ServerResponse> responseMono = handlerConJwt.save(mockRequest);
+
+        StepVerifier.create(responseMono)
+                .expectNextMatches(response -> response.statusCode().value() == 403)
+                .verifyComplete();
+    }
+
+
 }

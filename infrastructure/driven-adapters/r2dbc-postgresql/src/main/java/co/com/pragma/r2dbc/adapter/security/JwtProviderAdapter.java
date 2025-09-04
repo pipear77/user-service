@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.util.Date;
+import java.util.Map;
 
 @Component
 public class JwtProviderAdapter implements JwtProviderRepository {
@@ -35,12 +36,26 @@ public class JwtProviderAdapter implements JwtProviderRepository {
     public String generateToken(Usuario usuario) {
         return Jwts.builder()
                 .setSubject(usuario.getCorreoElectronico())
-                .claim("rol", usuario.getIdRol())
+                .claim("rol", usuario.getIdRol()) // UUID del rol
+                .claim("documento", usuario.getNumeroDocumento()) // ← nuevo claim
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationMillis))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
+
+    @Override
+    public String generateToken(String subject, Map<String, Object> claims) {
+        return Jwts.builder()
+                .setSubject(subject)
+                .addClaims(claims)
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + expirationMillis))
+                .signWith(key, SignatureAlgorithm.HS256)
+                .compact();
+    }
+
+
 
     @Override
     public boolean validateToken(String token) {
@@ -79,4 +94,5 @@ public class JwtProviderAdapter implements JwtProviderRepository {
     public long getExpirationTimestamp() {
         return System.currentTimeMillis() + expirationMillis;
     }
+
 }

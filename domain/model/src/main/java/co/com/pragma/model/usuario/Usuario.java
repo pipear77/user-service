@@ -3,6 +3,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 
 @Getter
@@ -13,7 +14,7 @@ import java.time.LocalDate;
 @Builder(toBuilder = true)
 public class Usuario {
 
-    private String id;
+    private UUID id;
     private String nombres;
     private String apellidos;
     private String numeroDocumento;
@@ -23,6 +24,6 @@ public class Usuario {
     private String correoElectronico;
     private String contrasena;
     private BigDecimal salarioBase;
-    private String idRol;
+    private UUID idRol;
 
 }

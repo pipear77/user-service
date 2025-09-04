@@ -1,4 +1,6 @@
 package co.com.pragma.usecase.registrarusuario;
+import co.com.pragma.model.usuario.gateways.JwtProviderRepository;
+import lombok.Getter;
 import reactor.core.publisher.Mono;
 
 import co.com.pragma.model.usuario.Usuario;
@@ -14,11 +16,13 @@ import java.util.UUID;
 
 import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_DUPLICADO;
 
+@Getter
 @RequiredArgsConstructor
 public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface {
 
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoderRepository passwordEncoderRepository;
+    private final JwtProviderRepository jwtProvider;
 
     @Override
     public Mono<Usuario> save(Usuario usuario) {
@@ -37,7 +41,7 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
                     }
                     return Mono.just(usuario)
                             .map(u -> u.toBuilder()
-                                    .id(UUID.randomUUID().toString()) // ← genera el UUID aquí
+                                    .id(null)
                                     .contrasena(passwordEncoderRepository.encode(u.getNumeroDocumento()))
                                     .build())
                             .flatMap(usuarioRepository::save);

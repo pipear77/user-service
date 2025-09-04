@@ -1,5 +1,6 @@
 package co.com.pragma.r2dbc.config;
 
+import co.com.pragma.model.rol.gateways.RolRepository;
 import co.com.pragma.model.usuario.gateways.JwtProviderRepository;
 import co.com.pragma.model.usuario.gateways.PasswordEncoderRepository;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
@@ -14,18 +15,20 @@ public class UseCaseConfig {
     @Bean
     public RegistrarUsuarioUseCase registrarUsuarioUseCase(
             UsuarioRepository usuarioRepository,
-            PasswordEncoderRepository passwordEncoderRepository
+            PasswordEncoderRepository passwordEncoderRepository,
+            JwtProviderRepository jwtProvider
     ) {
-        return new RegistrarUsuarioUseCase(usuarioRepository, passwordEncoderRepository);
+        return new RegistrarUsuarioUseCase(usuarioRepository, passwordEncoderRepository, jwtProvider);
     }
 
     @Bean
     public LoginUseCase loginUseCase(
             UsuarioRepository usuarioRepository,
             PasswordEncoderRepository passwordEncoderRepository,
-            JwtProviderRepository jwtProviderRepository
+            JwtProviderRepository jwtProviderRepository,
+            RolRepository rolRepository
     ) {
-        return new LoginUseCase(usuarioRepository, passwordEncoderRepository, jwtProviderRepository);
+        return new LoginUseCase(usuarioRepository, passwordEncoderRepository, jwtProviderRepository, rolRepository);
     }
 }
 
