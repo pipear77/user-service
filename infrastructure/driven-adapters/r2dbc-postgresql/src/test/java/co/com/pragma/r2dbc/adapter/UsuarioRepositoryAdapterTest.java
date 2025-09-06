@@ -14,6 +14,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
+import java.util.UUID;
+
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -33,8 +35,10 @@ class UsuarioRepositoryAdapterTest {
 
     @Test
     void mustSaveUsuario() {
-        Usuario usuario = Usuario.builder().id("1").build();
-        UsuarioEntity entity = UsuarioEntity.builder().id("1").build();
+        UUID id = UUID.randomUUID();
+
+        Usuario usuario = Usuario.builder().id(id).build();
+        UsuarioEntity entity = UsuarioEntity.builder().id(id).build();
 
         when(objectMapper.map(usuario, UsuarioEntity.class)).thenReturn(entity);
         when(dataRepository.save(entity)).thenReturn(Mono.just(entity));
@@ -44,7 +48,7 @@ class UsuarioRepositoryAdapterTest {
         Mono<Usuario> result = adapter.save(usuario);
 
         StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
+                .expectNextMatches(u -> u.getId().equals(id))
                 .verifyComplete();
 
         verify(dataRepository).save(entity);
@@ -54,8 +58,10 @@ class UsuarioRepositoryAdapterTest {
 
     @Test
     void mustFindAllUsuarios() {
-        UsuarioEntity entity = UsuarioEntity.builder().id("1").build();
-        Usuario usuario = Usuario.builder().id("1").build();
+        UUID id = UUID.randomUUID();
+
+        UsuarioEntity entity = UsuarioEntity.builder().id(id).build();
+        Usuario usuario = Usuario.builder().id(id).build();
 
         when(dataRepository.findAll()).thenReturn(Flux.just(entity));
         when(objectMapper.map(entity, Usuario.class)).thenReturn(usuario);
@@ -63,7 +69,7 @@ class UsuarioRepositoryAdapterTest {
         Flux<Usuario> result = adapter.findAllUsuarios();
 
         StepVerifier.create(result)
-                .expectNextMatches(u -> u.getId().equals("1"))
+                .expectNextMatches(u -> u.getId().equals(id))
                 .verifyComplete();
 
         verify(dataRepository).findAll();
