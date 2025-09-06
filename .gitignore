@@ -1,34 +1,21 @@
-# Java
+# IDEs
+.idea/
+*.iml
+
+# Bun
+.bun/
+.id-cache/
+
+# Build
+/build/
+/target/
+/out/
+/bin/
+.gradle/
 *.class
 *.jar
 *.war
-*.ear
 *.log
-*.tmp
-
-# Maven
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-release.properties
-
-# Gradle
-build/
-.gradle/
-
-# IntelliJ
-.idea/
-*.iml
-out/
-
-# Eclipse
-.project
-.classpath
-.settings/
-bin/
-
-# VS Code
-.vscode/
 
 # OS
 .DS_Store

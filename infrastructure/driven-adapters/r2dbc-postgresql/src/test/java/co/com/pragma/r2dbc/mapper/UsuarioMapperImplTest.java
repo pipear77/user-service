@@ -15,10 +15,10 @@ class UsuarioMapperImplTest {
 
     @Test
     void shouldMapToEntity() {
-        UUID uuid = UUID.randomUUID();
+        UUID id = UUID.randomUUID();
 
         Usuario usuario = Usuario.builder()
-                .id(uuid)
+                .id(id)
                 .nombres("Juan")
                 .correoElectronico("juan@correo.com")
                 .build();
@@ -26,24 +26,25 @@ class UsuarioMapperImplTest {
         UsuarioEntity entity = mapper.toEntity(usuario);
 
         assertThat(entity).isNotNull();
-        assertThat(entity.getId()).isEqualTo(uuid.toString());
+        assertThat(entity.getId()).isEqualTo(id);
         assertThat(entity.getNombres()).isEqualTo("Juan");
         assertThat(entity.getCorreoElectronico()).isEqualTo("juan@correo.com");
     }
 
     @Test
     void shouldMapToDomain() {
-        UUID uuid = UUID.randomUUID();
+        UUID id = UUID.randomUUID();
 
-        UsuarioEntity entity = new UsuarioEntity();
-        entity.setId(uuid.toString());
-        entity.setNombres("Juan");
-        entity.setCorreoElectronico("juan@correo.com");
+        UsuarioEntity entity = UsuarioEntity.builder()
+                .id(id)
+                .nombres("Juan")
+                .correoElectronico("juan@correo.com")
+                .build();
 
         Usuario usuario = mapper.toDomain(entity);
 
         assertThat(usuario).isNotNull();
-        assertThat(usuario.getId()).isEqualTo(uuid);
+        assertThat(usuario.getId()).isEqualTo(id);
         assertThat(usuario.getNombres()).isEqualTo("Juan");
         assertThat(usuario.getCorreoElectronico()).isEqualTo("juan@correo.com");
     }

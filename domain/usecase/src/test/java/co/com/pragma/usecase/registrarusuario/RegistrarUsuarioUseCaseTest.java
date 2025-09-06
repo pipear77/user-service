@@ -48,41 +48,61 @@ class RegistrarUsuarioUseCaseTest {
                 .correoElectronico(correo)
                 .contrasena("123456")
                 .salarioBase(new BigDecimal("1000000"))
-                .idRol("ROL-ADMIN")
+                .idRol(UUID.randomUUID()) // ✅ UUID real
                 .build();
     }
 
     @Test
     void save_debeGuardarUsuario_siCorreoNoExiste() {
+        // Simula el ID generado por la base
+        UUID idGenerado = UUID.randomUUID();
+
+        // Usuario de entrada sin ID
         Usuario usuario = usuarioValido("nuevo@correo.com");
 
-        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico())).thenReturn(Mono.just(false));
-        when(passwordEncoderRepository.encode(usuario.getNumeroDocumento())).thenReturn("encoded123");
+        // Simula que el correo no está registrado
+        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico()))
+                .thenReturn(Mono.just(false));
 
+        // Simula la codificación de la contraseña
+        when(passwordEncoderRepository.encode(usuario.getNumeroDocumento()))
+                .thenReturn("encoded123");
+
+        // Captura el usuario que se envía al repositorio
         ArgumentCaptor<Usuario> captor = ArgumentCaptor.forClass(Usuario.class);
-        when(usuarioRepository.save(any())).thenAnswer(invocation -> {
-            Usuario u = invocation.getArgument(0);
-            return Mono.just(u);
-        });
 
+        // Simula el repositorio devolviendo el usuario con ID asignado
+        when(usuarioRepository.save(any()))
+                .thenAnswer(invocation -> {
+                    Usuario u = invocation.getArgument(0);
+                    return Mono.just(u.toBuilder()
+                            .id(idGenerado)
+                            .contrasena("encoded123")
+                            .build());
+                });
+
+        // Verifica el resultado del use case
         StepVerifier.create(registrarUsuarioUseCase.save(usuario))
-                .expectNextMatches(saved -> {
+                .assertNext(saved -> {
                     assertNotNull(saved.getId(), "El ID no debe ser nulo");
-                    assertDoesNotThrow(() -> UUID.fromString(saved.getId()), "El ID debe tener formato UUID");
+                    assertEquals(idGenerado, saved.getId(), "El ID debe coincidir con el generado");
                     assertEquals("encoded123", saved.getContrasena());
-                    return true;
                 })
                 .verifyComplete();
 
+        // Verifica que se haya llamado correctamente al repositorio
         verify(usuarioRepository).existsByEmail(usuario.getCorreoElectronico());
         verify(passwordEncoderRepository).encode(usuario.getNumeroDocumento());
         verify(usuarioRepository).save(captor.capture());
 
+        // Verifica el usuario capturado antes del save
         Usuario usuarioGuardado = captor.getValue();
-        assertNotNull(usuarioGuardado.getId());
+        assertNull(usuarioGuardado.getId(), "El ID debe ser null antes del save");
         assertEquals("encoded123", usuarioGuardado.getContrasena());
         verifyNoMoreInteractions(usuarioRepository);
     }
+
+
 
 
     @Test
@@ -113,7 +133,7 @@ class RegistrarUsuarioUseCaseTest {
                 .telefono("3001234567")
                 .correoElectronico("ok@correo.com")
                 .salarioBase(new BigDecimal("1000000"))
-                .idRol("ROL-ADMIN")
+                .idRol(UUID.randomUUID()) // ✅ UUID real
                 .build();
 
         UsuarioValidationPipeline pipeline = new UsuarioValidationPipeline()
@@ -126,7 +146,6 @@ class RegistrarUsuarioUseCaseTest {
                 })
                 .verify();
     }
-
 
     @Test
     void existsByEmail_delegaEnRepositorio() {
@@ -262,4 +281,5 @@ class RegistrarUsuarioUseCaseTest {
         verifyNoMoreInteractions(usuarioRepository);
 >>>>>>> develop
     }
+
 }
