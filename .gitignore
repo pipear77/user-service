@@ -26,3 +26,6 @@ build/
 
 # Bun runtime cache
 .bun/
+
+# Cache de identificación
+.id-cache/
