@@ -72,6 +72,31 @@ public class Handler {
                         .bodyValue(lista));
     }
 
+    public Mono<ServerResponse> getByDocumento(ServerRequest request) {
+        String documento = request.pathVariable("documento");
+        log.info("📡 Iniciando búsqueda de usuario con documento: {}", documento);
+
+        return useCase.getUsuarioPorDocumento(documento)
+                .flatMap(usuario -> {
+                    log.info("🔍 Usuario encontrado: {}", usuario.getId());
+                    return Mono.just(responseMapper.toResponseDTO(usuario));
+                })
+                .flatMap(dto -> ServerResponse.ok()
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(dto))
+                .switchIfEmpty(Mono.defer(() -> {
+                    log.warn("⚠️ Usuario no encontrado con documento: {}", documento);
+                    return ServerResponse.notFound().build();
+                }))
+                .onErrorResume(e -> {
+                    log.error("❌ Error inesperado al buscar usuario por documento: {}", documento, e);
+                    return ServerResponse.status(500).bodyValue("Error interno al buscar usuario");
+                });
+    }
+
+
+
+
     private <T> Mono<T> validate(T bean) {
         Set<ConstraintViolation<T>> violations = validator.validate(bean);
         if (!violations.isEmpty()) {

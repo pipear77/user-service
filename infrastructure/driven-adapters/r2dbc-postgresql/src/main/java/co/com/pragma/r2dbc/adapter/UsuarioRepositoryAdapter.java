@@ -77,5 +77,17 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
                 .switchIfEmpty(Mono.error(new RuntimeException("Usuario no encontrado")));
     }
 
+    @Override
+    public Mono<Usuario> findByNumeroDocumento(String documentNumber) {
+        log.info("🔍 Buscando usuario por documento: {}", documentNumber);
+        return repository.findByNumeroDocumento(documentNumber)
+                .doOnNext(entity -> log.info("Entidad recuperada: {}", entity))
+                .map(entity -> mapper.map(entity, Usuario.class))
+                .doOnNext(usuario -> log.info("✅ Usuario mapeado: {}", usuario))
+                .onErrorResume(e -> {
+                    log.error("❌ Error técnico en repositorio", e);
+                    return Mono.error(new RuntimeException("Error técnico al consultar usuario")); // ← deja que el handler lo capture
+                });
+    }
 
 }

@@ -124,4 +124,29 @@ class UsuarioReactiveRepositoryAdapterTest {
                 .expectNextMatches(value -> value.getId().equals(id))
                 .verifyComplete();
     }
+
+    @Test
+    void mustFindByDocumentNumber() {
+        String documento = "123456";
+        UUID id = UUID.randomUUID();
+
+        UsuarioEntity entity = new UsuarioEntity();
+        entity.setId(id);
+        entity.setNumeroDocumento(documento);
+
+        Usuario usuario = Usuario.builder()
+                .id(id)
+                .numeroDocumento(documento)
+                .build();
+
+        when(repository.findByNumeroDocumento(documento)).thenReturn(Mono.just(entity));
+        when(mapper.map(entity, Usuario.class)).thenReturn(usuario);
+
+        Mono<Usuario> result = repositoryAdapter.findByNumeroDocumento(documento);
+
+        StepVerifier.create(result)
+                .expectNextMatches(u -> u.getId().equals(id) && documento.equals(u.getNumeroDocumento()))
+                .verifyComplete();
+    }
+
 }

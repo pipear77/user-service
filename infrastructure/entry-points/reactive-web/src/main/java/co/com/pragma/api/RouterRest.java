@@ -137,12 +137,38 @@ public class RouterRest {
                                     )
                             }
                     )
+            ),
+            @RouterOperation(
+                    path = "/api/v1/usuarios/{documento}",
+                    method = RequestMethod.GET,
+                    beanClass = Handler.class,
+                    beanMethod = "getByDocumento",
+                    operation = @Operation(
+                            operationId = "getUsuarioPorDocumento",
+                            summary = "Buscar usuario por documento",
+                            description = "Obtiene un usuario específico por número de documento",
+                            security = @SecurityRequirement(name = "bearerAuth"),
+                            responses = {
+                                    @ApiResponse(
+                                            responseCode = "200",
+                                            description = "Usuario encontrado",
+                                            content = @Content(
+                                                    mediaType = "application/json",
+                                                    schema = @Schema(implementation = UsuarioResponseDTO.class)
+                                            )
+                                    ),
+                                    @ApiResponse(responseCode = "404", description = "Usuario no encontrado"),
+                                    @ApiResponse(responseCode = "500", description = "Error interno")
+                            }
+                    )
             )
+
     })
     public RouterFunction<ServerResponse> usuarioRoutes(Handler handler, AuthHandler authHandler) {
         return RouterFunctions.route(POST("/api/v1/login"), authHandler::login)
                 .andRoute(GET("/api/v1/validate"), authHandler::validateToken)
                 .andRoute(POST("/api/v1/usuarios"), handler::save)
+                .andRoute(GET("/api/v1/usuarios/{documento}"), handler::getByDocumento)
                 .andRoute(GET("/api/v1/usuarios"), handler::getAll);
     }
 }

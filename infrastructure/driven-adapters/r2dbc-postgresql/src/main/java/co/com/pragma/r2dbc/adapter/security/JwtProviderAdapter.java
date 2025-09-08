@@ -8,6 +8,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,7 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.Map;
 
+@Slf4j
 @Component
 public class JwtProviderAdapter implements JwtProviderRepository {
 
@@ -36,6 +38,7 @@ public class JwtProviderAdapter implements JwtProviderRepository {
     public String generateToken(Usuario usuario) {
         return Jwts.builder()
                 .setSubject(usuario.getCorreoElectronico())
+                .claim("id", usuario.getId().toString())
                 .claim("rol", usuario.getIdRol()) // UUID del rol
                 .claim("documento", usuario.getNumeroDocumento()) // ← nuevo claim
                 .setIssuedAt(new Date())
@@ -59,6 +62,13 @@ public class JwtProviderAdapter implements JwtProviderRepository {
 
     @Override
     public boolean validateToken(String token) {
+        log.info("Validando token con expiración: {}", Jwts.parserBuilder()
+                .setSigningKey(key)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getExpiration());
+
         try {
             Jwts.parserBuilder()
                     .setSigningKey(key)
@@ -82,13 +92,16 @@ public class JwtProviderAdapter implements JwtProviderRepository {
 
     @Override
     public String getClaim(String token, String claimName) {
-        return Jwts.parserBuilder()
+        Object value = Jwts.parserBuilder()
                 .setSigningKey(key)
                 .build()
                 .parseClaimsJws(token)
                 .getBody()
-                .get(claimName, String.class);
+                .get(claimName);
+
+        return value != null ? value.toString() : null;
     }
+
 
     @Override
     public long getExpirationTimestamp() {

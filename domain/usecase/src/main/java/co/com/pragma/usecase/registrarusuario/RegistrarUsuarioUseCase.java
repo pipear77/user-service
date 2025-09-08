@@ -12,9 +12,6 @@ import co.com.pragma.usecase.exceptions.CorreoYaRegistradoException;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 
-import java.math.BigDecimal;
-import java.util.UUID;
-import java.util.regex.Pattern;
 import java.util.UUID;
 
 import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_DUPLICADO;
@@ -29,51 +26,6 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
 
     @Override
     public Mono<Usuario> save(Usuario usuario) {
-        return validarUsuario(usuario)
-                .then(Mono.defer(() ->
-                        usuarioRepository.findByCorreoElectronico(usuario.getCorreoElectronico())
-                                .flatMap(existing -> Mono.<Usuario>error(
-                                        new CorreoYaRegistradoException(usuario.getCorreoElectronico())))
-                                .switchIfEmpty(Mono.defer(() -> {
-                                    usuario.setId(UUID.fromString(UUID.randomUUID().toString()));
-                                    return usuarioRepository.save(usuario);
-                                }))
-                ));
-    }
-
-
-
-
-    Mono<Void> validarUsuario(Usuario usuario) {
-        if (isNullOrEmpty(usuario.getNombres())) {
-            return Mono.error(new CampoObligatorioException("nombres"));
-        }
-        if (isNullOrEmpty(usuario.getApellidos())) {
-            return Mono.error(new CampoObligatorioException("apellidos"));
-        }
-        if (isNullOrEmpty(usuario.getDireccion())) {
-            return Mono.error(new CampoObligatorioException("direccion"));
-        }
-        if (isNullOrEmpty(usuario.getTelefono())) {
-            return Mono.error(new CampoObligatorioException("telefono"));
-        }
-        if (isNullOrEmpty(usuario.getCorreoElectronico())) {
-            return Mono.error(new CampoObligatorioException("correo electronico"));
-        }
-        if (!EMAIL_PATTERN.matcher(usuario.getCorreoElectronico()).matches()) {
-            return Mono.error(new FormatoCorreoInvalidoException());
-        }
-        if (usuario.getSalarioBase().compareTo(SALARIO_MINIMO) < 0 ||
-                usuario.getSalarioBase().compareTo(SALARIO_MAXIMO) > 0) {
-            return Mono.error(new SalarioFueraDeRangoException(SALARIO_MINIMO, SALARIO_MAXIMO));
-        }
-
-        return Mono.empty();
-    }
-
-
-    private boolean isNullOrEmpty(String value) {
-        return value == null || value.trim().isEmpty();
         UsuarioValidationPipeline pipeline = new UsuarioValidationPipeline()
                 .agregarValidacion(new Nombre())
                 .agregarValidacion(new Apellido())
@@ -88,11 +40,13 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
                         return Mono.error(new CorreoYaRegistradoException(ERROR_CORREO_DUPLICADO + usuario.getCorreoElectronico()));
                     }
                     return Mono.just(usuario)
-                            .map(u -> u.toBuilder()
-                                    .id(null)
-                                    .contrasena(passwordEncoderRepository.encode(u.getNumeroDocumento()))
-                                    .build())
-                            .flatMap(usuarioRepository::save);
+                            .flatMap(u -> {
+                                Usuario nuevoUsuario = u.toBuilder()
+                                        .contrasena(passwordEncoderRepository.encode(u.getContrasena()))
+                                        .build();
+                                return usuarioRepository.save(nuevoUsuario);
+                            });
+
                 });
     }
 
@@ -110,5 +64,11 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
     public Mono<Boolean> existsByDocumentNumber(String documentNumber) {
         return usuarioRepository.existsByDocumentNumber(documentNumber);
     }
+
+    @Override
+    public Mono<Usuario> getUsuarioPorDocumento(String documentoIdentidad) {
+        return usuarioRepository.findByNumeroDocumento(documentoIdentidad);
+    }
+
 
 }

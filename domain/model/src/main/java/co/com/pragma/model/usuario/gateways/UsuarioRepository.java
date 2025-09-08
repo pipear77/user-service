@@ -12,4 +12,5 @@ public interface UsuarioRepository {
 
     // Metodo para autenticación
     Mono<Usuario> findByCorreoElectronico(String correoElectronico);
+    Mono<Usuario> findByNumeroDocumento(String documentNumber);
 }

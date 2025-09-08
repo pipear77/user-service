@@ -54,24 +54,46 @@ public class AuthHandler {
             log.warn("Token no presente o mal formado");
             return ServerResponse.status(401).bodyValue("Token de autorización requerido");
         }
+        log.info("Encabezado Authorization recibido: '{}'", authHeader);
 
-        String token = authHeader.substring(7);
+        String token = authHeader.substring(7).trim();
+        log.info("Token limpio: '{}'", token);
+
+        if (!token.matches("^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+$")) {
+            log.warn("Token con formato inválido");
+            return ServerResponse.status(401).bodyValue("Token mal formado");
+        }
+
 
         return Mono.fromCallable(() -> {
-                    UsuarioAutenticadoDTO dto = new UsuarioAutenticadoDTO();
-                    dto.setCorreo(loginUseCase.getJwtProvider().getSubject(token));
-                    dto.setDocumentoIdentidad(loginUseCase.getJwtProvider().getClaim(token, "documento"));
-                    dto.setRol(loginUseCase.getJwtProvider().getClaim(token, "rol"));
-                    dto.setEstado("ACTIVO"); // puedes ajustar si tienes campo real
-                    dto.setSesionActiva(true); // puedes ajustar si tienes lógica de sesión
-                    return dto;
+                    try {
+                        String id = loginUseCase.getJwtProvider().getClaim(token, "id");
+                        String correo = loginUseCase.getJwtProvider().getSubject(token);
+                        String documento = loginUseCase.getJwtProvider().getClaim(token, "documento");
+                        String rol = loginUseCase.getJwtProvider().getClaim(token, "rol");
+
+                        log.info("✅ Claims extraídos: id={}, correo={}, documento={}, rol={}", id, correo, documento, rol);
+
+                        return UsuarioAutenticadoDTO.builder()
+                                .id(id)
+                                .correo(correo)
+                                .documentoIdentidad(documento)
+                                .rol(rol)
+                                .estado("ACTIVO")
+                                .sesionActiva(true)
+                                .build();
+                    } catch (Exception e) {
+                        log.error("❌ Error interno al validar token", e);
+                        throw new RuntimeException("Error al procesar token", e);
+                    }
                 })
                 .flatMap(dto -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(dto))
                 .onErrorResume(e -> {
-                    log.warn("Error al validar token: {}", e.getMessage());
-                    return ServerResponse.status(401).bodyValue("Token inválido o expirado");
+                    log.warn("⚠️ Respuesta con error: {}", e.getMessage());
+                    return ServerResponse.status(500).bodyValue("Error interno al validar token");
                 });
     }
+
 }

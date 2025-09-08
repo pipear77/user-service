@@ -37,6 +37,7 @@ public class LoginUseCase {
                             .switchIfEmpty(Mono.error(new CredencialesInvalidasException("Rol no encontrado")))
                             .map(rol -> {
                                 Map<String, Object> claims = new HashMap<>();
+                                claims.put("id", usuario.getId().toString());
                                 claims.put("rol", rol.getName()); // ← nombre dinámico del rol
                                 claims.put("documento", usuario.getNumeroDocumento());
 
