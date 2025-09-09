@@ -1,6 +1,11 @@
-ò23:09:45.977 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Guardando usuario con ID: 088b11d0-b21f-4f9c-b3ad-c1a6c5226121
-ì23:09:45.992 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- ID antes de guardar: 088b11d0-b21f-4f9c-b3ad-c1a6c5226121
-ò23:09:45.996 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Usuario guardado: co.com.pragma.model.usuario.Usuario@596d17f4
-í23:09:46.008 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Se encontr√É¬≥ el usuario por su correo: test@correo.com
-ö23:09:46.010 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Usuario encontrado: co.com.pragma.model.usuario.Usuario@3314f179
-	x23:09:46.014 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Se listaron todos los usuarios
+â16:23:19.762 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- √∞≈∏‚Äù? Buscando usuario por documento: 123456
+û16:23:19.936 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Entidad recuperada: co.com.pragma.r2dbc.entity.UsuarioEntity@981d9d2
+’16:23:19.937 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- √¢≈ì‚Ä¶ Usuario mapeado: Usuario(id=83910329-1697-4b3c-8e5b-b89d4ad3e13f, nombres=null, apellidos=null, numeroDocumento=123456, fechaNacimiento=null, direccion=null, telefono=null, correoElectronico=null, contrasena=null, salarioBase=null, idRol=null)
+Õ16:23:20.081 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Guardando usuario: Usuario(id=76578346-a029-4b40-88a3-0576916a8f38, nombres=null, apellidos=null, numeroDocumento=null, fechaNacimiento=null, direccion=null, telefono=null, correoElectronico=null, contrasena=null, salarioBase=null, idRol=null)
+Õ16:23:20.208 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Guardando usuario: Usuario(id=4133e61a-cddc-4654-ae1d-25d6114eb96e, nombres=null, apellidos=null, numeroDocumento=null, fechaNacimiento=null, direccion=null, telefono=null, correoElectronico=null, contrasena=null, salarioBase=null, idRol=null)
+	å16:23:20.263 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Verificando existencia por correo: test@correo.com
+	j16:23:20.266 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- √Ç¬øExiste? true
+
+â16:23:20.272 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Verificando existencia por documento: 123456789
+
+k16:23:20.274 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- √Ç¬øExiste? false

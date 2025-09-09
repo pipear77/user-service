@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-09-03T04:24:44.105Z" hostname="DESKTOP-6JN1CPG" time="5.21">
+<testsuite name="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-09-09T21:23:07.402Z" hostname="DESKTOP-6JN1CPG" time="9.151">
   <properties/>
-  <testcase name="debeFallarSiCorreoYaExiste()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="5.072"/>
-  <testcase name="debeFallarSiCorreoEsNulo()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.008"/>
-  <testcase name="debeRetornarTodosLosUsuarios()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.012"/>
-  <testcase name="debeFallarSiApellidosEsNulo()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.018"/>
-  <testcase name="debeFallarSiCorreoEsInvalido()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.003"/>
-  <testcase name="debeFallarSiTelefonoEsNulo()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.002"/>
-  <testcase name="debeFallarSiSalarioEsMayorAlPermitido()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.006"/>
-  <testcase name="debeRegistrarUsuarioExitosamente()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.011"/>
-  <testcase name="noDebeFallarSiTodosLosCamposSonValidos()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.005"/>
-  <testcase name="debeFallarSiNombresEsNulo()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.008"/>
-  <testcase name="debeFallarSiDireccionEsNula()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.016"/>
+  <testcase name="save_debeFallar_siCorreoYaExiste()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="9.088"/>
+  <testcase name="pipeline_debeFallar_siNombreEsVacio()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.019"/>
+  <testcase name="existsByEmail_delegaEnRepositorio()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.023"/>
+  <testcase name="save_debeGuardarUsuario_siCorreoNoExiste()" classname="co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCaseTest" time="0.017"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

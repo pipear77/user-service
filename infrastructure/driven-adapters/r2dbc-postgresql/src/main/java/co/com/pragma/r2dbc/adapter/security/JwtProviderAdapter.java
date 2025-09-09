@@ -40,12 +40,16 @@ public class JwtProviderAdapter implements JwtProviderRepository {
                 .setSubject(usuario.getCorreoElectronico())
                 .claim("id", usuario.getId().toString())
                 .claim("rol", usuario.getIdRol()) // UUID del rol
-                .claim("documento", usuario.getNumeroDocumento()) // ← nuevo claim
+                .claim("documento", usuario.getNumeroDocumento())
+                .claim("nombres", usuario.getNombres())
+                .claim("apellidos", usuario.getApellidos())
+                .claim("salarioBase", usuario.getSalarioBase().toPlainString())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + expirationMillis))
                 .signWith(key, SignatureAlgorithm.HS256)
                 .compact();
     }
+
 
     @Override
     public String generateToken(String subject, Map<String, Object> claims) {

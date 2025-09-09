@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -22,6 +24,12 @@ public class UsuarioAutenticadoDTO {
     @Schema(description = "Número de documento de identidad", example = "1234567890")
     private String documentoIdentidad;
 
+    @Schema(description = "Nombres del usuario", example = "Juan David")
+    private String nombres;
+
+    @Schema(description = "Apellidos del usuario", example = "Pérez")
+    private String apellidos;
+
     @Schema(description = "Rol del usuario", example = "ROL_CLIENTE")
     private String rol;
 
@@ -30,4 +38,7 @@ public class UsuarioAutenticadoDTO {
 
     @Schema(description = "Indica si la sesión está activa", example = "true")
     private boolean sesionActiva;
+
+    @Schema(description = "Indica el salario base", example = "350000.00")
+    private BigDecimal salarioBase;
 }

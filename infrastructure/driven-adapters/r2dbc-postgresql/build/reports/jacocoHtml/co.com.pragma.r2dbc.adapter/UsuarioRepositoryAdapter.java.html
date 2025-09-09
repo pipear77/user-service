@@ -2,44 +2,92 @@
 
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
-import lombok.RequiredArgsConstructor;
+import co.com.pragma.r2dbc.entity.UsuarioEntity;
+import co.com.pragma.r2dbc.helper.ReactiveAdapterOperations;
+import co.com.pragma.r2dbc.repositories.ReactiveUsuarioRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
+import org.reactivecommons.utils.ObjectMapper;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.reactive.TransactionalOperator;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import co.com.pragma.r2dbc.mapper.UsuarioMapper;
-import co.com.pragma.r2dbc.repository.ReactiveUsuarioDataRepository;
 
-@RequiredArgsConstructor
-<span class="fc" id="L14">@Slf4j</span>
-@Component
-public class UsuarioRepositoryAdapter implements UsuarioRepository {
-    private final ReactiveUsuarioDataRepository dataRepository;
-    private final UsuarioMapper mapper;
+import java.util.UUID;
 
+<span class="fc" id="L17">@Slf4j</span>
+@Repository
+public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations&lt;
+        Usuario,
+        UsuarioEntity,
+        UUID,
+        ReactiveUsuarioRepository
+        &gt; implements UsuarioRepository {
+
+    private final TransactionalOperator txOperator;
+
+    public UsuarioRepositoryAdapter(ReactiveUsuarioRepository repository,
+                                    ObjectMapper mapper,
+                                    TransactionalOperator txOperator) {
+<span class="fc" id="L31">        super(repository, mapper, d -&gt; mapper.map(d, Usuario.class));</span>
+<span class="fc" id="L32">        this.txOperator = txOperator;</span>
+<span class="fc" id="L33">    }</span>
 
     @Override
     public Mono&lt;Usuario&gt; save(Usuario usuario) {
-<span class="fc" id="L23">        log.info(&quot;Guardando usuario con ID: {}&quot;, usuario.getId());</span>
-<span class="fc" id="L24">        log.info(&quot;ID antes de guardar: {}&quot;, usuario.getId());</span>
-<span class="fc" id="L25">        return dataRepository.save(mapper.toEntity(usuario))</span>
-<span class="fc" id="L26">                .map(mapper::toDomain)</span>
-<span class="fc" id="L27">                .doOnNext(u -&gt; log.info(&quot;Usuario guardado: {}&quot;, u));</span>
+<span class="fc" id="L37">        log.info(&quot;Guardando usuario: {}&quot;, usuario);</span>
+<span class="fc" id="L38">        return txOperator.transactional(super.save(usuario))</span>
+<span class="fc" id="L39">                .switchIfEmpty(Mono.error(() -&gt; {</span>
+<span class="nc" id="L40">                    log.error(&quot;No se pudo guardar el usuario&quot;);</span>
+<span class="nc" id="L41">                    return new RuntimeException(&quot;No se pudo guardar el usuario&quot;);</span>
+                }));
     }
 
     @Override
-    public Mono&lt;Usuario&gt; findByCorreoElectronico(String correoElectronico) {
-<span class="fc" id="L32">        log.info(&quot;Se encontrÃ³ el usuario por su correo: {}&quot;, correoElectronico);</span>
-<span class="fc" id="L33">        return dataRepository.findByCorreoElectronico(correoElectronico)</span>
-<span class="fc" id="L34">                .map(mapper::toDomain)</span>
-<span class="fc" id="L35">                .doOnNext(u -&gt; log.info(&quot;Usuario encontrado: {}&quot;, u));</span>
+    public Mono&lt;Boolean&gt; existsByEmail(String correoElectronico) {
+<span class="fc" id="L47">        log.info(&quot;Verificando existencia por correo: {}&quot;, correoElectronico);</span>
+<span class="fc" id="L48">        return repository.existsByCorreoElectronico(correoElectronico)</span>
+<span class="fc" id="L49">                .doOnNext(existe -&gt; log.info(&quot;Â¿Existe? {}&quot;, existe));</span>
+    }
+
+    @Override
+    public Mono&lt;Boolean&gt; existsByDocumentNumber(String numeroDocumento) {
+<span class="fc" id="L54">        log.info(&quot;Verificando existencia por documento: {}&quot;, numeroDocumento);</span>
+<span class="fc" id="L55">        return repository.existsByNumeroDocumento(numeroDocumento)</span>
+<span class="fc" id="L56">                .doOnNext(existe -&gt; log.info(&quot;Â¿Existe? {}&quot;, existe));</span>
     }
 
     @Override
     public Flux&lt;Usuario&gt; findAllUsuarios() {
-<span class="fc" id="L40">        log.info(&quot;Se listaron todos los usuarios&quot;);</span>
-<span class="fc" id="L41">        return dataRepository.findAll()</span>
-<span class="fc" id="L42">                .map(mapper::toDomain);</span>
+<span class="fc" id="L61">        return repository.findAll()</span>
+<span class="fc" id="L62">                .map(entity -&gt; mapper.map(entity, Usuario.class));</span>
+    }
+
+    @Override
+    public Mono&lt;Usuario&gt; findByCorreoElectronico(String correoElectronico) {
+<span class="nc" id="L67">        log.info(&quot;Buscando usuario por correo: {}&quot;, correoElectronico);</span>
+<span class="nc" id="L68">        return repository.findByCorreoElectronico(correoElectronico)</span>
+<span class="nc" id="L69">                .map(entity -&gt; {</span>
+<span class="nc" id="L70">                    log.info(&quot;Entidad recuperada: {}&quot;, entity);</span>
+<span class="nc" id="L71">                    Usuario usuario = mapper.map(entity, Usuario.class);</span>
+<span class="nc" id="L72">                    log.info(&quot;Usuario mapeado: {}&quot;, usuario);</span>
+<span class="nc" id="L73">                    log.info(&quot;ContraseÃ±a mapeada: {}&quot;, usuario.getContrasena());</span>
+<span class="nc" id="L74">                    return usuario;</span>
+                })
+<span class="nc" id="L76">                .doOnNext(usuario -&gt; log.info(&quot;Usuario final: {}&quot;, usuario.getId()))</span>
+<span class="nc" id="L77">                .switchIfEmpty(Mono.error(new RuntimeException(&quot;Usuario no encontrado&quot;)));</span>
+    }
+
+    @Override
+    public Mono&lt;Usuario&gt; findByNumeroDocumento(String documentNumber) {
+<span class="fc" id="L82">        log.info(&quot;ðŸ”� Buscando usuario por documento: {}&quot;, documentNumber);</span>
+<span class="fc" id="L83">        return repository.findByNumeroDocumento(documentNumber)</span>
+<span class="fc" id="L84">                .doOnNext(entity -&gt; log.info(&quot;Entidad recuperada: {}&quot;, entity))</span>
+<span class="fc" id="L85">                .map(entity -&gt; mapper.map(entity, Usuario.class))</span>
+<span class="fc" id="L86">                .doOnNext(usuario -&gt; log.info(&quot;âœ… Usuario mapeado: {}&quot;, usuario))</span>
+<span class="fc" id="L87">                .onErrorResume(e -&gt; {</span>
+<span class="nc" id="L88">                    log.error(&quot;â�Œ Error tÃ©cnico en repositorio&quot;, e);</span>
+<span class="nc" id="L89">                    return Mono.error(new RuntimeException(&quot;Error tÃ©cnico al consultar usuario&quot;)); // â†� deja que el handler lo capture</span>
+                });
     }
 
 }

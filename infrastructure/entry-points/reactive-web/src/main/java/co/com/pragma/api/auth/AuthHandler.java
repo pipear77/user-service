@@ -15,6 +15,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Slf4j
@@ -54,16 +55,14 @@ public class AuthHandler {
             log.warn("Token no presente o mal formado");
             return ServerResponse.status(401).bodyValue("Token de autorización requerido");
         }
-        log.info("Encabezado Authorization recibido: '{}'", authHeader);
 
         String token = authHeader.substring(7).trim();
-        log.info("Token limpio: '{}'", token);
+        log.info("🔐 Token limpio recibido: '{}'", token);
 
         if (!token.matches("^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+$")) {
-            log.warn("Token con formato inválido");
+            log.warn("❌ Token con formato inválido");
             return ServerResponse.status(401).bodyValue("Token mal formado");
         }
-
 
         return Mono.fromCallable(() -> {
                     try {
@@ -71,16 +70,25 @@ public class AuthHandler {
                         String correo = loginUseCase.getJwtProvider().getSubject(token);
                         String documento = loginUseCase.getJwtProvider().getClaim(token, "documento");
                         String rol = loginUseCase.getJwtProvider().getClaim(token, "rol");
+                        String nombres = loginUseCase.getJwtProvider().getClaim(token, "nombres");
+                        String apellidos = loginUseCase.getJwtProvider().getClaim(token, "apellidos");
+                        String salarioBaseStr = loginUseCase.getJwtProvider().getClaim(token, "salarioBase");
 
-                        log.info("✅ Claims extraídos: id={}, correo={}, documento={}, rol={}", id, correo, documento, rol);
+                        log.info("✅ Claims extraídos: id={}, correo={}, documento={}, rol={}, nombres={}, apellidos={}, salarioBase={}",
+                                id, correo, documento, rol, nombres, apellidos, salarioBaseStr);
+
+                        BigDecimal salarioBase = new BigDecimal(salarioBaseStr);
 
                         return UsuarioAutenticadoDTO.builder()
                                 .id(id)
                                 .correo(correo)
                                 .documentoIdentidad(documento)
+                                .nombres(nombres)
+                                .apellidos(apellidos)
                                 .rol(rol)
                                 .estado("ACTIVO")
                                 .sesionActiva(true)
+                                .salarioBase(salarioBase)
                                 .build();
                     } catch (Exception e) {
                         log.error("❌ Error interno al validar token", e);
@@ -95,5 +103,6 @@ public class AuthHandler {
                     return ServerResponse.status(500).bodyValue("Error interno al validar token");
                 });
     }
+
 
 }

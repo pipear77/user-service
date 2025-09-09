@@ -32,14 +32,17 @@ public class LoginUseCase {
                         return Mono.error(new CredencialesInvalidasException("Credenciales inválidas"));
                     }
 
-                    UUID idRol = usuario.getIdRol(); // ya es UUID en el modelo
+                    UUID idRol = usuario.getIdRol();
                     return rolRepository.findById(idRol)
                             .switchIfEmpty(Mono.error(new CredencialesInvalidasException("Rol no encontrado")))
                             .map(rol -> {
                                 Map<String, Object> claims = new HashMap<>();
                                 claims.put("id", usuario.getId().toString());
-                                claims.put("rol", rol.getName()); // ← nombre dinámico del rol
+                                claims.put("rol", rol.getName()); // nombre del rol
                                 claims.put("documento", usuario.getNumeroDocumento());
+                                claims.put("nombres", usuario.getNombres());
+                                claims.put("apellidos", usuario.getApellidos());
+                                claims.put("salarioBase", usuario.getSalarioBase().toPlainString()); // como String
 
                                 return TokenResponseDTO.builder()
                                         .token(jwtProvider.generateToken(usuario.getCorreoElectronico(), claims))
@@ -49,4 +52,5 @@ public class LoginUseCase {
                             });
                 });
     }
+
 }

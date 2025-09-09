@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2025-09-03T04:09:41.934Z" hostname="DESKTOP-6JN1CPG" time="3.948">
+<testsuite name="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2025-09-09T21:23:12.972Z" hostname="DESKTOP-6JN1CPG" time="7.191">
   <properties/>
-  <testcase name="mustSaveValue()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="3.923"/>
-  <testcase name="mustFindValueById()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.005"/>
+  <testcase name="mustFindByDocumentNumber()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="7.102"/>
+  <testcase name="mustSaveValue()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.046"/>
+  <testcase name="mustFindValueById()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.007"/>
   <testcase name="mustFindAllValues()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.005"/>
-  <testcase name="mustFindByExample()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.014"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="mustFindByExample()" classname="co.com.pragma.r2dbc.UsuarioReactiveRepositoryAdapterTest" time="0.025"/>
+  <system-out><![CDATA[16:23:19.762 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- ðŸ”? Buscando usuario por documento: 123456
+16:23:19.936 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Entidad recuperada: co.com.pragma.r2dbc.entity.UsuarioEntity@981d9d2
+16:23:19.937 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- âœ… Usuario mapeado: Usuario(id=83910329-1697-4b3c-8e5b-b89d4ad3e13f, nombres=null, apellidos=null, numeroDocumento=123456, fechaNacimiento=null, direccion=null, telefono=null, correoElectronico=null, contrasena=null, salarioBase=null, idRol=null)
+16:23:20.081 [Test worker] INFO co.com.pragma.r2dbc.adapter.UsuarioRepositoryAdapter -- Guardando usuario: Usuario(id=76578346-a029-4b40-88a3-0576916a8f38, nombres=null, apellidos=null, numeroDocumento=null, fechaNacimiento=null, direccion=null, telefono=null, correoElectronico=null, contrasena=null, salarioBase=null, idRol=null)
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

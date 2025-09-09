@@ -29,7 +29,6 @@ public class RouterRest {
     @Bean
     @RouterOperations({
 
-            // 🔐 Login
             @RouterOperation(
                     path = "/api/v1/login",
                     method = RequestMethod.POST,
@@ -39,6 +38,7 @@ public class RouterRest {
                             operationId = "loginUsuario",
                             summary = "Autenticación de usuario",
                             description = "Genera un token JWT si las credenciales son válidas",
+                            tags = {"Usuarios"},
                             requestBody = @RequestBody(
                                     required = true,
                                     content = @Content(
@@ -60,7 +60,6 @@ public class RouterRest {
                     )
             ),
 
-            // 🔍 Validar token
             @RouterOperation(
                     path = "/api/v1/validate",
                     method = RequestMethod.GET,
@@ -70,6 +69,7 @@ public class RouterRest {
                             operationId = "validateToken",
                             summary = "Validar token JWT",
                             description = "Retorna los datos del usuario autenticado si el token es válido",
+                            tags = {"Usuarios"},
                             security = @SecurityRequirement(name = "bearerAuth"),
                             responses = {
                                     @ApiResponse(
@@ -85,7 +85,6 @@ public class RouterRest {
                     )
             ),
 
-            // 👤 Registrar usuario
             @RouterOperation(
                     path = "/api/v1/usuarios",
                     method = RequestMethod.POST,
@@ -95,6 +94,7 @@ public class RouterRest {
                             operationId = "saveUsuario",
                             summary = "Registrar usuario",
                             description = "Registra un nuevo usuario en el sistema",
+                            tags = {"Usuarios"},
                             requestBody = @RequestBody(
                                     required = true,
                                     content = @Content(
@@ -116,7 +116,6 @@ public class RouterRest {
                     )
             ),
 
-            // 📋 Listar usuarios
             @RouterOperation(
                     path = "/api/v1/usuarios",
                     method = RequestMethod.GET,
@@ -126,6 +125,7 @@ public class RouterRest {
                             operationId = "getAllUsuarios",
                             summary = "Listar usuarios",
                             description = "Obtiene todos los usuarios registrados",
+                            tags = {"Usuarios"},
                             responses = {
                                     @ApiResponse(
                                             responseCode = "200",
@@ -138,6 +138,7 @@ public class RouterRest {
                             }
                     )
             ),
+
             @RouterOperation(
                     path = "/api/v1/usuarios/{documento}",
                     method = RequestMethod.GET,
@@ -147,6 +148,7 @@ public class RouterRest {
                             operationId = "getUsuarioPorDocumento",
                             summary = "Buscar usuario por documento",
                             description = "Obtiene un usuario específico por número de documento",
+                            tags = {"Usuarios"},
                             security = @SecurityRequirement(name = "bearerAuth"),
                             responses = {
                                     @ApiResponse(
