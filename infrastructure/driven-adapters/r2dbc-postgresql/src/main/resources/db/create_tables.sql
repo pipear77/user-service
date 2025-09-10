@@ -20,7 +20,7 @@ CREATE TABLE usuarios (
     fecha_nacimiento DATE NOT NULL,
     direccion VARCHAR(200) NOT NULL,
     telefono VARCHAR(20) NOT NULL,
-    correo_electronico VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
     contrasena VARCHAR(255) NOT NULL,
     salario_base NUMERIC(15,2) NOT NULL,
     id_rol UUID NOT NULL,
@@ -36,7 +36,7 @@ INSERT INTO roles (id, name, description) VALUES
 -- Insertar usuario
 INSERT INTO usuarios (
     id, nombres, apellidos, numero_docum, fecha_nacimiento, direccion,
-    telefono, correo_electronico, contrasena, salario_base, id_rol
+    telefono, correo, contrasena, salario_base, id_rol
 ) VALUES (
     'd6e6d3d7-9d37-44f6-acbd-764d6f751a22',
     'Leidy',

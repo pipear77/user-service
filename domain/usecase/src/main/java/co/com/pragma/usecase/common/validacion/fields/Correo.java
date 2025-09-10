@@ -7,9 +7,8 @@ import co.com.pragma.usecase.exceptions.error.CodigosEstadoHttp;
 import reactor.core.publisher.Mono;
 
 import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_REQUERIDO;
-import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_DOCUMENTO_REQUERIDO;
 
-public class CorreoElectronico implements UsuarioValidacion{
+public class Correo implements UsuarioValidacion{
     @Override
     public Mono<Void> validar(Usuario usuario) {
         if (usuario.getCorreoElectronico() == null || usuario.getCorreoElectronico().isEmpty()) {

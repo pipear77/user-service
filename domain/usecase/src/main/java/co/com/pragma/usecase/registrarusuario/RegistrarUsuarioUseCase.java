@@ -12,8 +12,6 @@ import co.com.pragma.usecase.exceptions.CorreoYaRegistradoException;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 
-import java.util.UUID;
-
 import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_DUPLICADO;
 
 @Getter
@@ -30,14 +28,14 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
                 .agregarValidacion(new Nombre())
                 .agregarValidacion(new Apellido())
                 .agregarValidacion(new NumeroDocumento())
-                .agregarValidacion(new CorreoElectronico())
+                .agregarValidacion(new Correo())
                 .agregarValidacion(new Salario());
 
         return pipeline.validar(usuario)
-                .then(usuarioRepository.existsByEmail(usuario.getCorreoElectronico()))
+                .then(usuarioRepository.existsByEmail(usuario.getCorreo()))
                 .flatMap(existe -> {
                     if (existe) {
-                        return Mono.error(new CorreoYaRegistradoException(ERROR_CORREO_DUPLICADO + usuario.getCorreoElectronico()));
+                        return Mono.error(new CorreoYaRegistradoException(ERROR_CORREO_DUPLICADO + usuario.getCorreo()));
                     }
                     return Mono.just(usuario)
                             .flatMap(u -> {

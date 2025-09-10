@@ -43,7 +43,7 @@ class RegistrarUsuarioUseCaseTest {
                 .fechaNacimiento(null)
                 .direccion("Calle 123")
                 .telefono("3001234567")
-                .correoElectronico(correo)
+                .correo(correo)
                 .contrasena("123456")
                 .salarioBase(new BigDecimal("1000000"))
                 .idRol(UUID.randomUUID()) //UUID real
@@ -55,7 +55,7 @@ class RegistrarUsuarioUseCaseTest {
         UUID idGenerado = UUID.randomUUID();
         Usuario usuario = usuarioValido("nuevo@correo.com");
 
-        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico()))
+        when(usuarioRepository.existsByEmail(usuario.getCorreo()))
                 .thenReturn(Mono.just(false));
 
         //Corrección aquí: codificamos la contraseña, no el documento
@@ -81,7 +81,7 @@ class RegistrarUsuarioUseCaseTest {
                 })
                 .verifyComplete();
 
-        verify(usuarioRepository).existsByEmail(usuario.getCorreoElectronico());
+        verify(usuarioRepository).existsByEmail(usuario.getCorreo());
         verify(passwordEncoderRepository).encode(usuario.getContrasena()); // ✅ aquí también
         verify(usuarioRepository).save(captor.capture());
 
@@ -97,16 +97,16 @@ class RegistrarUsuarioUseCaseTest {
     void save_debeFallar_siCorreoYaExiste() {
         Usuario usuario = usuarioValido("duplicado@correo.com");
 
-        when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico())).thenReturn(Mono.just(true));
+        when(usuarioRepository.existsByEmail(usuario.getCorreo())).thenReturn(Mono.just(true));
 
         StepVerifier.create(registrarUsuarioUseCase.save(usuario))
                 .expectErrorSatisfies(error -> {
                     assertInstanceOf(CorreoYaRegistradoException.class, error);
-                    assertEquals(ERROR_CORREO_DUPLICADO + usuario.getCorreoElectronico(), error.getMessage());
+                    assertEquals(ERROR_CORREO_DUPLICADO + usuario.getCorreo(), error.getMessage());
                 })
                 .verify();
 
-        verify(usuarioRepository).existsByEmail(usuario.getCorreoElectronico());
+        verify(usuarioRepository).existsByEmail(usuario.getCorreo());
         verify(usuarioRepository, never()).save(any());
         verifyNoMoreInteractions(usuarioRepository);
     }
@@ -119,7 +119,7 @@ class RegistrarUsuarioUseCaseTest {
                 .numeroDocumento("123456789")
                 .direccion("Calle 123")
                 .telefono("3001234567")
-                .correoElectronico("ok@correo.com")
+                .correo("ok@correo.com")
                 .salarioBase(new BigDecimal("1000000"))
                 .idRol(UUID.randomUUID()) // UUID real
                 .build();

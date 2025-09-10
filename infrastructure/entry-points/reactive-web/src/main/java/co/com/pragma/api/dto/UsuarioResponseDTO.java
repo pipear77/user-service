@@ -36,7 +36,7 @@ public class UsuarioResponseDTO {
     private String telefono;
 
     @Schema(example = "juan.vaca@example.com", description = "Correo electrónico")
-    private String correoElectronico;
+    private String correo;
 
     @Schema(example = "3500000.00", description = "Salario base")
     private BigDecimal salarioBase;

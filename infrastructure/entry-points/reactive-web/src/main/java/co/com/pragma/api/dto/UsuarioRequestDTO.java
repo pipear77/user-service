@@ -40,7 +40,7 @@ public class UsuarioRequestDTO {
     @NotBlank
     @Email
     @Schema(example = "juan.vaca@example.com", description = "Correo electrónico")
-    private String correoElectronico;
+    private String correo;
 
     @NotBlank
     @Schema(example = "claveSegura123", description = "Contraseña del usuario")

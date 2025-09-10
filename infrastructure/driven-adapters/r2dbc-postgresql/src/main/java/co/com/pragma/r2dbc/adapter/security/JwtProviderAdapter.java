@@ -40,7 +40,7 @@ public class JwtProviderAdapter implements JwtProviderRepository {
                 .claim("id", usuario.getId().toString())
                 .claim("rol", usuario.getIdRol()) // UUID del rol
                 .claim("documento", usuario.getNumeroDocumento())
-                .claim("correo", usuario.getCorreoElectronico())
+                .claim("correo", usuario.getCorreo())
                 .claim("nombres", usuario.getNombres())
                 .claim("apellidos", usuario.getApellidos())
                 .claim("salarioBase", usuario.getSalarioBase().toPlainString())

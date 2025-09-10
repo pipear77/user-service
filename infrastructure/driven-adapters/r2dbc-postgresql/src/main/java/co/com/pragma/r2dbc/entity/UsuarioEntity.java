@@ -33,8 +33,8 @@ public class UsuarioEntity implements Persistable<UUID> {
     private String direccion;
     private String telefono;
 
-    @Column("correo_electronico")
-    private String correoElectronico;
+    @Column("correo")
+    private String correo;
 
     private String contrasena;
 

@@ -20,7 +20,7 @@ class UsuarioMapperImplTest {
         Usuario usuario = Usuario.builder()
                 .id(id)
                 .nombres("Juan")
-                .correoElectronico("juan@correo.com")
+                .correo("juan@correo.com")
                 .build();
 
         UsuarioEntity entity = mapper.toEntity(usuario);
@@ -28,7 +28,7 @@ class UsuarioMapperImplTest {
         assertThat(entity).isNotNull();
         assertThat(entity.getId()).isEqualTo(id);
         assertThat(entity.getNombres()).isEqualTo("Juan");
-        assertThat(entity.getCorreoElectronico()).isEqualTo("juan@correo.com");
+        assertThat(entity.getCorreo()).isEqualTo("juan@correo.com");
     }
 
     @Test
@@ -38,7 +38,7 @@ class UsuarioMapperImplTest {
         UsuarioEntity entity = UsuarioEntity.builder()
                 .id(id)
                 .nombres("Juan")
-                .correoElectronico("juan@correo.com")
+                .correo("juan@correo.com")
                 .build();
 
         Usuario usuario = mapper.toDomain(entity);
@@ -46,6 +46,6 @@ class UsuarioMapperImplTest {
         assertThat(usuario).isNotNull();
         assertThat(usuario.getId()).isEqualTo(id);
         assertThat(usuario.getNombres()).isEqualTo("Juan");
-        assertThat(usuario.getCorreoElectronico()).isEqualTo("juan@correo.com");
+        assertThat(usuario.getCorreo()).isEqualTo("juan@correo.com");
     }
 }

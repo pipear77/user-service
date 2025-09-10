@@ -21,7 +21,7 @@ public class Usuario {
     private LocalDate fechaNacimiento;
     private String direccion;
     private String telefono;
-    private String correoElectronico;
+    private String correo;
     private String contrasena;
     private BigDecimal salarioBase;
     private UUID idRol;
