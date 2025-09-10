@@ -37,10 +37,10 @@ public class JwtProviderAdapter implements JwtProviderRepository {
     @Override
     public String generateToken(Usuario usuario) {
         return Jwts.builder()
-                .setSubject(usuario.getCorreoElectronico())
                 .claim("id", usuario.getId().toString())
                 .claim("rol", usuario.getIdRol()) // UUID del rol
                 .claim("documento", usuario.getNumeroDocumento())
+                .claim("correo", usuario.getCorreoElectronico())
                 .claim("nombres", usuario.getNombres())
                 .claim("apellidos", usuario.getApellidos())
                 .claim("salarioBase", usuario.getSalarioBase().toPlainString())
