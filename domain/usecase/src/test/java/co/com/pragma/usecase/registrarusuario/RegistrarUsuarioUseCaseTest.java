@@ -46,7 +46,7 @@ class RegistrarUsuarioUseCaseTest {
                 .correoElectronico(correo)
                 .contrasena("123456")
                 .salarioBase(new BigDecimal("1000000"))
-                .idRol(UUID.randomUUID()) // ✅ UUID real
+                .idRol(UUID.randomUUID()) //UUID real
                 .build();
     }
 
@@ -58,7 +58,7 @@ class RegistrarUsuarioUseCaseTest {
         when(usuarioRepository.existsByEmail(usuario.getCorreoElectronico()))
                 .thenReturn(Mono.just(false));
 
-        // ✅ Corrección aquí: codificamos la contraseña, no el documento
+        //Corrección aquí: codificamos la contraseña, no el documento
         when(passwordEncoderRepository.encode(usuario.getContrasena()))
                 .thenReturn("encoded123");
 
@@ -121,7 +121,7 @@ class RegistrarUsuarioUseCaseTest {
                 .telefono("3001234567")
                 .correoElectronico("ok@correo.com")
                 .salarioBase(new BigDecimal("1000000"))
-                .idRol(UUID.randomUUID()) // ✅ UUID real
+                .idRol(UUID.randomUUID()) // UUID real
                 .build();
 
         UsuarioValidationPipeline pipeline = new UsuarioValidationPipeline()
