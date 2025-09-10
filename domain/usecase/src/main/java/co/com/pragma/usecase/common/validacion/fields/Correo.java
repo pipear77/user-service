@@ -11,7 +11,7 @@ import static co.com.pragma.usecase.common.ConstantesUsuario.ERROR_CORREO_REQUER
 public class Correo implements UsuarioValidacion{
     @Override
     public Mono<Void> validar(Usuario usuario) {
-        if (usuario.getCorreoElectronico() == null || usuario.getCorreoElectronico().isEmpty()) {
+        if (usuario.getCorreo() == null || usuario.getCorreo().isEmpty()) {
             return Mono.error(new CampoObligatorioException(ERROR_CORREO_REQUERIDO, CodigosEstadoHttp.BAD_REQUEST.getCodigo()));
         }
 
