@@ -32,7 +32,7 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
                 .agregarValidacion(new Salario());
 
         return pipeline.validar(usuario)
-                .then(usuarioRepository.existsByEmail(usuario.getCorreo()))
+                .then(usuarioRepository.existsByCorreo(usuario.getCorreo()))
                 .flatMap(existe -> {
                     if (existe) {
                         return Mono.error(new CorreoYaRegistradoException(ERROR_CORREO_DUPLICADO + usuario.getCorreo()));
@@ -54,8 +54,8 @@ public class RegistrarUsuarioUseCase implements RegistrarUsuarioUseCaseInterface
     }
 
     @Override
-    public Mono<Boolean> existsByEmail(String email) {
-        return usuarioRepository.existsByEmail(email);
+    public Mono<Boolean> existsByCorreo(String correo) {
+        return usuarioRepository.existsByCorreo(correo);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class LoginUseCase {
     private final RolRepository rolRepository;
 
     public Mono<TokenResponseDTO> login(String correo, String contrasena) {
-        return usuarioRepository.findByCorreoElectronico(correo)
+        return usuarioRepository.findByCorreo(correo)
                 .flatMap(usuario -> {
                     if (!passwordEncoder.matches(contrasena, usuario.getContrasena())) {
                         return Mono.error(new CredencialesInvalidasException("Credenciales inválidas"));
@@ -45,7 +45,7 @@ public class LoginUseCase {
                                 claims.put("salarioBase", usuario.getSalarioBase().toPlainString()); // como String
 
                                 return TokenResponseDTO.builder()
-                                        .token(jwtProvider.generateToken(usuario.getCorreoElectronico(), claims))
+                                        .token(jwtProvider.generateToken(usuario.getCorreo(), claims))
                                         .tipo("Bearer")
                                         .expiracion(jwtProvider.getExpirationTimestamp())
                                         .build();

@@ -77,16 +77,16 @@ class UsuarioRepositoryAdapterTest {
     }
 
     @Test
-    void mustCheckExistenceByEmail() {
+    void mustCheckExistenceByCorreo() {
         String correo = "test@correo.com";
 
-        when(dataRepository.existsByCorreoElectronico(correo)).thenReturn(Mono.just(true));
+        when(dataRepository.existsByCorreo(correo)).thenReturn(Mono.just(true));
 
-        StepVerifier.create(adapter.existsByEmail(correo))
+        StepVerifier.create(adapter.existsByCorreo(correo))
                 .expectNext(true)
                 .verifyComplete();
 
-        verify(dataRepository).existsByCorreoElectronico(correo);
+        verify(dataRepository).existsByCorreo(correo);
     }
 
     @Test

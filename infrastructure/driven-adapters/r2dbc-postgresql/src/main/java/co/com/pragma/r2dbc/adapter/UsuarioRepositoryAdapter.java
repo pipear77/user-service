@@ -43,9 +43,9 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
     }
 
     @Override
-    public Mono<Boolean> existsByEmail(String correoElectronico) {
+    public Mono<Boolean> existsByCorreo(String correoElectronico) {
         log.info("Verificando existencia por correo: {}", correoElectronico);
-        return repository.existsByCorreoElectronico(correoElectronico)
+        return repository.existsByCorreo(correoElectronico)
                 .doOnNext(existe -> log.info("¿Existe? {}", existe));
     }
 
@@ -63,9 +63,9 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
     }
 
     @Override
-    public Mono<Usuario> findByCorreoElectronico(String correoElectronico) {
-        log.info("Buscando usuario por correo: {}", correoElectronico);
-        return repository.findByCorreoElectronico(correoElectronico)
+    public Mono<Usuario> findByCorreo(String correo) {
+        log.info("Buscando usuario por correo: {}", correo);
+        return repository.findByCorreo(correo)
                 .map(entity -> {
                     log.info("Entidad recuperada: {}", entity);
                     Usuario usuario = mapper.map(entity, Usuario.class);

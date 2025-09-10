@@ -55,7 +55,7 @@ class RegistrarUsuarioUseCaseTest {
         UUID idGenerado = UUID.randomUUID();
         Usuario usuario = usuarioValido("nuevo@correo.com");
 
-        when(usuarioRepository.existsByEmail(usuario.getCorreo()))
+        when(usuarioRepository.existsByCorreo(usuario.getCorreo()))
                 .thenReturn(Mono.just(false));
 
         //Corrección aquí: codificamos la contraseña, no el documento
@@ -81,7 +81,7 @@ class RegistrarUsuarioUseCaseTest {
                 })
                 .verifyComplete();
 
-        verify(usuarioRepository).existsByEmail(usuario.getCorreo());
+        verify(usuarioRepository).existsByCorreo(usuario.getCorreo());
         verify(passwordEncoderRepository).encode(usuario.getContrasena()); // ✅ aquí también
         verify(usuarioRepository).save(captor.capture());
 
@@ -97,7 +97,7 @@ class RegistrarUsuarioUseCaseTest {
     void save_debeFallar_siCorreoYaExiste() {
         Usuario usuario = usuarioValido("duplicado@correo.com");
 
-        when(usuarioRepository.existsByEmail(usuario.getCorreo())).thenReturn(Mono.just(true));
+        when(usuarioRepository.existsByCorreo(usuario.getCorreo())).thenReturn(Mono.just(true));
 
         StepVerifier.create(registrarUsuarioUseCase.save(usuario))
                 .expectErrorSatisfies(error -> {
@@ -106,7 +106,7 @@ class RegistrarUsuarioUseCaseTest {
                 })
                 .verify();
 
-        verify(usuarioRepository).existsByEmail(usuario.getCorreo());
+        verify(usuarioRepository).existsByCorreo(usuario.getCorreo());
         verify(usuarioRepository, never()).save(any());
         verifyNoMoreInteractions(usuarioRepository);
     }
@@ -138,13 +138,13 @@ class RegistrarUsuarioUseCaseTest {
     @Test
     void existsByEmail_delegaEnRepositorio() {
         String correo = "test@correo.com";
-        when(usuarioRepository.existsByEmail(correo)).thenReturn(Mono.just(true));
+        when(usuarioRepository.existsByCorreo(correo)).thenReturn(Mono.just(true));
 
-        StepVerifier.create(registrarUsuarioUseCase.existsByEmail(correo))
+        StepVerifier.create(registrarUsuarioUseCase.existsByCorreo(correo))
                 .expectNext(true)
                 .verifyComplete();
 
-        verify(usuarioRepository).existsByEmail(correo);
+        verify(usuarioRepository).existsByCorreo(correo);
         verifyNoMoreInteractions(usuarioRepository);
     }
 }

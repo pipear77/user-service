@@ -6,11 +6,11 @@ import reactor.core.publisher.Mono;
 
 public interface UsuarioRepository {
     Mono<Usuario> save(Usuario usuario);
-    Mono<Boolean> existsByEmail(String email);
+    Mono<Boolean> existsByCorreo(String email);
     Mono<Boolean> existsByDocumentNumber(String documentNumber);
     Flux<Usuario> findAllUsuarios();
 
     // Metodo para autenticación
-    Mono<Usuario> findByCorreoElectronico(String correoElectronico);
+    Mono<Usuario> findByCorreo(String correo);
     Mono<Usuario> findByNumeroDocumento(String documentNumber);
 }

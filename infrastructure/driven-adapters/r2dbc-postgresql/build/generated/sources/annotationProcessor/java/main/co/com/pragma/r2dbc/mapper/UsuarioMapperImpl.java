@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-10T14:35:15-0500",
+    date = "2025-09-10T15:27:13-0500",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.3.jar, environment: Java 17.0.12 (Oracle Corporation)"
 )
 @Component
@@ -28,7 +28,7 @@ public class UsuarioMapperImpl implements UsuarioMapper {
         usuario.fechaNacimiento( entity.getFechaNacimiento() );
         usuario.direccion( entity.getDireccion() );
         usuario.telefono( entity.getTelefono() );
-        usuario.correoElectronico( entity.getCorreoElectronico() );
+        usuario.correo( entity.getCorreo() );
         usuario.contrasena( entity.getContrasena() );
         usuario.salarioBase( entity.getSalarioBase() );
         usuario.idRol( entity.getIdRol() );
@@ -51,7 +51,7 @@ public class UsuarioMapperImpl implements UsuarioMapper {
         usuarioEntity.fechaNacimiento( usuario.getFechaNacimiento() );
         usuarioEntity.direccion( usuario.getDireccion() );
         usuarioEntity.telefono( usuario.getTelefono() );
-        usuarioEntity.correoElectronico( usuario.getCorreoElectronico() );
+        usuarioEntity.correo( usuario.getCorreo() );
         usuarioEntity.contrasena( usuario.getContrasena() );
         usuarioEntity.salarioBase( usuario.getSalarioBase() );
         usuarioEntity.idRol( usuario.getIdRol() );
