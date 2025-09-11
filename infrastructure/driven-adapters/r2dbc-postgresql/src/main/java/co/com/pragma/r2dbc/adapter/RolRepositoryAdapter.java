@@ -2,6 +2,7 @@ package co.com.pragma.r2dbc.adapter;
 
 import co.com.pragma.model.rol.Rol;
 import co.com.pragma.model.rol.gateways.RolRepository;
+import co.com.pragma.r2dbc.common.exceptions.RolNoEncontradoException;
 import co.com.pragma.r2dbc.entity.RolEntity;
 import co.com.pragma.r2dbc.helper.ReactiveAdapterOperations;
 import co.com.pragma.r2dbc.repositories.ReactiveRolRepository;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 import java.util.UUID;
+
+import static co.com.pragma.r2dbc.common.Constantes.ROL_NO_ENCONTRADO;
 
 @Slf4j
 @Repository
@@ -36,6 +39,6 @@ public class RolRepositoryAdapter extends ReactiveAdapterOperations<
                     log.info("Rol mapeado: {}", rol);
                     return rol;
                 })
-                .switchIfEmpty(Mono.error(new RuntimeException("Rol no encontrado")));
+                .switchIfEmpty(Mono.error(new RolNoEncontradoException()));
     }
 }

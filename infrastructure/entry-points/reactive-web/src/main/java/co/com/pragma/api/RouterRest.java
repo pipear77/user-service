@@ -19,6 +19,7 @@ import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import static co.com.pragma.r2dbc.common.Constantes.*;
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 
@@ -29,8 +30,9 @@ public class RouterRest {
     @Bean
     @RouterOperations({
 
+            // 🔐 Autenticación
             @RouterOperation(
-                    path = "/api/v1/login",
+                    path = LOGIN,
                     method = RequestMethod.POST,
                     beanClass = AuthHandler.class,
                     beanMethod = "login",
@@ -61,7 +63,7 @@ public class RouterRest {
             ),
 
             @RouterOperation(
-                    path = "/api/v1/validate",
+                    path = VALIDATE,
                     method = RequestMethod.GET,
                     beanClass = AuthHandler.class,
                     beanMethod = "validateToken",
@@ -85,8 +87,9 @@ public class RouterRest {
                     )
             ),
 
+            // 👤 Gestión de usuarios
             @RouterOperation(
-                    path = "/api/v1/usuarios",
+                    path = USUARIOS,
                     method = RequestMethod.POST,
                     beanClass = Handler.class,
                     beanMethod = "save",
@@ -117,7 +120,7 @@ public class RouterRest {
             ),
 
             @RouterOperation(
-                    path = "/api/v1/usuarios",
+                    path = USUARIOS,
                     method = RequestMethod.GET,
                     beanClass = Handler.class,
                     beanMethod = "getAll",
@@ -140,7 +143,7 @@ public class RouterRest {
             ),
 
             @RouterOperation(
-                    path = "/api/v1/usuarios/{documento}",
+                    path = USUARIOS + "/{documento}",
                     method = RequestMethod.GET,
                     beanClass = Handler.class,
                     beanMethod = "getByDocumento",
@@ -167,10 +170,10 @@ public class RouterRest {
 
     })
     public RouterFunction<ServerResponse> usuarioRoutes(Handler handler, AuthHandler authHandler) {
-        return RouterFunctions.route(POST("/api/v1/login"), authHandler::login)
-                .andRoute(GET("/api/v1/validate"), authHandler::validateToken)
-                .andRoute(POST("/api/v1/usuarios"), handler::save)
-                .andRoute(GET("/api/v1/usuarios/{documento}"), handler::getByDocumento)
-                .andRoute(GET("/api/v1/usuarios"), handler::getAll);
+        return RouterFunctions.route(POST(LOGIN), authHandler::login)
+                .andRoute(GET(VALIDATE), authHandler::validateToken)
+                .andRoute(POST(USUARIOS), handler::save)
+                .andRoute(GET(USUARIOS + "/{documento}"), handler::getByDocumento)
+                .andRoute(GET(USUARIOS), handler::getAll);
     }
 }

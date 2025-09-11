@@ -4,6 +4,7 @@ import co.com.pragma.model.rol.gateways.RolRepository;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
 import co.com.pragma.model.usuario.gateways.PasswordEncoderRepository;
 import co.com.pragma.model.usuario.gateways.JwtProviderRepository;
+import co.com.pragma.usecase.common.ConstantesUsuario;
 import co.com.pragma.usecase.dto.TokenResponseDTO;
 import co.com.pragma.usecase.exceptions.CredencialesInvalidasException;
 import lombok.Getter;
@@ -26,15 +27,18 @@ public class LoginUseCase {
     private final RolRepository rolRepository;
 
     public Mono<TokenResponseDTO> login(String correo, String contrasena) {
+        if (contrasena == null || contrasena.trim().isEmpty()) {
+            return Mono.error(new CredencialesInvalidasException(ConstantesUsuario.ERROR_CONTRASENA_REQUERIDA));
+        }
         return usuarioRepository.findByCorreo(correo)
                 .flatMap(usuario -> {
                     if (!passwordEncoder.matches(contrasena, usuario.getContrasena())) {
-                        return Mono.error(new CredencialesInvalidasException("Credenciales inválidas"));
+                        return Mono.error(new CredencialesInvalidasException());
                     }
 
                     UUID idRol = usuario.getIdRol();
                     return rolRepository.findById(idRol)
-                            .switchIfEmpty(Mono.error(new CredencialesInvalidasException("Rol no encontrado")))
+                            .switchIfEmpty(Mono.error(new CredencialesInvalidasException()))
                             .map(rol -> {
                                 Map<String, Object> claims = new HashMap<>();
                                 claims.put("id", usuario.getId().toString());

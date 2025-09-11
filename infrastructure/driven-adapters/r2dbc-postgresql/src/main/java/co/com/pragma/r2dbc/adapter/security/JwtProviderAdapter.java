@@ -66,18 +66,13 @@ public class JwtProviderAdapter implements JwtProviderRepository {
 
     @Override
     public boolean validateToken(String token) {
-        log.info("Validando token con expiración: {}", Jwts.parserBuilder()
-                .setSigningKey(key)
-                .build()
-                .parseClaimsJws(token)
-                .getBody()
-                .getExpiration());
-
         try {
-            Jwts.parserBuilder()
+            var claims = Jwts.parserBuilder()
                     .setSigningKey(key)
                     .build()
-                    .parseClaimsJws(token);
+                    .parseClaimsJws(token)
+                    .getBody();
+            log.info("Validando token con expiración: {}", claims.getExpiration());
             return true;
         } catch (JwtException | IllegalArgumentException e) {
             return false;

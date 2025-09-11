@@ -14,7 +14,7 @@ public class ConstantesUsuario {
     public static final String ERROR_CORREO_REQUERIDO = "El correo electrónico es obligatorio";
     public static final String ERROR_FORMATO_CORREO = "El correo electrónico debe tener un formato válido";
     public static final String ERROR_SALARIO_NUMERICO = "El salario base debe ser un valor numérico entre 0 y 15.000.000";
-
+    public static final String CREDENCIALES_INVALIDAS = "La validación retornó null";
     // Expresiones regulares
     public static final String REGEX_CORREO = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 }

@@ -30,3 +30,8 @@ bootJar {
     // Sets output jar name
     archiveFileName = "${project.getParent().getName()}.${archiveExtension.get()}"
 }
+
+tasks.named('bootJar', org.springframework.boot.gradle.tasks.bundling.BootJar) {
+    archiveFileName = "${project.getParent().getName()}.${archiveExtension.get()}"
+    mainClass.set('co.com.pragma.MainApplication')
+}

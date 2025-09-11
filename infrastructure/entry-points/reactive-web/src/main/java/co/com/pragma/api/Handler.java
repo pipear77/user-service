@@ -3,6 +3,8 @@ package co.com.pragma.api;
 import co.com.pragma.api.dto.UsuarioRequestDTO;
 import co.com.pragma.api.mapper.IUsuarioRequestMapper;
 import co.com.pragma.api.mapper.IUsuarioResponseMapper;
+import co.com.pragma.r2dbc.common.Constantes;
+import co.com.pragma.usecase.dto.ErrorDto;
 import co.com.pragma.usecase.registrarusuario.RegistrarUsuarioUseCase;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
@@ -17,6 +19,8 @@ import reactor.core.publisher.Mono;
 
 import java.util.Set;
 
+import static co.com.pragma.r2dbc.common.Constantes.*;
+
 @Slf4j
 @Component
 @RequiredArgsConstructor
@@ -28,40 +32,43 @@ public class Handler {
     private final Validator validator;
 
     public Mono<ServerResponse> save(ServerRequest request) {
-        log.info("Escuchando solicitud de creación de usuario");
+        log.info("Solicitud de creación de usuario recibida");
 
         String authHeader = request.headers().firstHeader("Authorization");
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            log.warn("Token no presente o mal formado");
-            return ServerResponse.status(401).bodyValue("Token de autorización requerido");
+            log.warn("{}", TOKEN_MALFORMADO);
+            return ServerResponse.status(401)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .bodyValue(new ErrorDto(TOKEN_REQUERIDO, 401));
         }
 
         String token = authHeader.substring(7);
         String rol = useCase.getJwtProvider().getClaim(token, "rol");
 
         if (!rol.equals("ROL_ADMIN") && !rol.equals("ROL_ASESOR")) {
-            log.warn("Acceso denegado: rol no autorizado ({})", rol);
-            return ServerResponse.status(403).bodyValue("No tienes permisos para registrar usuarios");
+            log.warn("{}", ROL_NO_AUTORIZADO);
+            return ServerResponse.status(403)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .bodyValue(new ErrorDto(ROL_NO_AUTORIZADO, 403));
         }
 
         return request.bodyToMono(UsuarioRequestDTO.class)
                 .doOnNext(dto -> log.debug("DTO recibido: {}", dto))
                 .flatMap(this::validate)
                 .map(requestMapper::toUsuario)
-                .doOnNext(usuario -> log.debug("Mapeado a dominio: {}", usuario))
+                .doOnNext(usuario -> log.debug("🔧 Mapeado a dominio: {}", usuario))
                 .flatMap(useCase::save)
-                .doOnNext(saved -> log.info("Usuario guardado exitosamente: {}", saved.getId()))
+                .doOnNext(saved -> log.info("Usuario guardado: {}", saved.getId()))
                 .map(responseMapper::toResponseDTO)
-                .doOnNext(dto -> log.debug("DTO de respuesta generado: {}", dto))
+                .doOnNext(dto -> log.debug("DTO de respuesta: {}", dto))
                 .flatMap(dto -> ServerResponse.created(request.uri())
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(dto));
     }
 
-
     public Mono<ServerResponse> getAll(ServerRequest request) {
-        log.info("Escuchando solicitud de consulta de todos los usuarios");
+        log.info("Solicitud de consulta de todos los usuarios");
 
         return useCase.getAllUsuarios()
                 .map(responseMapper::toResponseDTO)
@@ -69,33 +76,34 @@ public class Handler {
                 .doOnNext(lista -> log.info("Total usuarios recuperados: {}", lista.size()))
                 .flatMap(lista -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
-                        .bodyValue(lista));
+                        .bodyValue(lista))
+                .onErrorResume(e -> {
+                    log.error("{}", ERROR_CONSULTA_USUARIOS, e);
+                    return ServerResponse.status(500)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .bodyValue(new ErrorDto(ERROR_CONSULTA_USUARIOS, 500));
+                });
     }
 
     public Mono<ServerResponse> getByDocumento(ServerRequest request) {
         String documento = request.pathVariable("documento");
-        log.info("📡 Iniciando búsqueda de usuario con documento: {}", documento);
+        log.info("📡 Buscando usuario con documento: {}", documento);
 
         return useCase.getUsuarioPorDocumento(documento)
-                .flatMap(usuario -> {
-                    log.info("🔍 Usuario encontrado: {}", usuario.getId());
-                    return Mono.just(responseMapper.toResponseDTO(usuario));
-                })
+                .map(responseMapper::toResponseDTO)
                 .flatMap(dto -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(dto))
-                .switchIfEmpty(Mono.defer(() -> {
-                    log.warn("⚠️ Usuario no encontrado con documento: {}", documento);
-                    return ServerResponse.notFound().build();
-                }))
+                .switchIfEmpty(ServerResponse.status(404)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .bodyValue(new ErrorDto(USUARIO_NO_ENCONTRADO_POR_DOCUMENTO + documento, 404)))
                 .onErrorResume(e -> {
-                    log.error("❌ Error inesperado al buscar usuario por documento: {}", documento, e);
-                    return ServerResponse.status(500).bodyValue("Error interno al buscar usuario");
+                    log.error("{}", ERROR_CONSULTA_USUARIO_POR_DOCUMENTO, e);
+                    return ServerResponse.status(500)
+                            .contentType(MediaType.APPLICATION_JSON)
+                            .bodyValue(new ErrorDto(ERROR_CONSULTA_USUARIO_POR_DOCUMENTO, 500));
                 });
     }
-
-
-
 
     private <T> Mono<T> validate(T bean) {
         Set<ConstraintViolation<T>> violations = validator.validate(bean);

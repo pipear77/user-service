@@ -2,6 +2,7 @@ package co.com.pragma.usecase.common;
 
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.usecase.common.validacion.UsuarioValidacion;
+import co.com.pragma.usecase.exceptions.ValidacionNulaException;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -21,7 +22,7 @@ public class UsuarioValidationPipeline {
         return Flux.fromIterable(validaciones)
                 .concatMap(validacion -> {
                     Mono<Void> resultado = validacion.validar(usuario);
-                    return resultado != null ? resultado : Mono.error(new RuntimeException("La validación retornó null"));
+                    return resultado != null ? resultado : Mono.error(new ValidacionNulaException());
                 })
                 .then(); // ← se completa si todas las validaciones pasan
     }

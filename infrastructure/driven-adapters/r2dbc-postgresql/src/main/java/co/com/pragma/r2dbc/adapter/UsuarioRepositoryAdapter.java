@@ -2,6 +2,10 @@ package co.com.pragma.r2dbc.adapter;
 
 import co.com.pragma.model.usuario.Usuario;
 import co.com.pragma.model.usuario.gateways.UsuarioRepository;
+import co.com.pragma.r2dbc.common.Constantes;
+import co.com.pragma.r2dbc.common.exceptions.ErrorTecnicoUsuarioException;
+import co.com.pragma.r2dbc.common.exceptions.UsuarioNoEncontradoException;
+import co.com.pragma.r2dbc.common.exceptions.UsuarioNoGuardadoException;
 import co.com.pragma.r2dbc.entity.UsuarioEntity;
 import co.com.pragma.r2dbc.helper.ReactiveAdapterOperations;
 import co.com.pragma.r2dbc.repositories.ReactiveUsuarioRepository;
@@ -34,60 +38,58 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
 
     @Override
     public Mono<Usuario> save(Usuario usuario) {
-        log.info("Guardando usuario: {}", usuario);
+        log.info("📝 Guardando usuario con correo: {}", usuario.getCorreo());
         return txOperator.transactional(super.save(usuario))
                 .switchIfEmpty(Mono.error(() -> {
-                    log.error("No se pudo guardar el usuario");
-                    return new RuntimeException("No se pudo guardar el usuario");
+                    log.error("❌ {}", Constantes.USUARIO_NO_GUARDADO);
+                    return new UsuarioNoGuardadoException();
                 }));
     }
 
     @Override
     public Mono<Boolean> existsByCorreo(String correoElectronico) {
-        log.info("Verificando existencia por correo: {}", correoElectronico);
+        log.info("🔍 Verificando existencia por correo: {}", correoElectronico);
         return repository.existsByCorreo(correoElectronico)
-                .doOnNext(existe -> log.info("¿Existe? {}", existe));
+                .doOnNext(existe -> log.info("📌 ¿Existe correo? {}", existe));
     }
 
     @Override
     public Mono<Boolean> existsByDocumentNumber(String numeroDocumento) {
-        log.info("Verificando existencia por documento: {}", numeroDocumento);
+        log.info("🔍 Verificando existencia por documento: {}", numeroDocumento);
         return repository.existsByNumeroDocumento(numeroDocumento)
-                .doOnNext(existe -> log.info("¿Existe? {}", existe));
+                .doOnNext(existe -> log.info("📌 ¿Existe documento? {}", existe));
     }
 
     @Override
     public Flux<Usuario> findAllUsuarios() {
+        log.info("📋 Recuperando todos los usuarios");
         return repository.findAll()
                 .map(entity -> mapper.map(entity, Usuario.class));
     }
 
     @Override
     public Mono<Usuario> findByCorreo(String correo) {
-        log.info("Buscando usuario por correo: {}", correo);
+        log.info("🔍 Buscando usuario por correo: {}", correo);
         return repository.findByCorreo(correo)
                 .map(entity -> {
-                    log.info("Entidad recuperada: {}", entity);
+                    log.info("📦 Entidad recuperada con ID: {}", entity.getId());
                     Usuario usuario = mapper.map(entity, Usuario.class);
-                    log.info("Usuario mapeado: {}", usuario);
-                    log.info("Contraseña mapeada: {}", usuario.getContrasena());
+                    log.info("✅ Usuario mapeado con ID: {}", usuario.getId());
                     return usuario;
                 })
-                .doOnNext(usuario -> log.info("Usuario final: {}", usuario.getId()))
-                .switchIfEmpty(Mono.error(new RuntimeException("Usuario no encontrado")));
+                .switchIfEmpty(Mono.error(new UsuarioNoEncontradoException()));
     }
 
     @Override
     public Mono<Usuario> findByNumeroDocumento(String documentNumber) {
         log.info("🔍 Buscando usuario por documento: {}", documentNumber);
         return repository.findByNumeroDocumento(documentNumber)
-                .doOnNext(entity -> log.info("Entidad recuperada: {}", entity))
+                .doOnNext(entity -> log.info("📦 Entidad recuperada con ID: {}", entity.getId()))
                 .map(entity -> mapper.map(entity, Usuario.class))
-                .doOnNext(usuario -> log.info("✅ Usuario mapeado: {}", usuario))
+                .doOnNext(usuario -> log.info("✅ Usuario mapeado con ID: {}", usuario.getId()))
                 .onErrorResume(e -> {
-                    log.error("❌ Error técnico en repositorio", e);
-                    return Mono.error(new RuntimeException("Error técnico al consultar usuario")); // ← deja que el handler lo capture
+                    log.error("❌ {}", Constantes.ERROR_TECNICO_CONSULTA_USUARIO, e);
+                    return Mono.error(new ErrorTecnicoUsuarioException());
                 });
     }
-
 }

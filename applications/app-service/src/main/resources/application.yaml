@@ -2,11 +2,10 @@ server:
   port: 8080
   error:
     include-message: always
+
 spring:
   application:
     name: "user-service"
-  #devtools:
-    #add-properties: false
   h2:
     console:
       enabled: true
@@ -17,9 +16,10 @@ spring:
     user:
       name: admin
       password: admin123
+
 adapters:
   r2dbc:
-    host: "localhost"
+    host: user-db  # ⚠️ Cambiado de "localhost" a nombre del servicio en docker-compose
     port: 5432
     database: "auth_db"
     schema: public
@@ -35,6 +35,7 @@ management:
     health:
       probes:
         enabled: true
+
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
 
@@ -49,10 +50,3 @@ security:
   jwt:
     secret: YWJjZGVmZ2hpamtsbW5vcHFyc3R1dnd4eXo1Njc4OTAxMjM0NTY3ODkwMTIzNDU2
     expiration: 3600000 # 1 hora en milisegundos
-    
-spring:
-  datasource:
-    url: jdbc:postgresql://user-db:5432/auth_db
-    username: "postgres"
-    password: "1234"
-
