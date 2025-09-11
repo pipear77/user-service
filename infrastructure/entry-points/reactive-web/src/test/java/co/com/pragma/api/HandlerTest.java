@@ -73,7 +73,7 @@ class HandlerTest {
     void save_shouldReturnForbiddenIfRoleIsNotAdminOrAsesor() {
         UsuarioRequestDTO requestDTO = UsuarioRequestDTO.builder()
                 .nombres("Juan")
-                .correoElectronico("juan@correo.com")
+                .correo("juan@correo.com")
                 .build();
 
         JwtProviderRepository jwtProvider = Mockito.mock(JwtProviderRepository.class);

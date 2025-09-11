@@ -30,7 +30,7 @@ public class RouterRest {
     @Bean
     @RouterOperations({
 
-            // 🔐 Autenticación
+            // Autenticación
             @RouterOperation(
                     path = LOGIN,
                     method = RequestMethod.POST,

@@ -38,26 +38,26 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
 
     @Override
     public Mono<Usuario> save(Usuario usuario) {
-        log.info("📝 Guardando usuario con correo: {}", usuario.getCorreo());
+        log.info("Guardando usuario con correo: {}", usuario.getCorreo());
         return txOperator.transactional(super.save(usuario))
                 .switchIfEmpty(Mono.error(() -> {
-                    log.error("❌ {}", Constantes.USUARIO_NO_GUARDADO);
+                    log.error("{}", Constantes.USUARIO_NO_GUARDADO);
                     return new UsuarioNoGuardadoException();
                 }));
     }
 
     @Override
     public Mono<Boolean> existsByCorreo(String correoElectronico) {
-        log.info("🔍 Verificando existencia por correo: {}", correoElectronico);
+        log.info("Verificando existencia por correo: {}", correoElectronico);
         return repository.existsByCorreo(correoElectronico)
-                .doOnNext(existe -> log.info("📌 ¿Existe correo? {}", existe));
+                .doOnNext(existe -> log.info("¿Existe correo? {}", existe));
     }
 
     @Override
     public Mono<Boolean> existsByDocumentNumber(String numeroDocumento) {
-        log.info("🔍 Verificando existencia por documento: {}", numeroDocumento);
+        log.info("Verificando existencia por documento: {}", numeroDocumento);
         return repository.existsByNumeroDocumento(numeroDocumento)
-                .doOnNext(existe -> log.info("📌 ¿Existe documento? {}", existe));
+                .doOnNext(existe -> log.info("¿Existe documento? {}", existe));
     }
 
     @Override
@@ -69,12 +69,12 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
 
     @Override
     public Mono<Usuario> findByCorreo(String correo) {
-        log.info("🔍 Buscando usuario por correo: {}", correo);
+        log.info("Buscando usuario por correo: {}", correo);
         return repository.findByCorreo(correo)
                 .map(entity -> {
-                    log.info("📦 Entidad recuperada con ID: {}", entity.getId());
+                    log.info("Entidad recuperada con ID: {}", entity.getId());
                     Usuario usuario = mapper.map(entity, Usuario.class);
-                    log.info("✅ Usuario mapeado con ID: {}", usuario.getId());
+                    log.info("Usuario mapeado con ID: {}", usuario.getId());
                     return usuario;
                 })
                 .switchIfEmpty(Mono.error(new UsuarioNoEncontradoException()));
@@ -82,13 +82,13 @@ public class UsuarioRepositoryAdapter extends ReactiveAdapterOperations<
 
     @Override
     public Mono<Usuario> findByNumeroDocumento(String documentNumber) {
-        log.info("🔍 Buscando usuario por documento: {}", documentNumber);
+        log.info("Buscando usuario por documento: {}", documentNumber);
         return repository.findByNumeroDocumento(documentNumber)
-                .doOnNext(entity -> log.info("📦 Entidad recuperada con ID: {}", entity.getId()))
+                .doOnNext(entity -> log.info("Entidad recuperada con ID: {}", entity.getId()))
                 .map(entity -> mapper.map(entity, Usuario.class))
-                .doOnNext(usuario -> log.info("✅ Usuario mapeado con ID: {}", usuario.getId()))
+                .doOnNext(usuario -> log.info("Usuario mapeado con ID: {}", usuario.getId()))
                 .onErrorResume(e -> {
-                    log.error("❌ {}", Constantes.ERROR_TECNICO_CONSULTA_USUARIO, e);
+                    log.error("{}", Constantes.ERROR_TECNICO_CONSULTA_USUARIO, e);
                     return Mono.error(new ErrorTecnicoUsuarioException());
                 });
     }

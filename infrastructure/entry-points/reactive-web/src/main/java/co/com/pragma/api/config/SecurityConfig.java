@@ -43,7 +43,7 @@ public class SecurityConfig {
                         .pathMatchers(HttpMethod.GET, "/auth/validate").permitAll()
                         .pathMatchers(HttpMethod.GET, "/api/v1/validate").permitAll()
                         .pathMatchers(HttpMethod.GET, "/api/v1/usuarios/**").authenticated()
-                        .pathMatchers(HttpMethod.GET, "/usuarios/**").authenticated() // ✅ Protege /usuarios/{documento}
+                        .pathMatchers(HttpMethod.GET, "/usuarios/**").authenticated() //Protege /usuarios/{documento}
                         .anyExchange().authenticated()
                 )
                 .addFilterAt(jwtAuthenticationFilter(), SecurityWebFiltersOrder.AUTHENTICATION)

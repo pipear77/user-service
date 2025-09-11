@@ -24,7 +24,7 @@ public class UsuarioValidationPipeline {
                     Mono<Void> resultado = validacion.validar(usuario);
                     return resultado != null ? resultado : Mono.error(new ValidacionNulaException());
                 })
-                .then(); // ← se completa si todas las validaciones pasan
+                .then();
     }
 
 }

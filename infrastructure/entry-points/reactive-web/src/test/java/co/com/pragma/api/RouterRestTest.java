@@ -56,7 +56,7 @@ class RouterRestTest {
     void testPOSTUsuarioRoute() {
         UsuarioRequestDTO requestDTO = UsuarioRequestDTO.builder()
                 .nombres("Juan")
-                .correoElectronico("juan@correo.com")
+                .correo("juan@correo.com")
                 .build();
 
         UsuarioResponseDTO responseDTO = UsuarioResponseDTO.builder()
@@ -119,7 +119,7 @@ class RouterRestTest {
     void testPOSTUsuarioRoute_withValidToken_shouldReturnCreated() {
         UsuarioRequestDTO requestDTO = UsuarioRequestDTO.builder()
                 .nombres("Juan")
-                .correoElectronico("juan@correo.com")
+                .correo("juan@correo.com")
                 .build();
 
         UsuarioResponseDTO responseDTO = UsuarioResponseDTO.builder()
