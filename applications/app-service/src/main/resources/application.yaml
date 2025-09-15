@@ -2,10 +2,11 @@ server:
   port: 8080
   error:
     include-message: always
-
 spring:
   application:
     name: "user-service"
+    #devtools:
+    #add-properties: false
   h2:
     console:
       enabled: true
@@ -16,10 +17,9 @@ spring:
     user:
       name: admin
       password: admin123
-
 adapters:
   r2dbc:
-    host: user-db  # ⚠️ Cambiado de "localhost" a nombre del servicio en docker-compose
+    host: "localhost"
     port: 5432
     database: "auth_db"
     schema: public
@@ -35,7 +35,6 @@ management:
     health:
       probes:
         enabled: true
-
 cors:
   allowed-origins: "http://localhost:4200,http://localhost:8080"
 

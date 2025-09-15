@@ -30,7 +30,6 @@ public class AuthHandler {
 
     private final LoginUseCase loginUseCase;
     private final Validator validator;
-    private final ModelMapper modelMapper;
 
     public Mono<ServerResponse> login(ServerRequest request) {
         log.info("Procesando solicitud de login");
@@ -38,15 +37,22 @@ public class AuthHandler {
         return request.bodyToMono(LoginRequestDTO.class)
                 .flatMap(this::validate)
                 .flatMap(dto -> loginUseCase.login(dto.getCorreoElectronico(), dto.getContrasena()))
-                .doOnNext(token -> log.info("Token generado correctamente"))
+                .doOnNext(token -> log.info("Token generado correctamente para {}", request.path()))
                 .flatMap(token -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(token))
                 .onErrorResume(e -> {
-                    log.error("Error en login: {}", e.getMessage());
+                    // Diferenciar los errores
+                    if (e instanceof IllegalArgumentException || e instanceof ConstraintViolationException) {
+                        log.warn("Credenciales inválidas: {}", e.getMessage());
+                        return ServerResponse.status(401)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(new ErrorDto("Credenciales inválidas", 401));
+                    }
+                    log.error("Error inesperado en login", e);
                     return ServerResponse.status(500)
                             .contentType(MediaType.APPLICATION_JSON)
-                            .bodyValue(new ErrorDto(DESCRIPCION_ERROR_INESPERADO, 500));
+                            .bodyValue(new ErrorDto("Error interno. Intenta más tarde.", 500));
                 });
     }
 
@@ -54,21 +60,14 @@ public class AuthHandler {
         String authHeader = request.headers().firstHeader("Authorization");
 
         if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            log.warn("{}", TOKEN_MALFORMADO);
+            log.warn("Token no presente o mal formado");
             return ServerResponse.status(401)
                     .contentType(MediaType.APPLICATION_JSON)
-                    .bodyValue(new ErrorDto(TOKEN_REQUERIDO, 401));
+                    .bodyValue(new ErrorDto("Token requerido o mal formado", 401));
         }
 
         String token = authHeader.substring(7).trim();
-        log.info("Token limpio recibido");
-
-        if (!token.matches("^[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+$")) {
-            log.warn("Token con formato inválido");
-            return ServerResponse.status(401)
-                    .contentType(MediaType.APPLICATION_JSON)
-                    .bodyValue(new ErrorDto("Token mal formado", 401));
-        }
+        log.debug("Token recibido: {}", token);
 
         return Mono.fromCallable(() -> {
                     try {
@@ -80,10 +79,6 @@ public class AuthHandler {
                         String apellidos = loginUseCase.getJwtProvider().getClaim(token, "apellidos");
                         String salarioBaseStr = loginUseCase.getJwtProvider().getClaim(token, "salarioBase");
 
-                        log.info("Claims extraídos correctamente");
-
-                        BigDecimal salarioBase = new BigDecimal(salarioBaseStr);
-
                         return UsuarioAutenticadoDTO.builder()
                                 .id(id)
                                 .correo(correo)
@@ -93,30 +88,40 @@ public class AuthHandler {
                                 .rol(rol)
                                 .estado("ACTIVO")
                                 .sesionActiva(true)
-                                .salarioBase(salarioBase)
+                                .salarioBase(new BigDecimal(salarioBaseStr))
                                 .build();
                     } catch (Exception e) {
-                        log.error("{}", ERROR_INESPERADO, e);
-                        throw new ErrorInesperadoException();
+                        log.warn("Token inválido o expirado: {}", e.getMessage());
+                        throw new IllegalArgumentException("Token inválido o expirado");
                     }
                 })
                 .flatMap(dto -> ServerResponse.ok()
                         .contentType(MediaType.APPLICATION_JSON)
                         .bodyValue(dto))
                 .onErrorResume(e -> {
-                    log.warn("Error al validar token: {}", e.getMessage());
+                    if (e instanceof IllegalArgumentException) {
+                        return ServerResponse.status(401)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .bodyValue(new ErrorDto("Token inválido o expirado", 401));
+                    }
+                    log.error("Error inesperado al validar token", e);
                     return ServerResponse.status(500)
                             .contentType(MediaType.APPLICATION_JSON)
-                            .bodyValue(new ErrorDto(DESCRIPCION_ERROR_INESPERADO, 500));
+                            .bodyValue(new ErrorDto("Error interno. Intenta más tarde.", 500));
                 });
     }
 
     private <T> Mono<T> validate(T bean) {
         Set<ConstraintViolation<T>> violations = validator.validate(bean);
         if (!violations.isEmpty()) {
-            log.warn("Validación fallida: {}", violations);
-            return Mono.error(new ConstraintViolationException(violations));
+            String mensaje = violations.stream()
+                    .map(v -> v.getPropertyPath() + ": " + v.getMessage())
+                    .reduce((a, b) -> a + ", " + b)
+                    .orElse("Datos inválidos");
+            log.warn("Validación fallida: {}", mensaje);
+            return Mono.error(new IllegalArgumentException(mensaje));
         }
         return Mono.just(bean);
     }
 }
+

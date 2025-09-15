@@ -38,14 +38,15 @@ public class SecurityConfig {
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .authorizeExchange(auth -> auth
                         .pathMatchers(HttpMethod.POST, "/api/v1/login").permitAll()
-                        .pathMatchers("/swagger-ui/**", "/v3/api-docs/**", "/webjars/**").permitAll()
+                        .pathMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**", "/webjars/**").permitAll()
                         .pathMatchers(HttpMethod.POST, "/api/v1/usuarios").permitAll()
                         .pathMatchers(HttpMethod.GET, "/auth/validate").permitAll()
                         .pathMatchers(HttpMethod.GET, "/api/v1/validate").permitAll()
                         .pathMatchers(HttpMethod.GET, "/api/v1/usuarios/**").authenticated()
-                        .pathMatchers(HttpMethod.GET, "/usuarios/**").authenticated() //Protege /usuarios/{documento}
+                        .pathMatchers(HttpMethod.GET, "/usuarios/**").authenticated()
                         .anyExchange().authenticated()
                 )
+
                 .addFilterAt(jwtAuthenticationFilter(), SecurityWebFiltersOrder.AUTHENTICATION)
                 .build();
     }

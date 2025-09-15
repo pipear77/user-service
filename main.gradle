@@ -89,16 +89,20 @@ jacoco {
 
 tasks.register('jacocoMergedReport', JacocoReport) {
     dependsOn = [test, subprojects.jacocoTestReport, pitestReportAggregate]
-    additionalSourceDirs.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
-    sourceDirectories.setFrom files(subprojects.sourceSets.main.allSource.srcDirs)
-    classDirectories.setFrom files(subprojects.sourceSets.main.output)
-    executionData.setFrom project.fileTree(dir: '.', include: '**/build/jacoco/test.exec')
+
+    additionalSourceDirs.setFrom files(subprojects.collect { it.sourceSets.main.allSource.srcDirs }.flatten())
+    sourceDirectories.setFrom files(subprojects.collect { it.sourceSets.main.allSource.srcDirs }.flatten())
+    classDirectories.setFrom files(subprojects.collect { it.sourceSets.main.output }.flatten())
+    executionData.setFrom fileTree(dir: '.', include: '**/build/jacoco/test.exec')
+
     reports {
-        xml.setRequired true
-        csv.setRequired false
-        html.setRequired true
+        xml.required = true
+        xml.outputLocation = file("$buildDir/reports/jacocoMergedReport/jacocoMergedReport.xml")
+        html.required = true
+        html.outputLocation = file("$buildDir/reports/jacocoMergedReport/html")
     }
 }
+
 
 tasks.withType(JavaCompile).configureEach {
     options.compilerArgs = [
@@ -129,3 +133,8 @@ pitestReportAggregate {
 tasks.named('wrapper') {
     gradleVersion = '8.14.3'
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
