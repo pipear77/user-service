@@ -4,9 +4,11 @@ server:
     include-message: always
 spring:
   application:
-    name: "user-service"
-    #devtools:
-    #add-properties: false
+    name: user-service
+    r2dbc:
+      url: r2dbc:postgresql://user-db:5432/auth_db
+      username: postgres
+      password: 1234
   h2:
     console:
       enabled: true
@@ -17,6 +19,7 @@ spring:
     user:
       name: admin
       password: admin123
+
 adapters:
   r2dbc:
     host: "localhost"
