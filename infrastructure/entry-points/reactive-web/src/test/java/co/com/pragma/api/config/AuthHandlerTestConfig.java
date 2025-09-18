@@ -28,8 +28,8 @@ public class AuthHandlerTestConfig {
     }
 
     @Bean
-    public AuthHandler authHandler(LoginUseCase loginUseCase, Validator validator, ModelMapper modelMapper) {
-        return new AuthHandler(loginUseCase, validator, modelMapper);
+    public AuthHandler authHandler(LoginUseCase loginUseCase, Validator validator) {
+        return new AuthHandler(loginUseCase, validator);
     }
 
     @Bean
